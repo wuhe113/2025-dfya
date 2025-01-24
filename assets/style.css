@@ -94,16 +94,16 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
     position: absolute;
     width: 100vw;
     height: 100vh;
-    left: 25%;
-    top: -25%;
-    animation: rotate360 10s linear infinite;
-    transform-origin: bottom;
+    left: -25%;
+    top: -70%;
+    /* animation: rotate360 10s linear infinite;
+    transform-origin: bottom; */
 }
 
 .line {
     position: absolute;
     width: 2px;
-    height: 700px;
+    height: 800px;
     background: linear-gradient(0deg, rgba(255,255,255,1) 48%, rgba(255,216,0,1) 64%);
     top: 50%;
     left: 50%;
@@ -148,6 +148,7 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
 #text1{
 position: absolute;
 overflow: hidden;
-margin-top: -10px;
-margin-left: 50px;
+width: 105%;
+/* margin-top: -20px;
+margin-left: -10px; */
 }
