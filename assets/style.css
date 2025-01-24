@@ -133,6 +133,30 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
     }
 }
 
+#boom1{
+    position: absolute;
+    width: 50%;
+    right: -150px;
+    top: -200px;
+    z-index: 11;
+    mix-blend-mode: hard-light;
+    /* animation: resize2 3s infinite alternate ease; */
+}
+
+/* 
+@keyframes resize2{
+    0%{transform: scale(1);
+        filter: blur(0px);
+    }
+
+    100%{
+        transform: scale(1.5);
+        filter: blur(10px);
+    }
+} */
+
+
+
 
   
 
@@ -146,9 +170,19 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
 }
 
 #text1{
-position: absolute;
-overflow: hidden;
-width: 105%;
+    position: absolute;
+    overflow: hidden;
+    width: 105%;
+    bottom: -70px;
+    right: -50px;
 /* margin-top: -20px;
 margin-left: -10px; */
+}
+
+#text2{
+    position: absolute;
+    overflow: hidden;
+    width: 60%;
+    right: 50px;
+    bottom: 0px;
 }
