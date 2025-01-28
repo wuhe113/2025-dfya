@@ -79,3 +79,12 @@ function createSpots(){
 
 createSparks();
 createSpots();
+
+// const raysAmount = getComputedStyle(document.documentElement).getPropertyValue("--ray");
+// const amount = raysAmount-1;
+// const group = document.querySelector("g");
+// let ray = group.querySelector("g");
+
+// for (let i = 0; i < amount; i++){
+//   group.appendChild(ray.cloneNode(true));
+// }

@@ -18,7 +18,6 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
 #sparks{
     position: absolute;
     animation: up-down 5s infinite alternate ease;
-    z-index: 10;
 }
 
 .spark{
@@ -104,7 +103,7 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
     position: absolute;
     width: 2px;
     height: 800px;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 48%, rgba(255,216,0,1) 64%);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 48%, rgba(255,216,0) 64%, rgba(255,216,0,0) 84%);
     top: 50%;
     left: 50%;
     transform-origin: center;
@@ -136,9 +135,11 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
 #boom1{
     position: absolute;
     width: 50%;
-    right: -150px;
-    top: -200px;
-    z-index: 11;
+    right: -15%;
+    top: -20%;
+    /* right: -150px;
+    top: -200px; */
+    /* z-index: 11; */
     mix-blend-mode: hard-light;
     /* animation: resize2 3s infinite alternate ease; */
 }
@@ -165,7 +166,6 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
     top: 15px;
     left: 20px;
     width: 70vw;
-    z-index: 99;
     
 }
 
@@ -173,8 +173,10 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
     position: absolute;
     overflow: hidden;
     width: 105%;
-    bottom: -70px;
-    right: -50px;
+    bottom: -10%;
+    /* bottom: -70px;
+    right: -50px; */
+    /* z-index: 11; */
 /* margin-top: -20px;
 margin-left: -10px; */
 }
@@ -183,6 +185,61 @@ margin-left: -10px; */
     position: absolute;
     overflow: hidden;
     width: 60%;
-    right: 50px;
+    right: 5%;
+    /* right: 50px; */
     bottom: 0px;
+    /* z-index: 12; */
+    cursor: pointer;
 }
+
+#year{
+    position: absolute;
+    top: -10px;
+    width: 20%;
+}
+
+
+/* #scanner1{
+    position: absolute;
+    top: 0px;
+    left: -10%;
+    width: 0.5vw;
+    height: 10vw;
+    background-color: white;
+    mix-blend-mode: screen;
+    filter: blur(2px);
+    transform: rotate(10deg);
+    animation: scan 5s infinite linear;
+} */
+
+/* .scanner {
+    fill: url(#scanner-gradient);
+    animation: scan 2s linear infinite alternate;
+} */
+
+#svg-mask {
+    position: absolute;
+    top: -10px;
+    width: 30%;
+}
+
+.scanner {
+    animation: scan 2s linear infinite alternate;
+}
+
+/* @keyframes scan{
+    0% { left: -10%; }
+    100% { left: 20%; }
+} */
+
+@keyframes scan {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(500px); }
+}
+
+
+/* #star-mask{
+    position: absolute;
+    top: 0px;
+    width: 20%;
+} */

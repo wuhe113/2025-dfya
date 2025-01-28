@@ -1,5 +1,5 @@
 // Fire Effect
-// found the following code from https://editor.p5js.org/codingtrain/sketches/NaXdkoVI, posted by codingtrain, title as CC 103 - Fire Effect
+// the following code is learned from https://editor.p5js.org/codingtrain/sketches/NaXdkoVI, posted by codingtrain, title as CC 103 - Fire Effect
 
 let fireCanvas = function(fire) {
   let buffer1, buffer2, cooling;
@@ -137,9 +137,7 @@ let lightCanvas = function(light) {
 
 };
 
-
-
-
+  
 
 
 
