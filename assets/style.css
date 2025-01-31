@@ -141,20 +141,40 @@ background: radial-gradient(circle, rgba(255,255,255,1) 21%, rgba(255,216,0,1) 5
     top: -200px; */
     /* z-index: 11; */
     mix-blend-mode: hard-light;
+    /* animation: resize2 2s infinite alternate ease-in-out; */
+}
+
+#boom2{
+    position: absolute;
+    width: 40%;
+    right: 30%;
+    top: -20%;
+    /* right: -150px;
+    top: -200px; */
+    /* z-index: 11; */
+    /* mix-blend-mode: hard-light; */
     /* animation: resize2 3s infinite alternate ease; */
 }
 
-/* 
+#bullet3{
+    position: absolute;
+    width:10%;
+    right: 43%;
+    top: 7%;
+    /* animation: float4 3s infinite alternate ease-in-out; */
+}
+
+
 @keyframes resize2{
     0%{transform: scale(1);
         filter: blur(0px);
     }
 
     100%{
-        transform: scale(1.5);
+        transform: scale(2);
         filter: blur(10px);
     }
-} */
+}
 
 
 
@@ -243,3 +263,62 @@ margin-left: -10px; */
     top: 0px;
     width: 20%;
 } */
+
+#boom3{
+    position: absolute;
+    width:50%;
+    right: 11%;
+    top: 8%;
+    animation: float 3s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(-15px) rotate(5deg);
+     }
+    100% { transform: translateY(5px) scale(0.5); }
+}
+
+
+#bullet1{
+    position: absolute;
+    width:10%;
+    right: 32.5%;
+    top: 48%;
+    animation: float2 3s infinite alternate ease-in-out;
+}
+
+@keyframes float2 {
+    0% { transform: translateY(30px) translateX(-20px) scale(1.2);
+     }
+    100% { transform: translateY(-2px) rotate(-10deg); }
+}
+
+#boom4{
+    position: absolute;
+    width:50%;
+    right: 40%;
+    bottom: -35%;
+    animation: float3 3s infinite alternate ease-in-out;
+}
+
+@keyframes float3 {
+    0% {  transform: translateY(10px) scale(0.5);
+     }
+    100% {
+        transform: translateY(-10px) rotate(5deg); }
+}
+
+#bullet2{
+    position: absolute;
+    width:15%;
+    right: 55%;
+    bottom: 4%;
+    animation: float4 3s infinite alternate ease-in-out;
+}
+
+@keyframes float4 {
+    0% { transform: translateY(-30px) translateX(30px) scale(1.2);
+        transform: translateY(30px) rotate(-10deg) scale(0.6)
+     }
+    100% {transform: translateY(-30px) translateX(30px) scale(1.2);}
+}
