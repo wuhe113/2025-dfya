@@ -323,7 +323,15 @@ margin-left: -10px; */
     100% {transform: translateY(-30px) translateX(30px) scale(1.2);}
 }
 
-#matter{
+#behind-matter{
     position: absolute;
     bottom: 0;
+    /* cursor: pointer; */
 }
+
+#front-matter{
+    position: absolute;
+    bottom: 0;
+    /* cursor: pointer; */
+}
+

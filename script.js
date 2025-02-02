@@ -19,9 +19,9 @@ let quantity = 200;
 let max = 18;
 let min = 3;
 
-let quantity2 = 300;
-let max2 = 5;
-let min2 = 1;
+let quantity2 = 350;
+let max2 = 8;
+let min2 = 2;
 
 let sparks = document.getElementById("sparks");
 let spots = document.getElementById("spots");
