@@ -1,3 +1,11 @@
+let cursor = document.getElementById("cursor");
+
+document.onmousemove = function(e){
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+}
+
+
 const container = document.getElementById("ray-light");
 const lineCount = 50;
 
@@ -23,8 +31,13 @@ let quantity2 = 350;
 let max2 = 8;
 let min2 = 2;
 
+let quantity3 = 25;
+let max3 = 18;
+let min3 = 3;
+
 let sparks = document.getElementById("sparks");
 let spots = document.getElementById("spots");
+let sparks2  = document.getElementById("sparks2");
 
 function makeRandomSize(min, max) {
     return Math.random() * (max - min) + min;
@@ -77,8 +90,33 @@ function createSpots(){
   
   };
 
+
+  function createSparks2(){
+  
+    for (let i=0;i<quantity3;i++){
+    let randomSize3 = makeRandomSize(min, max);
+    let newDiv3 = document.createElement("div");
+    
+    newDiv3.classList.add("spark");
+    newDiv3.style.width = randomSize3 + "px";
+    newDiv3.style.height = randomSize3 + "px";
+    newDiv3.style.left = Math.random()*100 + "vw";
+    newDiv3.style.top = Math.random()*100 + "vh";
+  
+  
+    let randomDelay = Math.random() * 5;
+    newDiv3.style.animationDelay = `${randomDelay}s`;
+  
+  
+  sparks2.appendChild(newDiv3);
+    
+  };
+  
+  };
+
 createSparks();
 createSpots();
+createSparks2();
 
 // const raysAmount = getComputedStyle(document.documentElement).getPropertyValue("--ray");
 // const amount = raysAmount-1;
