@@ -1,4 +1,4 @@
-let cursor = document.getElementById("cursor");
+const cursor = document.getElementById("cursor");
 
 document.onmousemove = function(e){
     cursor.style.left = e.clientX + "px";
@@ -7,7 +7,7 @@ document.onmousemove = function(e){
 
 
 const container = document.getElementById("ray-light");
-const lineCount = 50;
+let lineCount = 50;
 
 for (let i = 0; i < lineCount; i++) {
   const line = document.createElement("div");
@@ -35,9 +35,9 @@ let quantity3 = 25;
 let max3 = 18;
 let min3 = 3;
 
-let sparks = document.getElementById("sparks");
-let spots = document.getElementById("spots");
-let sparks2  = document.getElementById("sparks2");
+const sparks = document.getElementById("sparks");
+const spots = document.getElementById("spots");
+const sparks2  = document.getElementById("sparks2");
 
 function makeRandomSize(min, max) {
     return Math.random() * (max - min) + min;

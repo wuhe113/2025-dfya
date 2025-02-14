@@ -44,7 +44,7 @@ class petal {
         this.size = ctx.random(8, 15);
         this.radius = ctx.sqrt(ctx.random(ctx.pow(ctx.width / 1, 2))); // Movement radius
         this.rotation = 0;
-        this.color = ctx.color(ctx.random(100, 239), 100);
+        this.color = ctx.color(ctx.random(200, 239));
     }
 
     update(time) {
@@ -63,6 +63,7 @@ class petal {
         ctx.rotate(this.rotation); 
         ctx.fill(this.color);
         ctx.stroke(26, 26, 26, 100);
+        ctx.strokeWeight(1.5);
         // ctx.noStroke();
         ctx.ellipse(0, 0, this.size * 1.2, this.size * 0.8, 5);
 

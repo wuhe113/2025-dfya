@@ -1,3 +1,5 @@
+// the following code is learned from https://www.youtube.com/watch?v=rG37RIRU0D4
+
 window.onload = function(){
 
       // module aliases
