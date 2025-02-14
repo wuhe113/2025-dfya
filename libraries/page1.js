@@ -1,15 +1,23 @@
 let petals = [];
 
+
 let dotsCanvas = function(dots) {
+    let isLargeScreen = false;
+
     dots.setup = function() {
         dots.canvas = dots.createCanvas(dots.windowWidth, dots.windowHeight * 0.48);
         dots.canvas.parent("dots");
+        checkMediaQuery();
     };
 
     dots.draw = function() {
-        // let rectW = 120;
-        drawGrid1(dots, 3, 0, 120, dots.height);
-        drawGrid2(dots, 650, 0, 50, dots.height);
+        if (isLargeScreen) {
+            drawGrid1(dots, 5, 0, 205, dots.height);
+            drawGrid2(dots, 1200, 0, 100, dots.height);
+        } else {
+            drawGrid1(dots, 3, 0, 120, dots.height);
+            drawGrid2(dots, 650, 0, 50, dots.height);
+        }
     };
 
     function drawGrid1(dots, rectX, rectY, rectW, rectH) {
@@ -45,16 +53,37 @@ let dotsCanvas = function(dots) {
             }
         }
     }
+
+    function checkMediaQuery() {
+        isLargeScreen = dots.windowWidth >= 2560;
+    }
+
+    dots.windowResized = function() {
+        dots.resizeCanvas(dots.windowWidth, dots.windowHeight * 0.48);
+        checkMediaQuery();
+    };
+
+
+      
 };
 
 let dots2Canvas = function(dots2) {
+    let isLargeScreen = false;
+
     dots2.setup = function() {
         dots2.canvas = dots2.createCanvas(dots2.windowWidth, dots2.windowHeight * 0.48);
         dots2.canvas.parent("block3");
+        checkMediaQuery();
     };
 
     dots2.draw = function() {
-        drawGrid1(dots2, 0, 0, 120, dots2.height);
+        
+        if (isLargeScreen) {
+            drawGrid1(dots2, 0, 0, 150, dots2.height);}
+        else{
+            drawGrid1(dots2, 0, 0, 120, dots2.height);
+
+        }
     };
 
 
@@ -74,17 +103,34 @@ let dots2Canvas = function(dots2) {
             }
         }
     }
+
+    function checkMediaQuery() {
+        isLargeScreen = dots2.windowWidth >= 2560;
+    }
+
+    dots2.windowResized = function() {
+        dots2.resizeCanvas(dots2.windowWidth, dots2.windowHeight * 0.48);
+        checkMediaQuery();
+    };
+
 
 }
 
 let dots3Canvas = function(dots3) {
+    let isLargeScreen = false;
+
     dots3.setup = function() {
         dots3.canvas = dots3.createCanvas(dots3.windowWidth, dots3.windowHeight * 0.48);
         dots3.canvas.parent("line8");
+        checkMediaQuery();
     };
 
     dots3.draw = function() {
-        drawGrid1(dots3, 3, 0, 27, dots3.height);
+        if (isLargeScreen) {
+            drawGrid1(dots3, 5, 0, 60, dots3.height);
+        }else{
+            drawGrid1(dots3, 3, 0, 27, dots3.height);
+        }
     };
 
 
@@ -104,6 +150,16 @@ let dots3Canvas = function(dots3) {
             }
         }
     }
+
+    function checkMediaQuery() {
+        isLargeScreen = dots3.windowWidth >= 2560;
+    }
+
+    dots3.windowResized = function() {
+        dots3.resizeCanvas(dots3.windowWidth, dots3.windowHeight * 0.48);
+        checkMediaQuery();
+    };
+
 
 }
 
@@ -116,6 +172,8 @@ let secondCanvas = function(second) {
     second.draw = function() {
         second.background(239, 239, 239);
         let t = second.frameCount / 100;
+
+        // drawNoise();
 
         for (let i = 0; i < 2; i++) {
             petals.push(new petal(second));
@@ -130,6 +188,23 @@ let secondCanvas = function(second) {
             }
         }
     };
+
+    function drawNoise(){
+        second.loadPixels();
+        let xoff = 0.0;
+        for (let x = 0; x < second.width; x++) {
+            let yoff = 0;
+
+            for (var y = 0; y < second.height; y++) {
+                let bright = second.map(second.noise(xoff, yoff), 0, 1, 0, 255);
+                second.set(x, y, second.floor(bright));
+                
+                yoff += 0.01;
+            }
+            xoff += 0.01;
+        }
+        second.updatePixels();
+    }
 };
 
 // function drawCherryBlossoms(){
@@ -147,6 +222,8 @@ let secondCanvas = function(second) {
 // }
 
 let linesCanvas = function(lines) {
+    let isLargeScreen = false;
+    let isFullScreen = false;
 
 
     lines.setup = function() {
@@ -160,6 +237,8 @@ let linesCanvas = function(lines) {
         brush.stroke(64, 64, 64);
 
         lines.noLoop();
+
+        checkMediaQuery();
     };
     
 
@@ -167,13 +246,37 @@ let linesCanvas = function(lines) {
         // let available_brushes = brush.box();
 
 
-        brush.flowLine(-450, -200, 200, -40);
-        brush.flowLine(-250, -200, 350, -40);
-        brush.flowLine(-320, -200, 350, -40);
+        if (isLargeScreen) {
+            brush.flowLine(-800, -400, 400, -40);
+        brush.flowLine(-600, -400, 650, -40);
+        brush.flowLine(-450, -400, 650, -40);
+        }else if(isFullScreen){
+            brush.flowLine(-500, -250, 250, -40);
+            brush.flowLine(-300, -250, 400, -40);
+            brush.flowLine(-370, -250, 400, -40);
+
+        }else{
+            brush.flowLine(-450, -200, 200, -40);
+            brush.flowLine(-250, -200, 350, -40);
+            brush.flowLine(-320, -200, 350, -40);
+        }
+    };
+
+    function checkMediaQuery() {
+        isLargeScreen = lines.windowWidth >= 2560;
+        isFullScreen = lines.windowWidth === 1440;
+    }
+
+    lines.windowResized = function() {
+        lines.resizeCanvas(lines.windowWidth, lines.windowHeight * 0.48);
+        checkMediaQuery();
+        lines.redraw();
     };
 }
 
 let lines2Canvas = function(lines2) {
+    let isLargeScreen = false;
+    let isFullScreen = false;
 
 
     lines2.setup = function() {
@@ -187,6 +290,8 @@ let lines2Canvas = function(lines2) {
         brush.stroke(64, 64, 64);
 
         lines2.noLoop();
+
+        checkMediaQuery();
     };
     
 
@@ -194,9 +299,30 @@ let lines2Canvas = function(lines2) {
         // let available_brushes = brush.box();
 
 
-        brush.flowLine(-400, -139, 250, -40);
-        brush.flowLine(-380, -137, 290, -40);
-        brush.flowLine(-250, -123, 280, -40);
+        if (isLargeScreen) {
+        brush.flowLine(-850, -325, 550, -40);
+        brush.flowLine(-800, -320, 590, -40);
+        brush.flowLine(-450, -280, 580, -40);
+        }else if(isFullScreen){
+            brush.flowLine(-450, -182, 300, -40);
+            brush.flowLine(-430, -180, 340, -40);
+            brush.flowLine(-300, -165, 330, -40);
+        }else{
+            brush.flowLine(-400, -139, 250, -40);
+            brush.flowLine(-380, -137, 290, -40);
+            brush.flowLine(-250, -123, 280, -40);
+        }
+    };
+
+    function checkMediaQuery() {
+        isLargeScreen = lines2.windowWidth >= 2560;
+        isFullScreen = lines2.windowWidth === 1440;
+    }
+
+    lines2.windowResized = function() {
+        lines2.resizeCanvas(lines2.windowWidth, lines2.windowHeight * 0.48);
+        checkMediaQuery();
+        lines2.redraw();
     };
 }
 
