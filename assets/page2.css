@@ -1,0 +1,230 @@
+body{
+    background-color: #EFEFEF;
+    animation: show 2s forwards;
+    overflow: hidden;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+#dots{
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+}
+
+#frame1{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 92%;
+    height: 100%;
+    border-left: 3px solid #1A1A1A;
+    border-right: 3px solid #1A1A1A;
+    overflow: hidden;
+}
+
+#line1{
+    position:absolute;
+    top: -55px;
+    left: 120px;
+    width: 3px;
+    height: 350px;
+    transform: rotate(-45deg);
+    background: linear-gradient(180deg, rgba(26,26,26,1) 63%, rgba(26,26,26,0) 100%);
+}
+
+#line2{
+    position: absolute;
+    top:60px;
+    left: 62px;
+    width: 190px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(26,26,26,1) 63%, rgba(26,26,26,0) 100%);
+}
+
+#line3{
+    position: absolute;
+    top:115px;
+    left: 118px;
+    width: 170px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(26,26,26,1) 63%, rgba(26,26,26,0) 100%);
+}
+
+#line4{
+    position: absolute;
+    top:155px;
+    left: 158px;
+    width: 90px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(26,26,26,1) 63%, rgba(26,26,26,0) 100%);
+}
+
+#line5{
+    position: absolute;
+    top:190px;
+    left: 192px;
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(105, 105, 105) 63%, rgba(26,26,26,0) 100%);
+}
+
+
+#line6{
+    position:absolute;
+    top: -55px;
+    left: 230px;
+    width: 2px;
+    height: 320px;
+    transform: rotate(-35deg);
+    background: linear-gradient(180deg, rgba(26,26,26,1) 33%, rgba(26,26,26,0) 100%);
+}
+
+#line7{
+    position:absolute;
+    top: 90px;
+    left: 50px;
+    width: 3px;
+    height: 180px;
+    transform: rotate(-53deg);
+    background-color: #1A1A1A;
+}
+
+#line8{
+    position:absolute;
+    top: 233px;
+    left: 122px;
+    width: 3px;
+    height: 250px;
+    background-color: #1A1A1A;
+}
+
+#line9{
+    position:absolute;
+    top: 115px;
+    left: 46px;
+    width: 1px;
+    height: 154px;
+    transform: rotate(-53deg);
+    background-color: #1A1A1A;
+}
+
+#line10{
+    position:absolute;
+    top: 237px;
+    left: 95px;
+    width: 30px;
+    height: 2px;
+    transform: rotate(-18deg);
+    background-color: #1A1A1A;
+}
+
+#line11{
+    position:absolute;
+    top: 139px;
+    left: 41px;
+    width: 3px;
+    height: 130px;
+    transform: rotate(-48deg) skew(5deg, 30deg);
+    background-color: #1A1A1A;
+}
+
+#line12{
+    position:absolute;
+    top: 242px;
+    left: 93px;
+    width: 3px;
+    height: 250px;
+    background-color: #1A1A1A;
+}
+
+#line13{
+    position:absolute;
+    top: 239px;
+    left: 108px;
+    width: 1px;
+    height: 250px;
+    background-color: #1A1A1A;
+}
+
+#line14{
+    position:absolute;
+    top: 148px;
+    left: 35px;
+    width: 1px;
+    height: 124px;
+    transform: rotate(-53deg);
+    background-color: #1A1A1A;
+}
+
+#line15{
+    position:absolute;
+    top: 246px;
+    left: 75px;
+    width: 22px;
+    height: 1px;
+    transform: rotate(-18deg);
+    background-color: #1A1A1A;
+}
+
+#line16{
+    position:absolute;
+    top: 158px;
+    left: 29px;
+    width: 2px;
+    height: 115px;
+    transform: rotate(-53deg);
+    background-color: #1A1A1A;
+}
+
+#line17{
+    position:absolute;
+    top: 250px;
+    left: 75px;
+    width: 2px;
+    height: 250px;
+    background-color: #1A1A1A;
+}
+
+#line18{
+    position:absolute;
+    top: 246px;
+    left: 84px;
+    width: 1px;
+    height: 250px;
+    background-color: #1A1A1A;
+}
+
+#block1{
+    position:absolute;
+    top: 118px;
+    left: 40px;
+    width: 10px;
+    height: 500px;
+    transform: skew(25deg,25deg) rotate(25deg);
+    background-color: #EFEFEF;
+    border: 2px solid #1A1A1A;
+}
+
+#block2{
+    position:absolute;
+    top: 180px;
+    left: 27px;
+    width: 13px;
+    height: 300px;
+    transform: skew(-12deg,-12deg) rotate(-12deg);
+    background-color: #EFEFEF;
+    border-left: 2px solid #1A1A1A;
+    border-top: 2px solid #1A1A1A;
+}
+
+
+
