@@ -29,8 +29,8 @@ const frame = document.getElementById("frame2");
 frame.onmouseover = function(e){
     const cursorWidth = cursor.offsetWidth;
     const cursorHeight = cursor.offsetHeight;
-
-cursor.style.left = (e.clientX - cursorWidth / 2) + "px";
+    
+    cursor.style.left = (e.clientX - cursorWidth / 2) + "px";
     cursor.style.top = (e.clientY - cursorHeight / 2) + "px";
 
 }
