@@ -13,6 +13,11 @@ body{
     }
 }
 
+@font-face {
+    font-family: plantagenet-cherokee;
+    src: url(fonts/plantagenet-cherokee.ttf);
+  }
+
 
 #dots{
     position: absolute;
@@ -295,6 +300,29 @@ font-weight: 600;
 font-style: normal;
 } */
 
+
+#title2{
+    position: absolute;
+    font-family: plantagenet-cherokee;
+    color: #1A1A1A;
+    -webkit-text-stroke: 3px #EFEFEF;
+    text-stroke: 3px #EFEFEF;
+    font-size: 18px;
+    paint-order: stroke fill;
+    line-height: 20px;
+    left: 150px;
+    bottom: 10px;
+    z-index: 110;
+    /* -webkit-text-fill-color: #1A1A1A; */
+}
+
+#title2 span{
+    font-family: "edu-au-vic-wa-nt-guides", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+
 #text1{
     position: absolute;
     top: 45px;
@@ -354,11 +382,20 @@ font-style: normal;
 }
 
 @media only screen and (min-width: 2560px){
-    #petals{
+
+    #tree{
         position: absolute;
         left: 205px;
         width: 1000px;
+        z-index: 110;
+    }
+
+    #petals{
+        position: absolute;
+        left: 450px;
+        width: 500px;
         height: 100%;
+        transform: scale(2);
         overflow: hidden;
     }
     
@@ -598,6 +635,28 @@ font-style: normal;
     font-weight: 600;
     font-style: normal;
     } */
+
+    #title2{
+        position: absolute;
+        font-family: plantagenet-cherokee;
+        color: #1A1A1A;
+        -webkit-text-stroke: 5px #EFEFEF;
+        text-stroke: 5px #EFEFEF;
+        font-size: 35px;
+        paint-order: stroke fill;
+        line-height: 35px;
+        left: 230px;
+        bottom: 10px;
+        z-index: 110;
+        /* -webkit-text-fill-color: #1A1A1A; */
+    }
+    
+    #title2 span{
+        font-family: "edu-au-vic-wa-nt-guides", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 25px;
+    }
     
     #text1{
         position: absolute;
@@ -608,8 +667,8 @@ font-style: normal;
         transform: perspective(40em) rotateY(20deg) rotate(2deg) skew(2deg);
         /* transform: perspective(4cm); */
         font-family: Arial, sans-serif;
-        font-size: 41px;
-        line-height: 45px;
+        font-size: 44px;
+        line-height: 48px;
         text-wrap: balance;
         /* background-color: aqua; */
         overflow: scroll;

@@ -304,13 +304,13 @@ let lines2Canvas = function(lines2) {
         brush.flowLine(-800, -320, 590, -40);
         brush.flowLine(-450, -280, 580, -40);
         }else if(isFullScreen){
-            brush.flowLine(-450, -182, 300, -40);
-            brush.flowLine(-430, -180, 340, -40);
-            brush.flowLine(-300, -165, 330, -40);
+            brush.flowLine(-450, -178, 300, -40);
+            brush.flowLine(-430, -176, 340, -40);
+            brush.flowLine(-300, -162, 330, -40);
         }else{
-            brush.flowLine(-400, -139, 250, -40);
-            brush.flowLine(-380, -137, 290, -40);
-            brush.flowLine(-250, -123, 280, -40);
+            brush.flowLine(-400, -135, 250, -40);
+            brush.flowLine(-380, -132, 290, -40);
+            brush.flowLine(-250, -119, 280, -40);
         }
     };
 
