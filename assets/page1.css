@@ -342,7 +342,70 @@ font-style: normal;
 }
 
 
+#frame2{
+    position: absolute;
+    bottom: 0px;
+    left: 60px;
+    height: 48%;
+    width: 35%;
+    border-top: 3px solid #1A1A1A;
+    border-left: 3px solid #1A1A1A;
+    border-right: 3px solid #1A1A1A;
+    overflow: hidden;
+}
 
+#sketch{
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    width: 350px;
+    cursor: pointer;
+}
+
+#pencil{
+    position: absolute;
+    width: 200px;
+    left: 30%;
+    
+}
+
+#note2{
+    position: absolute;
+    top: 0px;
+    left: 80px;
+    width: 300px;
+    height:350px;
+    border: 2px solid #1A1A1A;
+    background-color: #EFEFEF;
+    overflow: scroll;
+    transform: rotate(-30deg);
+}
+
+#note{
+    position: absolute;
+    top: 30px;
+    left: 150px;
+    width: 300px;
+    height:350px;
+    border: 2px solid #1A1A1A;
+    background-color: #EFEFEF;
+    overflow: scroll;
+    transform: rotate(-10deg);
+    outline: 2px solid #EFEFEF;
+}
+
+
+#text2{
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-wrap: balance;
+    /* background-color: aqua; */
+    /* overflow: scroll; */
+    box-sizing: border-box;
+    padding: 10px;
+}
 
 
 
