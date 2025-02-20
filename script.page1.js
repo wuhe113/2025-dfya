@@ -22,15 +22,22 @@ window.addEventListener('resize', adjustPosition);
 window.addEventListener('load', adjustPosition);
 
 
-const cursor = document.getElementById("pencil");
-const frame = document.getElementById("frame2");
+// const cursor = document.getElementById("pencil");
+// const frame = document.getElementById("frame2");
 
 
-frame.onmouseover = function(e){
-    const cursorWidth = cursor.offsetWidth;
-    const cursorHeight = cursor.offsetHeight;
+// frame.onmouseover = function(e){
+//     const cursorWidth = cursor.offsetWidth;
+//     const cursorHeight = cursor.offsetHeight;
     
-    cursor.style.left = (e.clientX - cursorWidth / 2) + "px";
-    cursor.style.top = (e.clientY - cursorHeight / 2) + "px";
+//     cursor.style.left = (e.clientX - cursorWidth / 2) + "px";
+//     cursor.style.top = (e.clientY - cursorHeight / 2) + "px";
 
+// }
+
+
+const sketch = document.getElementById("sketch1");
+
+sketch.onclick = function(e){
+    sketch.style.left = "-250px";
 }

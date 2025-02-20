@@ -354,19 +354,55 @@ font-style: normal;
     overflow: hidden;
 }
 
-#sketch{
+#sketch2{
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 250px;
+    transform: rotate(40deg);
+}
+
+#sketch1{
     position: absolute;
     top: -55px;
     left: -55px;
     width: 350px;
+    transition: all 5s ease;
     cursor: pointer;
 }
+
 
 #pencil{
     position: absolute;
     width: 200px;
-    left: 30%;
+    top: 50%;
+    left: 65%;
+    transform: rotate(80deg);
     
+}
+
+#note4{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 300px;
+    height:350px;
+    border: 2px solid #1A1A1A;
+    background-color: #EFEFEF;
+    overflow: scroll;
+    transform: rotate(-10deg);
+}
+
+#note3{
+    position: absolute;
+    top: -10px;
+    left: 130px;
+    width: 300px;
+    height:350px;
+    border: 2px solid #1A1A1A;
+    background-color: #EFEFEF;
+    overflow: scroll;
+    transform: rotate(30deg);
 }
 
 #note2{
@@ -391,7 +427,7 @@ font-style: normal;
     background-color: #EFEFEF;
     overflow: scroll;
     transform: rotate(-10deg);
-    outline: 2px solid #EFEFEF;
+    /* outline: 2px solid #EFEFEF; */
 }
 
 
@@ -405,6 +441,73 @@ font-style: normal;
     /* overflow: scroll; */
     box-sizing: border-box;
     padding: 10px;
+}
+
+#frame3{
+    position: absolute;
+    /* bottom: 58px; */
+    bottom: 8%;
+    right: 60px;
+    height: 40%;
+    width: 53%;
+    background-color: #EFEFEF;
+    border: 3px solid #1A1A1A;
+    overflow: hidden;
+}
+
+#classroom{
+    position: absolute;
+    top: -5px;
+    width: 700px;
+}
+
+#light{
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    height: 55%;
+    width: 30%;
+    transform: perspective(10em) rotateY(-60deg) rotate(35deg) skew(-50deg);
+    /* background-color: aqua; */
+    background-color: #EFEFEF;
+    filter: blur(10px);
+    opacity:0.5;
+    animation: light 10s infinite ease;
+}
+
+@keyframes light{
+    0%{
+        opacity:0.8;
+
+    }
+    50%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0.8;
+
+    }
+}
+
+
+
+#next{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    font-family: plantagenet-cherokee;
+    color: #1A1A1A;
+    font-size: 15px;
+    line-height: 20px;
+    text-decoration: underline;
+    z-index:110;
+}
+
+#next span{
+    font-family: hiragino-mincho-pron, sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 
