@@ -14,7 +14,6 @@ body{
 }
 
 
-
 #frame1{
     position: relative;
     left: 50%;
@@ -115,11 +114,11 @@ body{
 
 #line6{
     position:absolute;
-    top: -55px;
-    left: 230px;
+    top: 20px;
+    left: 270px;
     width: 2px;
-    height: 320px;
-    transform: rotate(-35deg);
+    height: 250px;
+    transform: rotate(-25deg) skew(10deg, 10deg);
     background: linear-gradient(180deg, rgba(26,26,26,1) 33%, rgba(26,26,26,0) 100%);
 }
 
@@ -261,6 +260,17 @@ body{
     border-top: 2px solid #1A1A1A;
 }
 
+
+#dots2{
+    position:absolute;
+    top: 170px;
+    left: 27px;
+    width: 13px;
+    height: 550px;
+    transform: skew(-12deg,-12deg) rotate(-12deg);
+    overflow: hidden;
+}
+
 #block3{
     position:absolute;
     top: 400px;
@@ -273,6 +283,17 @@ body{
     border-top: 2px solid #1A1A1A;
     border-bottom: 1px solid #1A1A1A;
 }
+
+#dots3{
+    position:absolute;
+    top: 400px;
+    left: -8px;
+    width: 46px;
+    height: 30px;
+    transform: rotate(20deg) skew(20deg);
+    overflow: hidden;
+}
+
 
 #block4{
     position:absolute;
@@ -361,6 +382,16 @@ body{
     border-bottom: 1px solid #1A1A1A;
 }
 
+#dots4{
+    position:absolute;
+    top: 425px;
+    left: 49px;
+    width: 65px;
+    height: 28px;
+    transform: perspective(10em) rotateY(20deg) rotate(18deg) skew(18deg);
+    overflow: hidden;
+}
+
 
 #line21{
     position:absolute;
@@ -396,14 +427,70 @@ body{
     background-color: #EFEFEF;
 }
 
+#text1{
+    position: absolute;
+    top: 10px;
+    left: 420px;
+    width: 60%;
+    color: #1A1A1A;
+    transform: perspective(20em) rotateX(-20deg) skew(15deg);
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    line-height: 26px;
+    text-indent: -10em;
+    text-wrap: balance;
+    box-sizing: border-box;
+    padding: 10px;
+    /* background-color: aqua; */
+}
+
 #frame2{
     position: absolute;
     left: -5px;
     bottom: -50px;
     width: 45%;
     height: 48%;
-    transform: rotate(-5deg) skew(-5deg, -5deg);
+    transform: rotate(-3deg) skew(-3deg, -3deg);
     background-color: #EFEFEF;
     border-top: 3px solid #1A1A1A;
     border-right: 3px solid #1A1A1A;
+    z-index: 99;
 }
+
+
+#scrolling-text {
+    position: fixed;
+    top: 0px;
+    left: 10px;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+  }
+
+#scrolling-text p{
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    font-family: "Noto Sans JP", serif;
+    font-weight: 800;
+    color: #1A1A1A;
+    animation: scrollText 15s linear infinite;
+}
+
+#scrolling-text p span{
+    display: inline-block;
+    letter-spacing: -5px;
+    margin-left: 5px;
+    transform: rotate(10deg);
+}
+
+@keyframes scrollText {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(280%);
+    }
+  }
+  

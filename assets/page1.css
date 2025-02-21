@@ -329,6 +329,7 @@ font-style: normal;
     left: 730px;
     width: 40%;
     height: 100%;
+    color: #1A1A1A;
     transform: perspective(40em) rotateY(20deg) rotate(2deg) skew(2deg);
     /* transform: perspective(4cm); */
     font-family: Arial, sans-serif;
@@ -442,6 +443,7 @@ font-style: normal;
     font-size: 18px;
     line-height: 21px;
     text-wrap: balance;
+    color: #1A1A1A;
     /* background-color: aqua; */
     /* overflow: scroll; */
     box-sizing: border-box;
