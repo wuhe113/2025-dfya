@@ -163,6 +163,7 @@ let dots3Canvas = function(dots3) {
 
 }
 
+
 let secondCanvas = function(second) {
     second.setup = function() {
         second.canvas = second.createCanvas(second.windowWidth, second.windowHeight * 0.48);
