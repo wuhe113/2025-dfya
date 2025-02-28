@@ -31,4 +31,14 @@ muteButton.onclick = function(e){
 
 }
 
+const trigger2 = document.getElementById("trigger2");
+const characterImg1 = document.getElementById("character1");
+const textbox1 = document.getElementById("textbox1");
+
+trigger2.onclick = function(e){
+
+    characterImg1.style.visibility = "visible";
+    textbox1.style.visibility = "visible";
+}
+
 
