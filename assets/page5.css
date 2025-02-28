@@ -1,0 +1,74 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.scenes-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+}
+
+.scenes-container div{
+    flex: 0 0 100vw;
+    height: 100vh;
+    object-fit: cover;
+    scroll-snap-align: start;
+
+}
+
+.scenes-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+#scene1{
+    position: relative;
+}
+
+#trigger1{
+    position: absolute;
+    top: 57%;
+    left: 36%;
+    width: 5vw;
+    height: 15vw;
+    background-color: pink;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#mute{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    width: 4%;
+}
+
+#key-notion {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    bottom: -10px;
+    right: -250px;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8vw;
+    color: rgb(238, 237, 230);
+}
+
+#key {
+    position: relative; 
+    width: 13%;
+}
