@@ -6,6 +6,12 @@ body,html {
     width: 100vw;
 }
 
+@font-face {
+    font-family: Redaction35;
+    src: url(fonts/Redaction_35-Regular.woff2);
+  }
+  
+
 .scenes-container {
     display: flex;
     width: 100vw;
@@ -84,18 +90,92 @@ body,html {
     width: 13%;
 }
 
+#character1{
+    visibility: hidden;
+}
+
 #textbox1{
     position: fixed;
     bottom: 0px;  
     width: 100%;
-    visibility: hidden;
+    /* visibility: hidden; */
+    cursor: pointer;
+    opacity: 90%;
 }
 
+#name1{
+    position: fixed;
+    bottom: 31%;  
+    left: 17%;
+    font-family: 'Merchant Copy Doublesize', sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+    color: rgb(238, 237, 230);
+}
 
-#character1{
+#character1-img{
     position: fixed;
     bottom: 0px;
     left: 60%;
     width: 40%;
+    /* visibility: hidden; */
+}
+
+
+#text1{
+    position: fixed;
+    width: 400px;
+    bottom: 19%;  
+    left: 18%;
+    font-family: 'Merchant Copy Doublesize', sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+    color: rgb(238, 237, 230);
+    cursor: pointer;
+}
+
+#choice1{
+    position: fixed;
+    width: 100%;
+    top:0px;
+    visibility: hidden;
+    opacity: 90%;
+}
+
+#choice-container1{
+    position: fixed;
+    width: 500px;
+    top: 11.5%;
+    left: 14%;
+    display: flex;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#choicetext1{
+    font-family: 'Merchant Copy Doublesize', sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+    color: rgb(196, 195, 189);
+}
+
+
+#choicetext1:hover{
+    color: rgb(238, 237, 230);
+}
+
+
+#close-dialogue{
+    position: fixed;
+    display: flex;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    color: rgb(57, 56, 48);
+    text-shadow: rgb(238, 237, 230) 1px 0 10px;
     visibility: hidden;
 }
