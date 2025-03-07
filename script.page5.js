@@ -3,6 +3,8 @@
 
 const scrollScenes = document.getElementById("scenes");
 
+const nextButton = document.getElementById("next");
+
 scrollScenes.addEventListener("wheel", (event) => {
     event.preventDefault(); 
 });
@@ -13,7 +15,22 @@ document.addEventListener("keydown", (event) => {
     } else if (event.key === "ArrowLeft") {
         scrollScenes.scrollLeft -= 50;
     }
+
+    if (scrollScenes.scrollLeft + scrollScenes.clientWidth >= scrollScenes.scrollWidth - 5) {
+        nextButton.style.display = "block"; 
+    } else {
+        nextButton.style.display = "none"; 
+    }
+
 });
+
+function openPopup(url, width, height) {
+    let left = (screen.width - width) / 2;
+    let top = (screen.height - height) / 2;
+    window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
+}
+
+
 
 const music = document.getElementsByTagName("audio")[0];
 const muteButton = document.getElementById("mute");
@@ -39,7 +56,7 @@ const section = document.getElementById("section-button");
 const sectionChoice = document.getElementById("section-choice");
 
 section.onclick = function(e){
-    
+
     if (isToggled){
         sectionChoice.style.visibility = "visible";
     }else{

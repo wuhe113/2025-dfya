@@ -123,6 +123,30 @@ body,html {
     visibility: hidden;
 }
 
+#next{
+    position: fixed;
+    display: none;
+    top:-33px;
+    left: 130px;
+    width: 12%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#next-text{
+    position: fixed;
+    top: 12px;
+    left: 165px;
+    text-align: center;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    color:rgb(124, 120, 97);
+    cursor: pointer;
+}
+
+
 #key-notion {
     position: fixed;
     display: flex;
@@ -373,7 +397,10 @@ figcaption{
     font-weight: 400;
     font-style: normal;
     font-size: 3vw;
-    color: rgb(255, 154, 225)
+    /* color: rgb(255, 154, 225); */
+    background: linear-gradient(180deg, rgba(255,126,217,1) 30%, rgba(255,230,247,1) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 
@@ -387,6 +414,6 @@ figcaption{
     font-weight: 400;
     font-style: normal;
     font-size: 3vw;
-    color: rgb(255, 189, 235)
+    color: rgb(255, 210, 241)
     
 }
