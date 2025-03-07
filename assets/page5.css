@@ -64,11 +64,63 @@ body,html {
     cursor: pointer;
 }
 
+#trigger3{
+    position: absolute;
+    top: 70%;
+    left: 47%;
+    width: 5vw;
+    height: 5vw;
+    background-color: pink;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+
 #mute{
     position: fixed;
     top: 5px;
     left: 5px;
     width: 4%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#section-button{
+    position: fixed;
+    top:-33px;
+    left: 35px;
+    width: 12%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#section-text{
+    position: fixed;
+    top: 12px;
+    left: 56px;
+    text-align: center;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    color:rgb(124, 120, 97);
+    cursor: pointer;
+}
+
+#section-choice{
+    position: fixed;
+    top: 45px;
+    left: 53px;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8vw;
+    color: rgb(57, 56, 48);
+    text-shadow: rgb(238, 237, 230) 1px 0 10px;
+    cursor: pointer;
+    z-index: 100;
+    visibility: hidden;
 }
 
 #key-notion {
@@ -165,6 +217,107 @@ body,html {
 }
 
 
+/* #images{
+    box-sizing: content-box;
+    padding: 5px;
+} */
+
+
+/* #object1{
+    display: flex;
+    align-items: center;
+}
+
+#img1{
+    position: fixed;
+    width: 18%;
+    left: 41%;
+    top:30.5%; 
+}
+
+
+
+figcaption{
+    position: fixed;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8vw;
+    left: 36.8%;
+    top: 73%;
+    color: rgb(255, 94, 188);
+    text-wrap: nowrap;
+} */
+
+#objects{
+    visibility: hidden;
+}
+
+#img-background{
+    position: fixed;
+    width: 100%;
+    top:10%;
+}
+
+
+#object1 {
+    position: fixed;
+    width: 18%;
+    left: 50%;
+    top: 30.5%;
+    transform: translateX(-50%);
+}
+
+#img1 {
+    width: 100%;
+    display: block;
+    margin: -18 25;
+}
+
+#nameCaption{
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8vw;
+    margin-left: -20%;
+    color: rgb(255, 136, 206);
+
+}
+
+#imgCaption1 {
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8vw;
+    color: rgb(255, 233, 246);
+    text-wrap: nowrap;
+    margin-top: 25%;
+    margin-left: -22.5%;
+    text-align: center;
+    text-shadow: rgb(255, 125, 216) 1px 0 10px;
+}
+
+#close-object{
+    background-color: rgb(255, 125, 216);
+    opacity: 0;
+    position: fixed;
+    top: -22%;
+    left: 116%;
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;    
+}
+
+#logo{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+}
+
+
+
+
 #close-dialogue{
     position: fixed;
     display: flex;
@@ -178,4 +331,62 @@ body,html {
     color: rgb(57, 56, 48);
     text-shadow: rgb(238, 237, 230) 1px 0 10px;
     visibility: hidden;
+    cursor: pointer;
+}
+
+#game-opening{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+
+#opening{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#start{
+    position: fixed;
+    top: 84%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4vw;
+    color: rgb(124, 120, 97);
+    cursor: pointer;
+}
+
+#title{
+    position: fixed;
+    top: 12%;
+    left: 63%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+    font-family: "pf-pixelscript", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vw;
+    color: rgb(255, 154, 225)
+
+}
+
+#section{
+    position: fixed;
+    top: 19%;
+    left: 80%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+    font-family: "pf-pixelscript", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vw;
+    color: rgb(255, 189, 235)
+    
 }

@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="assets/reset.css">
         <link rel="stylesheet" href="assets/page5.css">
         <link rel="stylesheet" href="https://use.typekit.net/ury2yyf.css">
+        <link rel="stylesheet" href="https://use.typekit.net/fub1uhw.css">
         <link href="https://fonts.cdnfonts.com/css/merchant-copy-doublesize" rel="stylesheet">
                 
         <meta charset="UTF-8">
@@ -12,18 +13,19 @@
 
     <body>
 
-        <!-- <audio autoplay loop>
+        <audio id="bg-music" autoplay loop>
             <source src="assets/Music/Tea and Pixels.mp3" type="audio/mpeg">
-        </audio> -->
+        </audio>
 
         <div class="scenes-container" id="scenes">
              <div id="scene1">
             <img src="assets/GIF/scene1.gif">
             <div id="trigger1"></div>
+            <div id="trigger2"></div>
+            <div id="trigger3"></div>
         </div>
         <div id="scene2">
             <img src="assets/GIF/scene2.gif">
-            <div id="trigger2"></div>
         </div>
         </div>
 
@@ -51,16 +53,74 @@
         </div>
 
 
-        <button>
-            <img id="mute" src="assets/PNG/mute1.png">
+        <div class="buttons">
+
+
+        <div id="section-button">
+            <img src="assets/PNG/menu.png">
+            <div id="section-text">
+                Section
+            </div>
+        </div>
+
+        <div id="section-choice">
+            <a href="page1.html">
+                <ul>Section 1</ul>
+            </a>
+
+            <a href="page5.html">
+                <ul>Section 2</ul>
+            </a>
+            <ul>Section 3</ul>
+            <ul>Section 4</ul>
+        </div>
+
+            <button>
+            <img  id="mute" src="assets/PNG/mute1.png">
         </button>
+    </div>
 
         <div id="key-notion">
             <p>Press key to move</p>
             <img id="key" src="assets/PNG/key.png">
         </div>
 
-        <button id="close-dialogue">Close</button>
+        <div id="objects">
+             
+                <img id="img-background" src="assets/PNG/img-background.png">
+            <div id="object1">
+                <div id="nameCaption">
+                    Penny:
+                </div>
+                <img id="img1" src="assets/PNG/penny_img1.png">
+                <div id="imgCaption1">
+                    Celebrating Li Zeyan's birthday
+                </div>
+            
+            <div id="close-object"></div>
+            </div>
+
+        </div>
+
+        <div id="close-dialogue">Close</div>
+
+        <div id="logo">
+            <img src="assets/PNG/dfya logo3.png">
+        </div>
+
+        <div id="game-opening">
+            <img id="opening" src="assets/GIF/opening.gif">
+            <div id="start">
+                Start
+            </div>
+
+            <div id="title">
+                Dear Fictional, Your Affection
+            </div>
+            <div id="section">
+                ~ Section 2 ~
+            </div>
+        </div>
 
 
     </body>

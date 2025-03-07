@@ -1,3 +1,6 @@
+// window.open('page5.html', '_blank', 'width=922,height=663,resizable=no,scrollbars=no');
+
+
 const scrollScenes = document.getElementById("scenes");
 
 scrollScenes.addEventListener("wheel", (event) => {
@@ -17,6 +20,7 @@ const muteButton = document.getElementById("mute");
 
 let isToggled = true;
 
+
 muteButton.onclick = function(e){
 
     if (isToggled){
@@ -29,6 +33,55 @@ muteButton.onclick = function(e){
 
     isToggled = !isToggled;
 
+}
+
+const section = document.getElementById("section-button");
+const sectionChoice = document.getElementById("section-choice");
+
+section.onclick = function(e){
+    
+    if (isToggled){
+        sectionChoice.style.visibility = "visible";
+    }else{
+        sectionChoice.style.visibility = "hidden";
+    }
+
+    isToggled = !isToggled;
+
+}
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     const music = document.getElementById("bg-music");
+//     const muteButton = document.getElementById("mute");
+
+//     music.play().catch(error => console.log("Autoplay blocked:", error));
+
+//     muteButton.onclick = function(e){
+
+//         if (music.muted) {
+//         music.muted = false;
+//         muteButton.src = "assets/PNG/mute1.png";
+//     } else {
+//         music.muted = true;
+//         muteButton.src = "assets/PNG/mute2.png";
+//     }
+//     }
+
+
+// })
+
+
+
+const startButton = document.getElementById("start");
+const gameOpening = document.getElementById("game-opening");
+
+startButton.onclick = function(){
+    gameOpening.style.opacity = "0"; 
+    setTimeout(() => {
+        gameOpening.style.visibility = "hidden";
+    }, 1000);
 }
 
 const trigger2 = document.getElementById("trigger2");
@@ -83,14 +136,83 @@ const choiceTexts1 = [
 let textIndex1 = 0;
 let choiceIndex1 = 0;
 
+let timeout1, timeout2;
+
 
 const choiceText = document.getElementById("choicetext1");
 
 const facial1 = ["assets/PNG/penny1.png", "assets/PNG/penny2.png", "assets/PNG/penny3.png"];
 
-trigger2.onclick = function () {
-    character1.style.visibility = "visible";
+const closeDialogue = document.getElementById("close-dialogue");
 
+closeDialogue.onclick = function () {
+
+
+    clearTimeout(timeout1);
+    clearTimeout(timeout2);
+
+    textElement.innerText = ""; 
+    choiceText.innerText = "";
+
+    resetElements();
+};
+
+function resetElements() {
+    console.log("Resetting elements...");
+
+    // Hide elements
+    character1.style.visibility = "hidden";
+    choice1.style.visibility = "hidden";
+    choiceContainer1.style.visibility = "hidden";
+    closeDialogue.style.visibility = "hidden";
+
+    // **Reset text completely before setting new text**
+    textElement.innerText = "";  
+    textElement.dataset.text = "Hi, I’m Penny, 21 years old, my pronouns are she/her, and I'm currently a senior illustration student.";
+    choiceText.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
+
+    textIndex1 = 0;
+    choiceIndex1 = 0;
+
+    // **Set Default Image (No More Random First Image)**
+    characterImg1.setAttribute("src", "assets/PNG/penny1.png");
+
+    // **Reset Typing Effect (Fixing Double Text Issue)**
+    clearTimeout(timeout1); // Ensure no ongoing typing process
+    textElement.innerText = "";  // Force clear before starting again
+
+    setTimeout(() => {
+        typeEffect(textElement, 80);
+    }, 50);
+    
+    textbox1.onclick = null;
+}
+
+
+
+
+// function resetElements() {
+//     console.log("Resetting elements...");
+
+//     character1.style.visibility = "hidden";
+//     choice1.style.visibility = "hidden";
+//     choiceContainer1.style.visibility = "hidden";
+//     closeDialogue.style.visibility = "hidden";
+
+//     textElement.innerText = "Hi, I’m Penny, 21 years old, my pronouns are she/her, and I'm currently a senior illustration student.";
+//     choiceText.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
+
+
+//     textIndex1 = 0;
+//     choiceIndex1 = 0;
+
+//     textbox1.onclick = null;
+// }
+
+trigger2.onclick = function () {
+    resetElements();
+
+    character1.style.visibility = "visible";
     closeDialogue.style.visibility = "visible";
 
     timeout1 = setTimeout(() => {
@@ -104,25 +226,19 @@ trigger2.onclick = function () {
 };
 
 
+const trigger3 = document.getElementById("trigger3");
+const objects = document.getElementById("objects");
+const closeObject = document.getElementById("close-object");
 
-// choiceContainer1.onclick = function () {
-//     choice1.style.visibility = "hidden";
-//     choiceContainer1.style.visibility = "hidden";
+trigger3.onclick = function () {
+    objects.style.visibility = "visible";
+}
 
-//     changeText();
+closeObject.onclick = function () {
+    objects.style.visibility = "hidden";
+}
 
-//     let characterFace1 = Math.floor(Math.random() * facial1.length);
-//     characterImg1.setAttribute("src", facial1[characterFace1]);
 
-//         setTimeout(() => {
-//         choice1.style.visibility = "visible";
-//         choiceContainer1.style.visibility = "visible";
-
-//         choiceText.innerText = choiceTexts1[choiceIndex1];
-//         choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
-//     }, 3500);
-
-// };
 
 
 
@@ -405,34 +521,91 @@ function changeText() {
 }
 
 function typeEffect(element, delay = 80) {
-    const text = element.dataset.text || element.innerText.trim();
-    const words = text.split(" ");
-    element.innerText = "";
+    let text = element.dataset.text || element.innerText.trim(); // Get text to display
+    if (!text) return; // Stop if no text
 
+    element.innerText = ""; // **Ensure text is fully cleared before typing**
+    clearTimeout(timeout1); // Stop any existing typing process (if re-clicked)
+
+    const words = text.split(" ");
     let i = 0;
+
     function addWord() {
         if (i < words.length) {
-            element.innerHTML += words[i] + " ";
+            element.innerHTML += words[i] + " "; // Type words one by one
             i++;
-            setTimeout(addWord, delay);
+            timeout1 = setTimeout(addWord, delay); // Store timeout to clear on next click
         }
     }
     addWord();
 }
 
-const closeDialogue = document.getElementById("close-dialogue");
 
-closeDialogue.onclick = function (){
 
-    clearTimeout(timeout1);
-    clearTimeout(timeout2);
+window.onload = function () {
+    textElement.innerText = "";
+    textElement.dataset.text = ""; 
+};
 
-    character1.style.visibility = "hidden";
-    choice1.style.visibility = "hidden";
-    choiceContainer1.style.visibility = "hidden";
 
-    closeDialogue.style.visibility = "hidden";
-}
+console.log("textElement:", textElement.innerText);
+console.log("dataset.text:", textElement.dataset.text);
+
+// function typeEffect(element, delay = 80) {
+//     const text = element.dataset.text || element.innerText.trim();
+//     const words = text.split(" ");
+//     element.innerText = "";
+
+//     let i = 0;
+//     function addWord() {
+//         if (i < words.length) {
+//             element.innerHTML += words[i] + " ";
+//             i++;
+//             setTimeout(addWord, delay);
+//         }
+//     }
+//     addWord();
+// }
+
+
+// choiceContainer1.onclick = function () {
+//     choice1.style.visibility = "hidden";
+//     choiceContainer1.style.visibility = "hidden";
+
+//     changeText();
+
+//     let characterFace1 = Math.floor(Math.random() * facial1.length);
+//     characterImg1.setAttribute("src", facial1[characterFace1]);
+
+//         setTimeout(() => {
+//         choice1.style.visibility = "visible";
+//         choiceContainer1.style.visibility = "visible";
+
+//         choiceText.innerText = choiceTexts1[choiceIndex1];
+//         choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+//     }, 3500);
+
+// };
+
+
+// choiceContainer1.onclick = function () {
+//     choice1.style.visibility = "hidden";
+//     choiceContainer1.style.visibility = "hidden";
+
+//     changeText();
+
+//     let characterFace1 = Math.floor(Math.random() * facial1.length);
+//     characterImg1.setAttribute("src", facial1[characterFace1]);
+
+//         setTimeout(() => {
+//         choice1.style.visibility = "visible";
+//         choiceContainer1.style.visibility = "visible";
+
+//         choiceText.innerText = choiceTexts1[choiceIndex1];
+//         choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+//     }, 3500);
+
+// };
 
 
 
