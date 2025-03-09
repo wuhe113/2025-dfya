@@ -76,12 +76,114 @@ body,html {
 }
 
 
-
-#mute{
+#buttons {
+    display: flex;
+    align-items: center;
     position: fixed;
-    top: 5px;
+    top: -33px;
+    left: 32px;
+    z-index: 100;
+}
+
+#section-button {
+    position: relative;
+    width: 18%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 101;
+}
+
+#section-button img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+#section-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    color: rgb(124, 120, 97);
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+#section-choice {
+    position: absolute;
+    top: 75px;
+    left: 20px;
+    text-align: center;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8vw;
+    color: rgb(57, 56, 48);
+    text-shadow: rgb(238, 237, 230) 1px 0 10px;
+    cursor: pointer;
+    z-index: 100;
+    visibility: hidden;
+}
+
+
+
+#next {
+    position: relative;
+    width: 18%;
+    height: 100%;
+    transform: translateX(-15px);
+    cursor: pointer;
+    z-index: 101;
+    visibility: hidden;
+}
+
+#next img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+#next-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    color: rgb(124, 120, 97);
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+#mute {
+    position: fixed;
+    top: 10px;
     left: 5px;
-    width: 4%;
+    width: 31px;
+    height: 31px;
+    transform: scale(1.5);
+    cursor: pointer;
+    z-index: 105;
+}
+
+
+
+
+
+
+/* #mute{
+    position: fixed;
+    top: 0.5px;
+    left: 5px;
+    width: 5%;
     cursor: pointer;
     z-index: 100;
 }
@@ -127,7 +229,7 @@ body,html {
     position: fixed;
     display: none;
     top:-33px;
-    left: 130px;
+    left: 126px;
     width: 12%;
     cursor: pointer;
     z-index: 100;
@@ -136,7 +238,7 @@ body,html {
 #next-text{
     position: fixed;
     top: 12px;
-    left: 165px;
+    left: 161px;
     text-align: center;
     font-family: lores-12, sans-serif;
     font-weight: 400;
@@ -144,7 +246,7 @@ body,html {
     font-size: 2vw;
     color:rgb(124, 120, 97);
     cursor: pointer;
-}
+} */
 
 
 #key-notion {
@@ -401,6 +503,7 @@ figcaption{
     background: linear-gradient(180deg, rgba(255,126,217,1) 30%, rgba(255,230,247,1) 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: rgb(238, 237, 230) 1px 0 20px;
 
 }
 
@@ -414,6 +517,7 @@ figcaption{
     font-weight: 400;
     font-style: normal;
     font-size: 3vw;
-    color: rgb(255, 210, 241)
+    color: rgb(255, 210, 241);
+    text-shadow: rgb(238, 237, 230) 1px 0 20px;
     
 }

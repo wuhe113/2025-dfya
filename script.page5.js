@@ -17,9 +17,9 @@ document.addEventListener("keydown", (event) => {
     }
 
     if (scrollScenes.scrollLeft + scrollScenes.clientWidth >= scrollScenes.scrollWidth - 5) {
-        nextButton.style.display = "block"; 
+        nextButton.style.visibility = "visible"; 
     } else {
-        nextButton.style.display = "none"; 
+        nextButton.style.visibility = "hidden"; 
     }
 
 });
