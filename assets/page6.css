@@ -107,6 +107,7 @@ body{
     font-variation-settings: "opsz" 500, "wght" 400;
     font-size: 1.3vw;
     color: #666666;
+    cursor: default;
 }
 
 /* #section{
@@ -148,6 +149,116 @@ body{
     text-align: center;
     cursor: pointer;
 }
+
+#interview-container{
+    position:relative;
+    left: 4%;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    font-size: 1.2vw;
+    color:#1A1A1A;
+    text-wrap: balance;
+    /* text-align: justify;
+    text-justify: auto; */
+
+    /* background-color: aqua;
+    border-left: 1px solid #4D4D4D;
+    border-right: 1px solid #4D4D4D; */
+}
+
+b{
+    font-weight: 700;
+}
+
+i{
+    font-style: italic;
+}
+
+.character{
+    display: inline;
+    background-color: #c6c6c6;
+    cursor: default;
+}
+
+.introduction{
+    color: #888;
+    display: none;
+}
+
+.character:hover + .introduction {
+    display: inline;
+}
+
+figcaption{
+    color: #888;
+    /* margin-top: 2%; */
+    font-size: 0.9vw;
+}
+
+.enlarged {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    z-index: 110;
+    box-shadow: 0px 0px 20px #888;
+  }
+
+.add2{
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.5vw;
+    /* margin-left: 80%; */
+    /* margin-right: -8%; */
+    cursor: pointer;
+}
+
+#interview1{
+    position: absolute;
+    top: 60%;
+    box-sizing: border-box;
+    padding-top: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 5%;
+    border-left: 1px solid #4D4D4D;
+    border-right: 1px solid #4D4D4D;
+    visibility: hidden;
+}
+
+.interviewee{
+    padding-top: 5%;
+    padding-left: 3%;
+    padding-right: 15%;
+    padding-bottom: 5%;
+    transform: translateX(15%);
+}
+
+#interview-container::-webkit-scrollbar {
+    /* width: 0.8vw; */
+    display: none;
+  }
+  
+/* 
+#interview-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+
+#interview-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 0px;
+  }
+  
+
+#interview-container::-webkit-scrollbar-thumb:hover {
+    background: #666; 
+  } */
 
 
 #essay-section{
@@ -226,7 +337,7 @@ body{
     text-wrap: pretty;
 }
 
-.add{
+.add1{
     display: inline-block;
     vertical-align: middle;
     width: 2vw;
