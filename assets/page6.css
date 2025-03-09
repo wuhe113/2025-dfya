@@ -60,12 +60,18 @@ body{
     z-index: 100;
 }
 
-#footnote{
+#footnote-section{
     position: fixed;
     right: 0px;
     bottom: 0px;
     width: 50%;
-    height: 60px;
+    height: 7%;
+    font-family: "thermal-variable", sans-serif;
+    font-variation-settings: "opsz" 500, "wght" 400;
+    font-size: 1vw;
+    color: #666666;
+    box-sizing: border-box;
+    padding: 1%;
     background-color: rgb(255, 255, 255);
     border-top: 1px solid #4D4D4D;
 }
@@ -220,7 +226,7 @@ body{
     text-wrap: pretty;
 }
 
-#add1{
+.add{
     display: inline-block;
     vertical-align: middle;
     width: 2vw;
@@ -234,7 +240,12 @@ body{
     padding-left: 10%;
     padding-right: 5%;
     border-left: 0.8vw solid #c6c6c6;
+    background-color: #f1f1f1;
 }
+
+/* #part2 div:nth-child(2){
+    padding-bottom: 0%;
+} */
 
 #part3{
     display: block;
@@ -243,6 +254,20 @@ body{
     /* padding-bottom: 18%; */
 }
 
+/* #text div:last-of-type {
+    padding-bottom: 10%;
+} */
+
+#last{
+    padding-bottom: 10%;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+    color: #888; 
+    cursor:default
+  }
 
 
 
@@ -279,3 +304,7 @@ body{
     }
 }
 
+.reference{
+    position: absolute;
+    visibility: hidden;
+}
