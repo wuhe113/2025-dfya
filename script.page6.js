@@ -57,16 +57,30 @@ document.onclick = function(e) {
     document.querySelectorAll('img').forEach(img => img.classList.remove('enlarged'));
 };
 
-const interview1 = document.getElementById("interview1");
-const openInterview1 = document.getElementById("a3");
+const interview2 = document.getElementById("interview1");
+const openInterview2 = document.getElementById("a2");
+
+const interview3 = document.getElementById("interview2");
+const openInterview3 = document.getElementById("a3");
 
 let isToggled = false;
 
-openInterview1.onclick = function(){
+openInterview2.onclick = function(){
     if (isToggled){
-        interview1.style.visibility = "hidden";
+        interview2.style.display = "none";
     }else{
-        interview1.style.visibility = "visible";
+        interview2.style.display = "block";
+    }
+
+    isToggled = !isToggled;
+
+}
+
+openInterview3.onclick = function(){
+    if (isToggled){
+        interview3.style.display = "none";
+    }else{
+        interview3.style.display = "block";
     }
 
     isToggled = !isToggled;
