@@ -1,5 +1,5 @@
 // window.open('page5.html', '_blank', 'width=922,height=663,resizable=no,scrollbars=no');
-
+// parts of code are assisted with the help from ChatGPT for debugging and revising functions *especially the part that require user's clicking interaction and character's dialogue process
 
 const scrollScenes = document.getElementById("scenes");
 

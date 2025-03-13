@@ -456,7 +456,7 @@ body,html {
 
 
 #character3{
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 #textbox3{
@@ -483,6 +483,7 @@ body,html {
     bottom: 0px;
     left: 56%;
     width: 41%;
+    transform: translateY(1%);
     /* visibility: hidden; */
 }
 

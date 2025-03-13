@@ -2,6 +2,9 @@ body{
     background-color: white;
     /* animation: show 2s forwards; */
     overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 @keyframes show {
@@ -245,6 +248,78 @@ figcaption{
     display: none;
 }
 
+#interview3{
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: none;
+}
+
+#wall{
+    width: 120%;
+    height: 120%;
+}
+
+#fourth-wall-essay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 0%;
+    transform-origin: center;
+    transition: all 3s ease-in-out;
+    background-color: white;
+    /* background-color: rgba(0, 255, 255. 0.4); */
+    /* z-index: 110; */
+    /* -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px); */
+    border-left: 1px solid #4D4D4D;
+    border-right: 1px solid #4D4D4D;
+    box-sizing: border-box;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: "cofo-sans-mono-variable", sans-serif;
+    font-variation-settings: "wght" 400;
+    font-size: 1.2vw;
+    color:#1A1A1A;
+    display: none;
+    opacity: 0;
+
+    /* -webkit-box-shadow:0px 0px 50px 0px rgba(0,34,255,0.9);
+-moz-box-shadow: 0px 0px 50px 0px rgba(0,34,255,0.9);
+box-shadow: 0px 0px 50px 0px rgba(0,34,255,0.9); */
+}
+
+#close-wall{
+    position: absolute;
+    top: 4%;
+    right: 5%;
+    font-family: "thermal-variable", sans-serif;
+    font-variation-settings: "opsz" 500, "wght" 400;
+    font-size: 1.3vw;
+    color:red;
+    /* color: #666666; */
+    cursor: default;
+    display: none;
+    cursor: pointer;
+}
+
+#wall-notion{
+    text-align: center;
+    display: none;
+}
+
+
+
+
 .interviewee{
     padding-top: 5%;
     padding-left: 3%;
@@ -257,6 +332,14 @@ figcaption{
     /* width: 0.8vw; */
     display: none;
   }
+
+#fourth-wall-essay::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
   
 /* 
 #interview-container::-webkit-scrollbar-track {
@@ -301,11 +384,13 @@ figcaption{
     color: #666666;
     text-align: center;
     transition: opacity 0.5s ease-in-out;
+    /* visibility: hidden; */
 }
 
 #text-container{
     overflow-y: scroll;
     height: 100%;
+    /* visibility: hidden; */
 }
 
 #text-container::-webkit-scrollbar {

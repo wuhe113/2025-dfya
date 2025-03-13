@@ -23,6 +23,7 @@ interview.addEventListener("wheel", function(event) {
 }, { passive: false });
 
 
+
 document.querySelectorAll('.footnote').forEach(footnote => {
     footnote.onmouseenter = function() {
         const refId = this.getAttribute('data-id');
@@ -57,13 +58,57 @@ document.onclick = function(e) {
     document.querySelectorAll('img').forEach(img => img.classList.remove('enlarged'));
 };
 
+const wallEssay = document.getElementById("fourth-wall-essay");
+const interview1 = document.getElementById("interview3");
+const wallNotion = document.getElementById("wall-notion");
+
+wallEssay.addEventListener("wheel", function(event) {
+    event.preventDefault();
+    wallEssay.scrollTop += event.deltaY * 0.3;
+}, { passive: false });
+
+
+const openInterview1 = document.getElementById("a1");
+
 const interview2 = document.getElementById("interview1");
 const openInterview2 = document.getElementById("a2");
 
 const interview3 = document.getElementById("interview2");
 const openInterview3 = document.getElementById("a3");
 
+
 let isToggled = false;
+
+openInterview1.onclick = function(){
+    
+    if (isToggled){
+        setTimeout(() => {
+            wallEssay.style.height = "0%";
+        }, 300);
+
+        interview1.style.display = "none";
+        wallEssay.style.display = "none";
+        wallNotion.style.display = "none";
+        closeWall.style.display = "none";
+        essay.style.visibility = "visible";
+        essayTitle.style.visibility = "visible";
+    }else{
+        setTimeout(() => {
+            wallEssay.style.height = "80%";
+            wallEssay.style.opacity = "1";
+        }, 300);
+
+        interview1.style.display = "block";
+        wallEssay.style.display = "block";
+        wallNotion.style.display = "block";
+        closeWall.style.display = "block"
+        essay.style.visibility = "hidden";
+        essayTitle.style.visibility = "hidden";
+    }
+
+    isToggled = !isToggled;
+
+}
 
 openInterview2.onclick = function(){
     if (isToggled){
@@ -86,3 +131,31 @@ openInterview3.onclick = function(){
     isToggled = !isToggled;
 
 }
+
+const closeWall = document.getElementById("close-wall");
+
+closeWall.onclick = function(){
+    interview1.style.display = "none";
+    interview3.style.display = "none";
+    wallEssay.style.display = "none";
+    wallNotion.style.display = "none";
+    essay.style.visibility = "visible";
+    essayTitle.style.visibility = "visible";
+    closeWall.style.display = "none";
+}
+
+
+
+
+// function addLines(rows, cols) {
+//     wallEssay.style.setProperty('--grid-rows', rows);
+//     wallEssay.style.setProperty('--grid-cols', cols);
+
+//     for (let i = 0; i < rows * cols; i++) {
+//         let newDiv = document.createElement("div");
+//         newDiv.classList.add("lines");
+//         wallEssay.appendChild(newDiv);
+//     }
+// }
+
+// addLines(10, 10);
