@@ -84,6 +84,7 @@ openInterview1.onclick = function(){
     if (isToggled){
         setTimeout(() => {
             wallEssay.style.height = "0%";
+            wallEssay.style.opacity = "0";
         }, 300);
 
         interview1.style.display = "none";
@@ -135,6 +136,11 @@ openInterview3.onclick = function(){
 const closeWall = document.getElementById("close-wall");
 
 closeWall.onclick = function(){
+    setTimeout(() => {
+        wallEssay.style.height = "0%";
+        wallEssay.style.opacity = "0";
+    }, 300);
+    
     interview1.style.display = "none";
     interview3.style.display = "none";
     wallEssay.style.display = "none";
