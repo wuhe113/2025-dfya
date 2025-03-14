@@ -103,20 +103,30 @@ startButton.onclick = function(){
 
 const trigger1 = document.getElementById("trigger1");
 const trigger2 = document.getElementById("trigger2");
+const trigger7 = document.getElementById("trigger7");
+
 const characterImg1 = document.getElementById("character1-img");
 const characterImg2 = document.getElementById("character2-img");
+const characterImg3 = document.getElementById("character3-img");
+
 const textbox1 = document.getElementById("textbox1");
 const textbox2 = document.getElementById("textbox2");
+const textbox3 = document.getElementById("textbox3");
 const character1 = document.getElementById("character1");
 const character2 = document.getElementById("character2");
+const character3 = document.getElementById("character3");
 
 const textElement = document.getElementById("text1");
 const textElement2 = document.getElementById("text2");
+const textElement3 = document.getElementById("text3");
 
 const choice1 = document.getElementById("choice1");
 const choice2 = document.getElementById("choice2");
+const choice3 = document.getElementById("choice3");
+
 const choiceContainer1 = document.getElementById("choice-container1");
 const choiceContainer2 = document.getElementById("choice-container2");
+const choiceContainer3 = document.getElementById("choice-container3");
 
 
 
@@ -211,20 +221,65 @@ const choiceTexts2 = [
 
 ];
 
+
+
+
+const texts3 = [
+    "For me, the mediums that take up a large proportion are definitely games, followed by anime/animations and VTubers on the internet.",
+    "I think it's because they don't require a huge amount of time investment from me, meaning the time I spend on these three mediums is flexible.",
+    "I think it's about whether the character has something that attracts me, but mainly it starts with their appearance and personality.",
+    "Right.",
+    "Yes.",
+    "Right, but also, for example, Lu Jinghe sometimes has situations that I think are completely like my past self or even my current self.",
+    "I think it's like starting from being soulmates, then to the honeymoon phase, then to a steady flow, and now it feels like an old married couple.",
+    "I think it's also about the character's personality, especially when I see characters that are somewhat like me, I really want to get to know that character.",
+    "I think their existence and this relationship have made my real life more stable,",
+    "For me, it might be drawing.",
+
+
+];
+
+
+const choiceTexts3 = [
+    "So why do you think these three mediums are more capable of helping you establish relationships with fictional characters?",
+    "Based on these mediums, how do you establish parasocial relationships with fictional characters?",
+    "Alright, then why do you think you establish such relationships? For instance, here, you might have established a romantic relationship with a character in the game, which is a very intense relationship for you. Perhaps the character has touched you emotionally or in other aspects, right?",
+    "From what I hear, I would think that some people might feel that a character has the same growth experience as them, and they can empathize, so the relationship is established through this so-called empathy.",
+    "But for you, the parts of them that are different from you are what you desire. This prompts you to establish relationships with the characters, and they are also a place for you to escape from reality, but at the same time, through their character stories or behaviors, you find the strength to face reality.",
+    "So you overlap his part of the plot with your past self, which brings you a greater emotional impact. From the time you started playing these games and established relationships with characters until now, after so many years, do you think your relationship with them has changed over time?",
+    "Alright, besides games, you also mentioned anime/animations. How do you establish parasocial relationships with fictional characters in anime/animations?",
+    "Do you think this relationship has had any impact on your real-life? Are these impacts positive, negative, or a mix of both?",
+    "After saying so much, finally, I want to ask, have you made any efforts for this relationship? (creating fanart, cosplay, buying merchandise, participating in related events, etc.)",
+
+
+
+
+
+
+];
+
+
+
+
 let textIndex1 = 0;
 let choiceIndex1 = 0;
 
 let textIndex2 = 0;
 let choiceIndex2 = 0;
 
-let timeout1, timeout2, timeout3, timeout4;
+let textIndex3 = 0;
+let choiceIndex3 = 0;
+
+let timeout1, timeout2, timeout3, timeout4, timeout5, timeout6;
 
 
 const choiceText = document.getElementById("choicetext1");
 const choiceText2 = document.getElementById("choicetext2");
+const choiceText3 = document.getElementById("choicetext3");
 
 const facial1 = ["assets/PNG/penny1.png", "assets/PNG/penny2.png", "assets/PNG/penny3.png"];
 const facial2 = ["assets/PNG/catherine1.png", "assets/PNG/catherine2.png", "assets/PNG/catherine3.png"];
+const facial3 = ["assets/PNG/sammi1.png", "assets/PNG/sammi2.png", "assets/PNG/sammi3.png"];
 
 const closeDialogue = document.getElementById("close-dialogue");
 
@@ -237,11 +292,18 @@ closeDialogue.onclick = function () {
     clearTimeout(timeout3);
     clearTimeout(timeout4);
 
+    clearTimeout(timeout5);
+    clearTimeout(timeout6);
+
     textElement.innerText = ""; 
     choiceText.innerText = "";
 
     textElement2.innerText = ""; 
     choiceText2.innerText = "";
+
+    textElement3.innerText = ""; 
+    choiceText3.innerText = "";
+
 
     resetElements();
 };
@@ -257,6 +319,11 @@ function resetElements() {
     character2.style.visibility = "hidden";
     choice2.style.visibility = "hidden";
     choiceContainer2.style.visibility = "hidden";
+
+
+    character3.style.visibility = "hidden";
+    choice3.style.visibility = "hidden";
+    choiceContainer3.style.visibility = "hidden";
 
 
     closeDialogue.style.visibility = "hidden";
@@ -277,23 +344,33 @@ function resetElements() {
     textElement2.dataset.text = "Hi, My name is Catherine, pronouns she/her. I am 21 years old and a senior student majoring in fashion design.";
     choiceText2.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
 
+    textElement3.innerText = "";  
+    textElement3.dataset.text = "Hi, My name is Catherine, pronouns she/her. I am 21 years old and a senior student majoring in fashion design.";
+    choiceText3.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
+
     textIndex1 = 0;
     choiceIndex1 = 0;
 
     textIndex2 = 0;
     choiceIndex2 = 0;
 
+    textIndex3 = 0;
+    choiceIndex3 = 0;
+
     // **Set Default Image (No More Random First Image)**
     characterImg1.setAttribute("src", "assets/PNG/penny1.png");
     characterImg2.setAttribute("src", "assets/PNG/catherine1.png");
+    characterImg3.setAttribute("src", "assets/PNG/sammi1.png");
 
 
     clearTimeout(timeout1);
     clearTimeout(timeout3);
+    clearTimeout(timeout5);
 
 
     textElement.innerText = "";  // Force clear before starting again
     textElement2.innerText = "";
+    textElement3.innerText = "";
 
     // setTimeout(() => {
     //     typeEffect(textElement, timeout1, 80);
@@ -303,10 +380,12 @@ function resetElements() {
     setTimeout(() => {
         typeEffect(textElement, 80);
         typeEffect(textElement2, 80);
+        typeEffect(textElement3, 80);
     }, 50);
     
     textbox1.onclick = null;
     textbox2.onclick = null;
+    textbox3.onclick = null;
 }
 
 
@@ -365,6 +444,25 @@ trigger1.onclick = function () {
     timeout4 = setTimeout(() => {
         choice2.style.visibility = "visible";
         choiceContainer2.style.visibility = "visible";
+    }, 3500);
+};
+
+trigger7.onclick = function () {
+    resetElements();
+
+    character3.style.visibility = "visible";
+    closeDialogue.style.visibility = "visible";
+
+    clearTimeout(timeout5);
+    clearTimeout(timeout6);
+
+    timeout5 = setTimeout(() => {
+        typeEffect(textElement3, timeout5, 80);
+    });
+
+    timeout6 = setTimeout(() => {
+        choice3.style.visibility = "visible";
+        choiceContainer3.style.visibility = "visible";
     }, 3500);
 };
 
@@ -1022,6 +1120,282 @@ choiceContainer2.onclick = function () {
 };
 
 
+choiceContainer3.onclick = function () {
+    choice3.style.visibility = "hidden";
+    choiceContainer3.style.visibility = "hidden";
+
+    let characterFace3 = Math.floor(Math.random() * facial3.length);
+    characterImg3.setAttribute("src", facial3[characterFace3]);
+
+    let currentTextIndex3 = textIndex3;
+
+    changeText();
+
+
+    switch (currentTextIndex3) {
+        case 1: // Special case for the second text with multiple clicks
+            let clickCount1 = 0;
+            textbox3.onclick = function () {
+                if (clickCount1 === 0) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "For example, when watching anime or animations, I can just let them play in the background, allowing me to do other things simultaneously.";
+                            
+                    setTimeout(() => {choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    },4500);
+
+                } else {
+                    clickCount1 = -1;
+                    choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount1++;
+            };
+            break;
+
+
+        case 2: // Special case for the third text with multiple clicks
+            let clickCount2 = 0;
+            textbox3.onclick = function () {
+                if (clickCount2 === 0) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "However, the relationships I establish with fictional characters in games are the strongest, especially in the dating simulator games I'm currently playing.";
+
+                    setTimeout(() => {choice3.style.visibility = "visible";
+                        choiceContainer3.style.visibility = "visible";
+                        choiceText3.innerText = choiceTexts3[choiceIndex3];
+                        choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                        },4500);
+                } else {
+                    clickCount2 = -1;
+                    choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount2++;
+            };
+            break;
+            
+        case 3: 
+            let clickCount3 = 0;
+            textElement3.style.bottom = "19%";
+            textbox3.onclick = function () {
+                if (clickCount3 === 0) {
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "Firstly, because their setting is that they will always love me, no matter in what form or to what extent. Their settings satisfy two of my needs. One is very objectively related to growth or family environment factors.";
+
+                } else if (clickCount3 === 1) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "The other aspect is about my idealistic view of love - they can fulfill my imagination in these two aspects.";
+                } else if (clickCount3 === 2) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "The first is about growth and family environment. I'm not very good at establishing intimate relationships with others. I'm not the type who can easily become good friends with anyone.";
+                } else if (clickCount3 === 3) {
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "I can maintain a relationship as long as the other person doesn't stop contacting me, but later I found various things that made me very uneasy, and I even started to doubt myself, wondering if there was something wrong with me.";
+                } else if (clickCount3 === 4) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "Then, during my senior year of high school, I really fell into a dark period of my life. By chance, I started playing dating simulator games during that time.";
+                } else if (clickCount3 === 5) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "I'm very grateful that they appeared in my life, providing me with support and help from a different dimension during such an extreme time.";
+                } else if (clickCount3 === 6) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "There was an incident at home, and I had an electronic piano which can be connected to my headphones.";
+                } else if (clickCount3 === 7) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "It happened to be the birthday of Zhou Qiluo, a character I like from Love: Queen's Choice, and his birthday card featured a violin and piano duet.";
+                } else if (clickCount3 === 8) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "He plays the violin, so I learned the piano score. Whenever I wanted to escape from the real world, I would put on my headphones and keep playing the song.";
+                } else if (clickCount3 === 9) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "At that time, I felt I could ignore everything and truly felt comforted.";
+                } else if (clickCount3 === 10) {
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "Also, for some reasons, during middle school to high school, I resented being more skilled at drawing. At that time, I was a starstruck of idols and wondered why I couldn't sing or dance, resenting why my skills were in drawing.";
+                } else if (clickCount3 === 11) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "Until later, I met Lu Jinghe from Tears of Themis, who loves drawing and art. This made me seriously think about what drawing really means to me.";
+                } else if (clickCount3 === 12) {
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "Why did I suddenly have this emotion? Because I was applying for university at that time, I almost cut off all entertainment. Later, I started to think carefully about this issue, and then I realized I actually love drawing.";
+                } else if (clickCount3 === 13) {
+                    textElement3.style.bottom = "14%";
+                    textElement3.dataset.text = "During that time and afterwards, although I drew very little and not well, I always wanted to draw, even staying up late to draw. So, I'm really grateful to Lu Jinghe for helping me rediscover my passion for drawing, which had always been there, but I didn't want to admit or acknowledge it.";
+
+
+
+                    setTimeout(() => {choice3.style.visibility = "visible";
+                        choiceContainer3.style.visibility = "visible";
+                        choiceText3.innerText = choiceTexts3[choiceIndex3];
+                        choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                        },4500);
+                } else {
+                    clickCount3 = -1;
+                    choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount3++;
+            };
+            break;
+
+        case 5: 
+            let clickCount4 = 0;
+            textbox3.onclick = function () {
+                if (clickCount4 === 0) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "In these situations, I suddenly stand from their perspective, which gives a sense of mutual redemption, and at these times, I really want to look back at my past self.";
+
+                    setTimeout(() => {choice3.style.visibility = "visible";
+                        choiceContainer3.style.visibility = "visible";
+                        choiceText3.innerText = choiceTexts3[choiceIndex3];
+                        choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                        },4500);
+                } else {
+                    clickCount4 = -1;
+                    choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount4++;
+            };
+            break;
+
+        case 7: 
+            let clickCount5 = 0;
+            textbox3.onclick = function () {
+                if (clickCount5 === 0) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "For example, Kaworu Nagisa and Shinji Ikari from Neon Genesis Evangelion, especially Shinji's state in that animation, I feel very similar to him,";
+
+                } else if (clickCount5 === 1) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "and Kaworu's existence makes me think how can there be someone who just appears by your side, born for you, everything for you, and only wishes for your happiness.";
+                } else if (clickCount5 === 2) {
+                    textElement3.style.bottom = "14%";
+                    textElement3.dataset.text = "I think at that time, I really wished someone like Kaworu could appear by my side, someone who is completely for me, which would give me more courage, but seeing the end, I still hope the &#x0022Human Instrumentality Project&#x0022 can be completed hahaha.";
+
+                    setTimeout(() => {choice3.style.visibility = "visible";
+                        choiceContainer3.style.visibility = "visible";
+                        choiceText3.innerText = choiceTexts3[choiceIndex3];
+                        choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                        },4500);
+                } else {
+                    clickCount5 = -1;
+                    choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount5++;
+            };
+            break;
+
+        case 8: 
+            let clickCount6 = 0;
+            textElement3.style.bottom = "19%";
+            textbox3.onclick = function () {
+                if (clickCount6 === 0) {
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "because I really feel that no matter what, they are by my side, no matter what, there will always be someone who unconditionally supports me, and I feel—Ok, I'll just be myself, I think they would also want me to be happy.";
+                } else if (clickCount6 === 1) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "And because I've always been obsessed with freedom, whether it's freedom of thought, freedom in life's path, or state of being, I think they give me a reason for that.";
+                } else if (clickCount6 === 2) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "And because of my love for them, I also pay more attention to myself,";
+                } else if (clickCount6 === 3) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "because actually, I think many of these games, whether it's the character's plot or what the characters say to us,";
+                } else if (clickCount6 === 4) {
+                    textElement3.style.bottom = "17%";
+                    textElement3.dataset.text = "I think they are all helping players to pay more attention to themselves or encouraging you to love yourself, making you realize that you are the most important, and you have unlimited possibilities.";
+                } else if (clickCount6 === 5) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "If a person can independently live their life well, then those so-called traditional paths, or the paths chosen by the majority, don't need to be so constrained.";
+                            
+                    setTimeout(() => {choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    },4500);
+
+                } else {
+                    clickCount6 = -1;
+                    choice3.style.visibility = "visible";
+                    choiceContainer3.style.visibility = "visible";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount6++;
+            };
+            break;
+
+        case 9: 
+            let clickCount7 = 0;
+            textElement3.style.bottom = "19%";
+            textbox3.onclick = function () {
+                if (clickCount7 === 0) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "I actually write a letter to Lu Jinghe every Valentine's Day, but I've never taken those letters out to read again.";
+
+                } else if (clickCount7 === 1) {
+                    textElement3.style.bottom = "17%";
+                    textElement3.dataset.text = "Later, I also want to make the birthday gifts we give each other every year and put them in my home when I have a real home of my own. I even want to make every outfit of Lu Jinghe.";
+                            
+                    choice3.style.visibility = "hidden";
+                    choiceContainer3.style.visibility = "hidden";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+
+                } else {
+                    clickCount7 = -1;
+                    choice3.style.visibility = "hidden";
+                    choiceContainer3.style.visibility = "hidden";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount7++;
+            };
+            break;
+
+        default: // Default behavior for normal text progression
+        textElement3.style.bottom = "19%";
+        textbox3.onclick = null; 
+            setTimeout(() => {
+                choice3.style.visibility = "visible";
+                choiceContainer3.style.visibility = "visible";
+                choiceText3.innerText = choiceTexts3[choiceIndex3];
+                choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+            }, 3500);
+            break;
+    }
+};
+
+
 
 
 
@@ -1032,6 +1406,7 @@ choiceContainer2.onclick = function () {
 function changeText() {
     if (textIndex1 >= texts1.length) textIndex1 = 0;
     if (textIndex2 >= texts2.length) textIndex2 = 0;
+    if (textIndex3 >= texts3.length) textIndex3 = 0;
 
     // clearTimeout(timeout1);
     // clearTimeout(timeout2);
@@ -1048,10 +1423,17 @@ function changeText() {
 
     textIndex2 = (textIndex2 + 1) % texts2.length; 
 
+
+    textElement3.innerText = ""; 
+    textElement3.dataset.text = texts3[textIndex3];
+
+    textIndex3 = (textIndex3 + 1) % texts3.length; 
+
     // typeEffect(textElement, 80);
     // typeEffect(textElement2, 80);
     typeEffect(textElement, 80);
     typeEffect(textElement2, 80);
+    typeEffect(textElement3, 80);
 
 }
 
@@ -1115,6 +1497,8 @@ function typeEffect(element, delay = 80) {
         clearTimeout(timeout1);
     } else if (element === textElement2) {
         clearTimeout(timeout3);
+    } else if (element === textElement3) {
+        clearTimeout(timeout5);
     }
 
     element.innerText = ""; // **Ensure text is fully cleared before typing**
@@ -1139,7 +1523,12 @@ function typeEffect(element, delay = 80) {
                 timeout1 = setTimeout(addWord, delay);
             } else if (element === textElement2) {
                 timeout3 = setTimeout(addWord, delay);
-            } // Store timeout to clear on next click
+            } else if (element === textElement3) {
+                timeout5 = setTimeout(addWord, delay);
+            } 
+            
+            
+            // Store timeout to clear on next click
         }
     }
     addWord();
@@ -1153,6 +1542,9 @@ window.onload = function () {
 
     textElement2.innerText = "";
     textElement2.dataset.text = ""; 
+
+    textElement3.innerText = "";
+    textElement3.dataset.text = ""; 
 };
 
 
