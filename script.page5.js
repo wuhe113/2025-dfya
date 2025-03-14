@@ -225,31 +225,32 @@ const choiceTexts2 = [
 
 
 const texts3 = [
-    "For me, the mediums that take up a large proportion are definitely games, followed by anime/animations and VTubers on the internet.",
-    "I think it's because they don't require a huge amount of time investment from me, meaning the time I spend on these three mediums is flexible.",
-    "I think it's about whether the character has something that attracts me, but mainly it starts with their appearance and personality.",
-    "Right.",
-    "Yes.",
-    "Right, but also, for example, Lu Jinghe sometimes has situations that I think are completely like my past self or even my current self.",
-    "I think it's like starting from being soulmates, then to the honeymoon phase, then to a steady flow, and now it feels like an old married couple.",
-    "I think it's also about the character's personality, especially when I see characters that are somewhat like me, I really want to get to know that character.",
-    "I think their existence and this relationship have made my real life more stable,",
+    "Mainly through games.",
+    "While playing the game, I first got to know the main storyline, and then through interactions with the characters in the game,",
+    "The relationship established with the character is a romantic one, or a one-sided relationship that exceeds the usual boundaries of liking.",
+    "When someone first got to know this character, people might think he was a bit rigid or old-fashioned, especially since he is the class monitor and always strives to do everything perfectly.",
+    "It's been a long time.",
+    "The impact has been huge, both positive and negative.",
+    "I don't really agree with the idea that &ldquo;the more merchandise you buy, the more it proves your love for the character.&rdquo;",
+    "Yes, exactly.",
+    "Speaking of this, I feel like I'm a bit strange.",
     "For me, it might be drawing.",
+    "Yes, due to my personality, I've never participated in such offline events."
 
 
 ];
 
 
 const choiceTexts3 = [
-    "So why do you think these three mediums are more capable of helping you establish relationships with fictional characters?",
-    "Based on these mediums, how do you establish parasocial relationships with fictional characters?",
-    "Alright, then why do you think you establish such relationships? For instance, here, you might have established a romantic relationship with a character in the game, which is a very intense relationship for you. Perhaps the character has touched you emotionally or in other aspects, right?",
-    "From what I hear, I would think that some people might feel that a character has the same growth experience as them, and they can empathize, so the relationship is established through this so-called empathy.",
-    "But for you, the parts of them that are different from you are what you desire. This prompts you to establish relationships with the characters, and they are also a place for you to escape from reality, but at the same time, through their character stories or behaviors, you find the strength to face reality.",
-    "So you overlap his part of the plot with your past self, which brings you a greater emotional impact. From the time you started playing these games and established relationships with characters until now, after so many years, do you think your relationship with them has changed over time?",
-    "Alright, besides games, you also mentioned anime/animations. How do you establish parasocial relationships with fictional characters in anime/animations?",
-    "Do you think this relationship has had any impact on your real-life? Are these impacts positive, negative, or a mix of both?",
-    "After saying so much, finally, I want to ask, have you made any efforts for this relationship? (creating fanart, cosplay, buying merchandise, participating in related events, etc.)",
+    "Based on this medium, how did you establish a parasocial relationship with the fictional characters?",
+    "Could you describe what kind of parasocial relationship this is? Who is the character?",
+    "Why do you think you established such a relationship with this character? How did the character move you emotionally or in other aspects?",
+    "As far as I know, this relationship has been maintained for a long time. When did it start exactly? Have you noticed any changes in this relationship over time?",
+    "Do you think this relationship has had an impact on your real-life? Has it been positive, negative, or both?",
+    "I see. Some people might say that the more merchandise you buy, the more it proves your love for the character. What do you think about this topic?",
+    "I think so too. Buying merchandise should always be voluntary. I believe most fans initially buy merchandise to own something related to their favorite character and derive joy from it, not to compete with others.",
+    "Besides buying merchandise, have you made any other efforts for this relationship? (For example, creating fan art, cosplay, participating in related events, etc.)",
+    "I see. As far as I know, the basic setting of the mobile game Ensemble Stars is that the characters are idols, so they regularly hold offline &ldquo;concerts.&rdquo; Have you never participated in such official events? Do you feel regret about that?",
 
 
 
@@ -345,7 +346,7 @@ function resetElements() {
     choiceText2.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
 
     textElement3.innerText = "";  
-    textElement3.dataset.text = "Hi, My name is Catherine, pronouns she/her. I am 21 years old and a senior student majoring in fashion design.";
+    textElement3.dataset.text = "Hi, I'm Sammi, 22 years old, and I'm a student majoring in metal art & jewelry.";
     choiceText3.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
 
     textIndex1 = 0;
@@ -1014,7 +1015,7 @@ choiceContainer2.onclick = function () {
                     textElement2.dataset.text = "and Kaworu's existence makes me think how can there be someone who just appears by your side, born for you, everything for you, and only wishes for your happiness.";
                 } else if (clickCount5 === 2) {
                     textElement2.style.bottom = "14%";
-                    textElement2.dataset.text = "I think at that time, I really wished someone like Kaworu could appear by my side, someone who is completely for me, which would give me more courage, but seeing the end, I still hope the &#x0022Human Instrumentality Project&#x0022 can be completed hahaha.";
+                    textElement2.dataset.text = "I think at that time, I really wished someone like Kaworu could appear by my side, someone who is completely for me, which would give me more courage, but seeing the end, I still hope the &ldquo;Human Instrumentality Project&ldquo; can be completed hahaha.";
 
                     setTimeout(() => {choice2.style.visibility = "visible";
                         choiceContainer2.style.visibility = "visible";
@@ -1137,8 +1138,17 @@ choiceContainer3.onclick = function () {
             let clickCount1 = 0;
             textbox3.onclick = function () {
                 if (clickCount1 === 0) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "I gradually understood their personalities, roles, and positions in the game's plot.";
+                } else if (clickCount1 === 1) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "This made me feel that the character was great and exactly what I liked, so I wanted to learn more about them.";
+                } else if (clickCount1 === 2) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "Another aspect is the voice actors of the characters.";
+                } else if (clickCount1 === 3) {
                     textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "For example, when watching anime or animations, I can just let them play in the background, allowing me to do other things simultaneously.";
+                    textElement3.dataset.text = "Since I really enjoy listening to music and have a soft spot for certain voices I like, I naturally wanted to get to know the characters because of their voices.";
                             
                     setTimeout(() => {choice3.style.visibility = "visible";
                     choiceContainer3.style.visibility = "visible";
@@ -1164,8 +1174,14 @@ choiceContainer3.onclick = function () {
             let clickCount2 = 0;
             textbox3.onclick = function () {
                 if (clickCount2 === 0) {
-                    textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "However, the relationships I establish with fictional characters in games are the strongest, especially in the dating simulator games I'm currently playing.";
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "Hokuto Hidaka is a character from the game Ensemble Stars. ";
+                } else if (clickCount2 === 1) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "In the storyline of school  from the game, he is a perfectionist and someone who prioritizes friends.";
+                } else if (clickCount2 === 2) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "He also serves as the class monitor and the leader of an idol group. He is a very hardworking and calm individual.";
 
                     setTimeout(() => {choice3.style.visibility = "visible";
                         choiceContainer3.style.visibility = "visible";
@@ -1187,51 +1203,40 @@ choiceContainer3.onclick = function () {
             
         case 3: 
             let clickCount3 = 0;
-            textElement3.style.bottom = "19%";
+            textElement3.style.bottom = "18%";
             textbox3.onclick = function () {
                 if (clickCount3 === 0) {
-                    textElement3.style.bottom = "16%";
-                    textElement3.dataset.text = "Firstly, because their setting is that they will always love me, no matter in what form or to what extent. Their settings satisfy two of my needs. One is very objectively related to growth or family environment factors.";
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "He doesn't mess around or play pranks like other kids his age, and sometimes he speaks very directly without considering others' feelings, which might lead to a stereotypical impression of him.";
 
                 } else if (clickCount3 === 1) {
-                    textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "The other aspect is about my idealistic view of love - they can fulfill my imagination in these two aspects.";
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "However, as I progressed through the storyline, I realized that he is actually a very good person. He works hard to solve problems for his friends, cares about others, and strives to do his best in everything he sets out to do.";
                 } else if (clickCount3 === 2) {
                     textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "The first is about growth and family environment. I'm not very good at establishing intimate relationships with others. I'm not the type who can easily become good friends with anyone.";
+                    textElement3.dataset.text = "Despite being a &ldquo;star child&rdquo; (a character with a famous background), he doesn't rely solely on his background but fights for his rights in a just manner.";
                 } else if (clickCount3 === 3) {
-                    textElement3.style.bottom = "16%";
-                    textElement3.dataset.text = "I can maintain a relationship as long as the other person doesn't stop contacting me, but later I found various things that made me very uneasy, and I even started to doubt myself, wondering if there was something wrong with me.";
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "Some aspects of his personality are also very cute, upright, and kind, which made me gradually fall for him.";
                 } else if (clickCount3 === 4) {
-                    textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "Then, during my senior year of high school, I really fell into a dark period of my life. By chance, I started playing dating simulator games during that time.";
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "But I want to clarify that I don't imagine him in real life as my ideal type.";
                 } else if (clickCount3 === 5) {
                     textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "I'm very grateful that they appeared in my life, providing me with support and help from a different dimension during such an extreme time.";
+                    textElement3.dataset.text = " Instead, I immerse myself in the game, I feel that he is a character worth getting to know deeply.";
                 } else if (clickCount3 === 6) {
-                    textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "There was an incident at home, and I had an electronic piano which can be connected to my headphones.";
+                    textElement3.style.bottom = "14%";
+                    textElement3.dataset.text = "I often wonder: if I were a character in the game, based on his personality traits and role, how would he react if we developed a deeper relationship? Would he change his rigid and old-fashioned image? Would he prioritize me and treat me well like he does with his friends?";
                 } else if (clickCount3 === 7) {
                     textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "It happened to be the birthday of Zhou Qiluo, a character I like from Love: Queen's Choice, and his birthday card featured a violin and piano duet.";
+                    textElement3.dataset.text = "Of course, these answers are based on the game's setting and my own imagination or subjective extension of the character.";
                 } else if (clickCount3 === 8) {
-                    textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "He plays the violin, so I learned the piano score. Whenever I wanted to escape from the real world, I would put on my headphones and keep playing the song.";
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "Then I feel that if I were a character in the game and we could be in a relationship, he would be a great choice, which is why I gradually developed feelings for him that go beyond friendship.";
                 } else if (clickCount3 === 9) {
                     textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "At that time, I felt I could ignore everything and truly felt comforted.";
-                } else if (clickCount3 === 10) {
-                    textElement3.style.bottom = "16%";
-                    textElement3.dataset.text = "Also, for some reasons, during middle school to high school, I resented being more skilled at drawing. At that time, I was a starstruck of idols and wondered why I couldn't sing or dance, resenting why my skills were in drawing.";
-                } else if (clickCount3 === 11) {
-                    textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "Until later, I met Lu Jinghe from Tears of Themis, who loves drawing and art. This made me seriously think about what drawing really means to me.";
-                } else if (clickCount3 === 12) {
-                    textElement3.style.bottom = "16%";
-                    textElement3.dataset.text = "Why did I suddenly have this emotion? Because I was applying for university at that time, I almost cut off all entertainment. Later, I started to think carefully about this issue, and then I realized I actually love drawing.";
-                } else if (clickCount3 === 13) {
-                    textElement3.style.bottom = "14%";
-                    textElement3.dataset.text = "During that time and afterwards, although I drew very little and not well, I always wanted to draw, even staying up late to draw. So, I'm really grateful to Lu Jinghe for helping me rediscover my passion for drawing, which had always been there, but I didn't want to admit or acknowledge it.";
+                    textElement3.dataset.text = "Another factor is that he sings very well, and his voice is one I really like. His appearance is also my type.";
+
 
 
 
@@ -1253,12 +1258,39 @@ choiceContainer3.onclick = function () {
             };
             break;
 
-        case 5: 
+        case 4: 
             let clickCount4 = 0;
             textbox3.onclick = function () {
                 if (clickCount4 === 0) {
                     textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "In these situations, I suddenly stand from their perspective, which gives a sense of mutual redemption, and at these times, I really want to look back at my past self.";
+                    textElement3.dataset.text = " I'm not exactly sure when this relationship was truly established because it was a gradual process of deepening my feelings and being drawn to this character.";
+                } else if (clickCount4 === 1) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "It's been almost nine years now.";
+                } else if (clickCount4 === 2) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "The game itself has many characters, but he was the first one out of over 40 characters that I felt truly attracted to.";
+                } else if (clickCount4 === 3) {
+                    textElement3.style.bottom = "14%";
+                    textElement3.dataset.text = "In the first few years of this relationship, he was like a spiritual pillar to me. I would imagine him as a real-life romantic lover, thinking about where we would go together, what kind of life we would have, and how he would handle certain situations or problems.";
+                } else if (clickCount4 === 4) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "It's a bit embarrassing to say, but back then, just seeing him would make me smile.";
+                } else if (clickCount4 === 5) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "Whenever I saw him, I felt motivated to finish my tasks or relieve stress. He was like a rare spiritual refuge or haven amidst the pressures of life.";
+                } else if (clickCount4 === 6) {
+                    textElement3.style.bottom = "17%";
+                    textElement3.dataset.text = "For example, during the time I was preparing for university entrance exams, I often thought that without his spiritual support, that period would have felt much longer and more painful.";
+                } else if (clickCount4 === 7) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "In recent years, the intensity of these feelings actually has lessened.";
+                } else if (clickCount4 === 8) {
+                    textElement3.style.bottom = "17%";
+                    textElement3.dataset.text = "However, during this time, I've also explored other works and grown fond of other fictional characters, but none of them have evoked the same romantic feelings as Hokuto Hidaka.";
+                } else if (clickCount4 === 9) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "Even if a character is very similar to him, I still feel that Hokuto Hidaka is the best and my favorite.";
 
                     setTimeout(() => {choice3.style.visibility = "visible";
                         choiceContainer3.style.visibility = "visible";
@@ -1278,19 +1310,22 @@ choiceContainer3.onclick = function () {
             };
             break;
 
-        case 7: 
+        case 5: 
             let clickCount5 = 0;
             textbox3.onclick = function () {
                 if (clickCount5 === 0) {
-                    textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "For example, Kaworu Nagisa and Shinji Ikari from Neon Genesis Evangelion, especially Shinji's state in that animation, I feel very similar to him,";
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "Because I really like him, but I can't just rely on the game or my own imagination to satisfy myself, so these overflowing emotions extend to buying merchandise or commissioning fan art to fulfill myself.";
 
                 } else if (clickCount5 === 1) {
                     textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "and Kaworu's existence makes me think how can there be someone who just appears by your side, born for you, everything for you, and only wishes for your happiness.";
+                    textElement3.dataset.text = "The positive impact, as I mentioned earlier, is that his mere existence stabilizes my mental state, improves my stress tolerance, and gives me hope in life.";
                 } else if (clickCount5 === 2) {
-                    textElement3.style.bottom = "14%";
-                    textElement3.dataset.text = "I think at that time, I really wished someone like Kaworu could appear by my side, someone who is completely for me, which would give me more courage, but seeing the end, I still hope the &#x0022Human Instrumentality Project&#x0022 can be completed hahaha.";
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "The negative impact might be similar to an addiction that's hard to break.";
+                } else if (clickCount5 === 3) {
+                    textElement3.style.bottom = "15%";
+                    textElement3.dataset.text = "I spend a lot of money on the game itself, buying merchandise, and commissioning artwork. In my daily life, I don't pursue luxury brands and I save money, but when it comes to anything related to him, I spend generously.";
 
                     setTimeout(() => {choice3.style.visibility = "visible";
                         choiceContainer3.style.visibility = "visible";
@@ -1310,28 +1345,23 @@ choiceContainer3.onclick = function () {
             };
             break;
 
-        case 8: 
+        case 6: 
             let clickCount6 = 0;
             textElement3.style.bottom = "19%";
             textbox3.onclick = function () {
                 if (clickCount6 === 0) {
-                    textElement3.style.bottom = "16%";
-                    textElement3.dataset.text = "because I really feel that no matter what, they are by my side, no matter what, there will always be someone who unconditionally supports me, and I feel—Ok, I'll just be myself, I think they would also want me to be happy.";
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "First, everyone's family conditions and budget allocations are different.";
                 } else if (clickCount6 === 1) {
-                    textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "And because I've always been obsessed with freedom, whether it's freedom of thought, freedom in life's path, or state of being, I think they give me a reason for that.";
+                    textElement3.style.bottom = "14%";
+                    textElement3.dataset.text = "If buying more merchandise or having a higher game ranking is seen as proof of love, it feels more like an unwarranted competition among fans. It seems like fans are competing to prove &ldquo;I love the character more,&rdquo; which I think is driven by vanity, and I really don't like that.";
                 } else if (clickCount6 === 2) {
                     textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "And because of my love for them, I also pay more attention to myself,";
+                    textElement3.dataset.text = "Personally, I don't care how much merchandise other fans buy. I enjoy myself in my own way, and I think that's fine.";
                 } else if (clickCount6 === 3) {
-                    textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "because actually, I think many of these games, whether it's the character's plot or what the characters say to us,";
-                } else if (clickCount6 === 4) {
-                    textElement3.style.bottom = "17%";
-                    textElement3.dataset.text = "I think they are all helping players to pay more attention to themselves or encouraging you to love yourself, making you realize that you are the most important, and you have unlimited possibilities.";
-                } else if (clickCount6 === 5) {
-                    textElement3.style.bottom = "18%";
-                    textElement3.dataset.text = "If a person can independently live their life well, then those so-called traditional paths, or the paths chosen by the majority, don't need to be so constrained.";
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "I do buy a lot of merchandise, but for me, it's more about self-satisfaction. Just displaying the merchandise and looking at it makes me feel at ease, and being surrounded by things related to the character I like brings me happiness.";
+
                             
                     setTimeout(() => {choice3.style.visibility = "visible";
                     choiceContainer3.style.visibility = "visible";
@@ -1352,22 +1382,43 @@ choiceContainer3.onclick = function () {
             };
             break;
 
-        case 9: 
+        case 8: 
             let clickCount7 = 0;
             textElement3.style.bottom = "19%";
             textbox3.onclick = function () {
                 if (clickCount7 === 0) {
                     textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "I actually write a letter to Lu Jinghe every Valentine's Day, but I've never taken those letters out to read again.";
+                    textElement3.dataset.text = "I haven't drawn any fan art of him because I feel like I might make him look bad, and I would feel sorry for him, so I decided not to draw.";
 
                 } else if (clickCount7 === 1) {
-                    textElement3.style.bottom = "17%";
-                    textElement3.dataset.text = "Later, I also want to make the birthday gifts we give each other every year and put them in my home when I have a real home of my own. I even want to make every outfit of Lu Jinghe.";
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "As for cosplay, when I was in school, my friends once prepared a cosplay surprise for me! My friend dressed up as Hokuto Hidaka and came to me.";
+                
+                } else if (clickCount7 === 2) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "Although it was a good experience, it felt a bit weird. Maybe I'm not used to interacting with a &ldquo;real-life version&rdquo; of him standing right beside me.";
+                } else if (clickCount7 === 3) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "I don't really participate in other offline activities either.";
+                } else if (clickCount7 === 4) {
+                    textElement3.style.bottom = "14%";
+                    textElement3.dataset.text = "This is related to my social habits in real life. After graduating from middle school, I almost completely stopped socializing in real life. My MBTI &ldquo;I&rdquo; (introversion) score is probably around 95%. Now, even asking for directions requires a lot of courage.";
+                } else if (clickCount7 === 5) {
+                    textElement3.style.bottom = "19%";
+                    textElement3.dataset.text = "Also, I'm a bit afraid of meeting other people who like this character.";
+                } else if (clickCount7 === 6) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "Maybe it's because I see myself in a romantic relationship with him, so I automatically avoid content posted by others about him and distance myself from other fans.";
+                } else if (clickCount7 === 7) {
+                    textElement3.style.bottom = "16%";
+                    textElement3.dataset.text = "I'm not sure if it's possessiveness or just a desire to keep him as my spiritual pillar and live my life quietly. So far, I've only expressed my support and love for him through imagination, commissioning artwork, and buying merchandise.";
                             
-                    choice3.style.visibility = "hidden";
-                    choiceContainer3.style.visibility = "hidden";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                            
+                    setTimeout(() => {choice3.style.visibility = "visible";
+                        choiceContainer3.style.visibility = "visible";
+                        choiceText3.innerText = choiceTexts3[choiceIndex3];
+                        choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                        },4500);
 
                 } else {
                     clickCount7 = -1;
@@ -1379,6 +1430,33 @@ choiceContainer3.onclick = function () {
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
                 clickCount7++;
+            };
+            break;
+
+            case 9: 
+            let clickCount8 = 0;
+            textElement3.style.bottom = "19%";
+            textbox3.onclick = function () {
+                if (clickCount8 === 0) {
+                    textElement3.style.bottom = "18%";
+                    textElement3.dataset.text = "Although I do feel a bit regretful, since these concerts are now available for online viewing, I can watch their concerts online.";
+
+                            
+                    choice3.style.visibility = "hidden";
+                    choiceContainer3.style.visibility = "hidden";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+
+                } else {
+                    clickCount8 = -1;
+                    choice3.style.visibility = "hidden";
+                    choiceContainer3.style.visibility = "hidden";
+                    choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                }
+                textElement3.innerText = ""; 
+                typeEffect(textElement3, 80);
+                clickCount8++;
             };
             break;
 
