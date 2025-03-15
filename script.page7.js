@@ -71,9 +71,31 @@ ref.on("value", (snapshot) => {
         commentChat.style.fontSize = `${randomSize}vw`;
 
         chat.appendChild(commentChat);
+        
+
 
 	}
 });
+
+
+const closeButton = document.getElementById("closeChat-button");
+const open = document.getElementById("open");
+
+let isToggled = false;
+        
+closeButton.onclick = function(event){
+    event.preventDefault();
+
+    if (isToggled){
+        chat.style.visibility = "hidden";
+        open.style.visibility = "hidden";
+    }else{
+        chat.style.visibility = "visible";
+        open.style.visibility = "visible";
+    }
+
+    isToggled = !isToggled;
+}
 
 
 
