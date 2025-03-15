@@ -67,7 +67,7 @@ ref.on("value", (snapshot) => {
         const animationDuration = Math.random() * 5 + 8;
         commentChat.style.animationDuration = `${animationDuration}s`;
 
-        const randomSize = Math.random()*5 + 1;
+        const randomSize = Math.random()*3 + 1;
         commentChat.style.fontSize = `${randomSize}vw`;
 
         chat.appendChild(commentChat);
@@ -89,7 +89,7 @@ window.onload = function () {
     const credits = document.getElementById("ending-credits")
     const slider = document.getElementById("myRange");
 
-    credits.style.top = "200%";
+    // credits.style.top = "";
 
 
 
@@ -104,6 +104,7 @@ window.onload = function () {
 if (credits) {
     setTimeout(() => {
     credits.style.visibility = "visible";
+    credits.style.top = "200%";
     startScrolling();
     // credits.classList.add("scrolling-animation");
 }, 8500);
@@ -111,13 +112,16 @@ if (credits) {
 
 
 function startScrolling() {
-    let start = Date.now();
     let duration = 60000;
     let startTop = 200;
     let endTop = -500;
     let isManualControl = false; 
 
     function animateScroll() {
+        if (isManualControl) return;
+        let start = Date.now();
+
+        function loopAnimation(){
         if (isManualControl) return;
 
         let elapsed = Date.now() - start;
@@ -127,9 +131,17 @@ function startScrolling() {
         slider.value = -newTop;
 
         if (progress < 1) {
-            requestAnimationFrame(animateScroll);
+            requestAnimationFrame(loopAnimation);
+        }else {
+            setTimeout(() => {
+                credits.style.top = startTop + "%";
+                requestAnimationFrame(animateScroll);
+            }, 5000);
         }
     }
+
+    loopAnimation();
+}
 
     animateScroll();
 

@@ -514,7 +514,7 @@ font-style: normal;
 }
 
 #chat{
-    position: relative;
+    position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
@@ -534,9 +534,9 @@ font-style: normal;
 
 @keyframes bulletMove {
     from {
-        left: 100%;
+        left: 150%;
     }
     to {
-        left: -100%;
+        left: -150%;
     }
 }
