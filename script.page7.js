@@ -1,5 +1,4 @@
 //refer to 24fall next-level coding course: https://www.notion.so/Intro-to-Firebase-14855da29c23809daa20d715106c795e
-
 const firebaseConfig = {
     apiKey: "AIzaSyDDaQBUlFNUNu6nTAd4ptTIZJsAsxfpK5k",
     authDomain: "dfya-369ce.firebaseapp.com",
@@ -96,6 +95,37 @@ closeButton.onclick = function(event){
 
     isToggled = !isToggled;
 }
+
+
+const sectionButton = document.getElementById("section-button");
+const sectionChoice = document.getElementById("sections");
+
+sectionButton.onclick = function(event){
+    event.preventDefault();
+
+    if (isToggled){
+        sectionChoice.style.visibility = "visible";
+    }else{
+        sectionChoice.style.visibility = "hidden";
+    }
+
+    isToggled = !isToggled;
+}
+
+
+
+function openPopup1(url, width, height) {
+    let left = (screen.width - width) / 2;
+    let top = (screen.height - height) / 2;
+    window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
+}
+
+function openPopup2(url, width, height) {
+    let left = (screen.width - width) / 2;
+    let top = (screen.height - height) / 2;
+    window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top},resizable=no`);
+}
+
 
 
 

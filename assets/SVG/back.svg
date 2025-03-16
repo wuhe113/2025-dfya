@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-ceff940a-5e0e-4180-ab39-c8cccb8efddb" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 86 128">
+  <defs>
+    <style>
+      .uuid-0ecbe9fc-32be-4036-8598-100cb7048db3 {
+        fill: none;
+        filter: url(#uuid-fcc77cb8-ee8c-49f8-930a-bede0a9583c0);
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 9px;
+      }
+    </style>
+    <filter id="uuid-fcc77cb8-ee8c-49f8-930a-bede0a9583c0" data-name="outer-glow-1" x="0" y="0" width="86" height="128" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="uuid-b8147f92-4dc2-4e0f-bf33-418f0d6b8dd9" stdDeviation="5"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="uuid-b8147f92-4dc2-4e0f-bf33-418f0d6b8dd9" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="uuid-50bb3e0e-5dc6-4787-b16f-0c51c8f5e50f" data-name="Layer 1">
+    <polyline class="uuid-0ecbe9fc-32be-4036-8598-100cb7048db3" points="67.7 109.5 22.2 64.38 67.32 18.89"/>
+  </g>
+</svg>
