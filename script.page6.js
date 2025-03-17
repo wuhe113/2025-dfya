@@ -68,6 +68,36 @@ wallEssay.addEventListener("wheel", function(event) {
 }, { passive: false });
 
 
+const interview3a = document.getElementById("interview3-a");
+
+
+interview3a.addEventListener("wheel", function(event) {
+    event.preventDefault();
+    interview3a.scrollTop += event.deltaY * 0.3;
+}, { passive: false });
+    
+
+
+wallEssay.addEventListener("scroll", function () {
+    const scrollBottom = wallEssay.scrollHeight - wallEssay.scrollTop - wallEssay.clientHeight;
+    
+    if (scrollBottom < 10) {
+        interview3a.style.visibility = "visible";
+        interview3a.style.pointerEvents = "auto";
+    } else {
+        interview3a.style.visibility = "hidden";
+        interview3a.style.pointerEvents = "none";
+    }
+
+
+
+
+});
+
+
+
+
+
 const openInterview1 = document.getElementById("a1");
 
 const interview2 = document.getElementById("interview1");
