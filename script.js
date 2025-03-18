@@ -151,3 +151,21 @@ nextButton.onmouseenter = function(){
 nextButton.onmouseleave = function(){
     cursor.style.backgroundColor = "";
 }
+
+
+const sectionButton = document.getElementById("section-button");
+const sectionChoice = document.getElementById("sections");
+
+
+sectionButton.onclick = function(event){
+    event.preventDefault();
+
+    let currentDisplay = window.getComputedStyle(sectionChoice).display;
+
+    if (currentDisplay === "none"){
+        sectionChoice.style.display = "block";
+    }else{
+        sectionChoice.style.display = "none";
+    }
+
+}
