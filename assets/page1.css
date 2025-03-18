@@ -355,19 +355,19 @@ font-style: normal;
     overflow: hidden;
 }
 
-#sketch2{
+#comicbook{
     position: absolute;
-    top: 0px;
-    left: 10px;
-    width: 250px;
-    transform: rotate(40deg);
+    top: -30px;
+    left: -40px;
+    width: 400px;
+    transform: rotate(-20deg);
 }
 
-#sketch1{
+#mangabook{
     position: absolute;
     top: -55px;
     left: -55px;
-    width: 350px;
+    width: 450px;
     transition: all 5s ease;
     cursor: pointer;
 }
@@ -516,7 +516,7 @@ font-style: normal;
     right: 30px;
     font-family: plantagenet-cherokee;
     color: #1A1A1A;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 20px;
     text-decoration: underline;
     z-index:110;

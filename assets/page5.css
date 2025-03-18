@@ -190,6 +190,7 @@ body,html {
 
 #section-choice {
     position: absolute;
+    display: none;
     top: 75px;
     left: 20px;
     text-align: center;
@@ -201,7 +202,6 @@ body,html {
     text-shadow: rgb(238, 237, 230) 1px 0 10px;
     cursor: pointer;
     z-index: 100;
-    visibility: hidden;
 }
 
 

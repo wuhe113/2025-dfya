@@ -17,21 +17,22 @@
             <source src="assets/Music/Tea and Pixels.mp3" type="audio/mpeg">
         </audio>
 
+
         <div class="scenes-container" id="scenes">
              <div id="scene1">
             <img src="assets/GIF/scene1.gif">
-            <div id="trigger1"></div>
-            <div id="trigger2"></div>
-            <div id="trigger3"></div>
-            <div id="trigger4"></div>
-            <div id="trigger5"></div>
-            <div id="trigger6"></div>
+            <div id="trigger1" onmousedown="clicking.play()"></div>
+            <div id="trigger2" onmousedown="clicking.play()"></div>
+            <div id="trigger3" onmousedown="clicking.play()"></div>
+            <div id="trigger4" onmousedown="clicking.play()"></div>
+            <div id="trigger5" onmousedown="clicking.play()"></div>
+            <div id="trigger6" onmousedown="clicking.play()"></div>
         </div>
         <div id="scene2">
             <img src="assets/GIF/scene2.gif">
-            <div id="trigger7"></div>
-            <div id="trigger8"></div>
-            <div id="trigger9"></div>
+            <div id="trigger7" onmousedown="clicking.play()"></div>
+            <div id="trigger8" onmousedown="clicking.play()"></div>
+            <div id="trigger9" onmousedown="clicking.play()"></div>
         </div>
         </div>
 
@@ -39,7 +40,7 @@
         <div id="characters">
 
             <div id="character1">
-                <img id="textbox1" src="assets/GIF/textbox1.gif">
+                <img id="textbox1" src="assets/GIF/textbox1.gif" onmousedown="clicking.play()">
                 <div id="name1">Penny</div>
                 <div id="text1">
                     Hi, I’m Penny, 21 years old, my pronouns are she/her, and I'm currently a senior illustration student.
@@ -49,7 +50,7 @@
             <img id="choice1" src="assets/GIF/choice1.gif">
 
             <div id="choice-container1">
-                <div id="choicetext1">
+                <div id="choicetext1" onmousedown="clicking.play()">
                     Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?
                 </div>
             </div>
@@ -86,7 +87,7 @@
 
 
     <div id="character3">
-        <img id="textbox3" src="assets/GIF/textbox1.gif">
+        <img id="textbox3" src="assets/GIF/textbox1.gif" onmousedown="clicking.play()">
         <div id="name3">Sammi</div>
         <div id="text3">
             Hi, I'm Sammi, 22 years old, and I'm a student majoring in metal art & jewelry.
@@ -96,7 +97,7 @@
     <img id="choice3" src="assets/GIF/choice1.gif">
 
     <div id="choice-container3">
-        <div id="choicetext3">
+        <div id="choicetext3" onmousedown="clicking.play()">
             Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?
         </div>
     </div>
@@ -111,29 +112,29 @@
         <div id="buttons">
 
 
-        <div id="section-button">
+        <div id="section-button" onmousedown="clicking.play()">
             <img src="assets/PNG/menu.png">
             <div id="section-text">
                 Section
             </div>
 
-        <div id="section-choice">
-            <a href="page1.html">
+        <div id="section-choice" onmousedown="clicking.play()">
+            <a href="page1.html" onclick="openPopup1('page1.html', 1352, 725); return false;">
                 <ul>Section 1</ul>
             </a>
 
 
-                <ul>Section 2</ul>
+            <a href="page5.html"><ul>Section 2</ul></a>
 
-            <a href="page6.html" onclick="openPopup('page6.html', 1200, 825); return false;">
+            <a href="page6.html" onclick="openPopup1('page6.html', 1200, 825); return false;">
                 <ul>Section 3</ul>
             </a>
 
-            <ul>Section 4</ul>
+            <a href="page7.html" onclick="openPopup2('page7.html'); return false;"><ul>Section 4</ul></a>
         </div>
     </div>
 
-        <div id="next">
+        <div id="next" onmousedown="clicking.play()">
             <img src="assets/PNG/menu.png">
             <a href="page6.html" onclick="openPopup('page6.html', 1200, 825); return false;">
                 <div id="next-text">
@@ -142,7 +143,7 @@
         </a>
         </div>
 
-            <button>
+            <button onmousedown="clicking.play()">
             <img  id="mute" src="assets/PNG/mute1.png">
         </button>
     </div>
@@ -212,9 +213,9 @@
 
         </div>
 
-        <div id="close-object"></div>
+        <div id="close-object" onmousedown="clicking.play()"></div>
 
-        <div id="close-dialogue">Close</div>
+        <div id="close-dialogue" onmousedown="clicking.play()">Close</div>
 
         <div id="logo">
             <img src="assets/PNG/dfya logo2.png">
@@ -222,7 +223,7 @@
 
         <div id="game-opening">
             <img id="opening" src="assets/GIF/opening.gif">
-            <div id="start">
+            <div id="start" onmousedown="clicking.play()">
                 Start
             </div>
 

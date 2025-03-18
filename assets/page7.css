@@ -514,6 +514,7 @@ font-style: normal;
 }
 
 #section-button{
+    display: block;
     padding: 8px;
     border: 1px solid #ddd;
 	border-radius: 4px;
@@ -530,8 +531,8 @@ font-style: normal;
 
 #sections{
     position: fixed;
-    visibility: hidden;
     text-align: center;
+    display:none;
     transform: translate(-20%,-13vw);
     /* text-shadow: 0px 0px 5px rgb(0, 0, 0); */
     line-height: 2vw;
@@ -568,12 +569,14 @@ font-style: normal;
 }
 
 #open{
+    visibility: visible;
     width: 60%;
     transform: translate(100%, -20%);
 }
 
 #chat{
     position: absolute;
+    visibility: visible;
     top: 0;
     width: 100%;
     height: 100%;

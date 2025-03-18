@@ -297,8 +297,8 @@ figcaption{
     bottom: 10%;
     left: 50%;
     transform: translate(-50%);
-    width: 50%;
-    height: 80%;
+    width: 0;
+    height: 0;
     font-family: Arial, sans-serif;
     font-size: 1.2vw;
     /* background-color: rgb(255, 0, 0); */
@@ -313,6 +313,12 @@ figcaption{
 #interview3-a::-webkit-scrollbar {
     display: none;
 }
+
+/* #interview3-a.hidden {
+    overflow-y: hidden;
+    pointer-events: none;
+} */
+
 
 #insert-answers{
     position: absolute;

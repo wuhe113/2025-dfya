@@ -80,36 +80,38 @@ ref.on("value", (snapshot) => {
 const closeButton = document.getElementById("closeChat-button");
 const open = document.getElementById("open");
 
-let isToggled = false;
-        
+
 closeButton.onclick = function(event){
     event.preventDefault();
 
-    if (isToggled){
+    let currentVisibility = window.getComputedStyle(chat).visibility;
+
+    if (currentVisibility === "visible") {
         chat.style.visibility = "hidden";
         open.style.visibility = "hidden";
-    }else{
+    } else {
         chat.style.visibility = "visible";
         open.style.visibility = "visible";
     }
 
-    isToggled = !isToggled;
 }
 
 
 const sectionButton = document.getElementById("section-button");
 const sectionChoice = document.getElementById("sections");
 
+
 sectionButton.onclick = function(event){
     event.preventDefault();
 
-    if (isToggled){
-        sectionChoice.style.visibility = "visible";
+    let currentDisplay = window.getComputedStyle(sectionChoice).display;
+
+    if (currentDisplay === "none"){
+        sectionChoice.style.display = "block";
     }else{
-        sectionChoice.style.visibility = "hidden";
+        sectionChoice.style.display = "none";
     }
 
-    isToggled = !isToggled;
 }
 
 

@@ -24,10 +24,14 @@ document.addEventListener("keydown", (event) => {
 
 });
 
-function openPopup(url, width, height) {
+function openPopup1(url, width, height) {
     let left = (screen.width - width) / 2;
     let top = (screen.height - height) / 2;
     window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
+}
+
+function openPopup2(url) {
+    window.open(url, '_blank', `width=${screen.width},height=${screen.height},top=0,left=0`);
 }
 
 
@@ -52,18 +56,32 @@ muteButton.onclick = function(e){
 
 }
 
+
+// function clicking() {
+//     var clickingSound = document.getElementById("clicking-sound");
+//     clickingSound.play();
+// }
+
+
+const clicking = new Audio();
+clicking.src = "assets/Music/clicking-sound.mp3";
+
+
+
+
 const section = document.getElementById("section-button");
 const sectionChoice = document.getElementById("section-choice");
 
-section.onclick = function(e){
+section.onclick = function(event){
+    event.preventDefault();
 
-    if (isToggled){
-        sectionChoice.style.visibility = "visible";
+    let currentDisplay = window.getComputedStyle(sectionChoice).display;
+
+    if (currentDisplay === "none"){
+        sectionChoice.style.display = "block";
     }else{
-        sectionChoice.style.visibility = "hidden";
+        sectionChoice.style.display = "none";
     }
-
-    isToggled = !isToggled;
 
 }
 

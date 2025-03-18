@@ -36,8 +36,8 @@ window.addEventListener('load', adjustPosition);
 // }
 
 
-const sketch = document.getElementById("sketch1");
+const mangabook = document.getElementById("mangabook");
 
-sketch.onclick = function(e){
-    sketch.style.left = "-250px";
+mangabook.onclick = function(e){
+    mangabook.style.left = "-280px";
 }

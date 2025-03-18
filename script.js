@@ -126,3 +126,16 @@ createSparks2();
 // for (let i = 0; i < amount; i++){
 //   group.appendChild(ray.cloneNode(true));
 // }
+
+
+const nextButton = document.getElementById("text2");
+// const cursorCircle = document.getElementById("c-circle1");
+
+nextButton.onmouseenter = function(){
+  cursor.style.backgroundColor = "rgba(255, 17, 0, 0.5)";
+
+}
+
+nextButton.onmouseleave = function(){
+    cursor.style.backgroundColor = "";
+}

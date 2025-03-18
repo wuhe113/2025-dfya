@@ -70,29 +70,33 @@ wallEssay.addEventListener("wheel", function(event) {
 
 const interview3a = document.getElementById("interview3-a");
 
+const insertAnswers = document.getElementById("insert-answers");
 
-interview3a.addEventListener("wheel", function(event) {
-    event.preventDefault();
-    interview3a.scrollTop += event.deltaY * 0.3;
-}, { passive: false });
-    
 
 
 wallEssay.addEventListener("scroll", function () {
     const scrollBottom = wallEssay.scrollHeight - wallEssay.scrollTop - wallEssay.clientHeight;
     
-    if (scrollBottom < 10) {
+    if (scrollBottom < 5) {
+        interview3a.style.width = "50%";
+        interview3a.style.height = "80%";
         interview3a.style.visibility = "visible";
         interview3a.style.pointerEvents = "auto";
-    } else {
+    } else{
+        interview3a.style.width = "0";
+        interview3a.style.height = "0";
         interview3a.style.visibility = "hidden";
         interview3a.style.pointerEvents = "none";
     }
 
-
-
-
 });
+
+
+interview3a.addEventListener("wheel", function(event) {
+    event.preventDefault();
+    interview3a.scrollTop += event.deltaY * 0.3;
+
+}, { passive: false });
 
 
 
@@ -107,11 +111,10 @@ const interview3 = document.getElementById("interview2");
 const openInterview3 = document.getElementById("a3");
 
 
-let isToggled = false;
+openInterview1.onclick = function () {
+    const isVisible = interview1.style.display === "block";
 
-openInterview1.onclick = function(){
-    
-    if (isToggled){
+    if (isVisible) {
         setTimeout(() => {
             wallEssay.style.height = "0%";
             wallEssay.style.opacity = "0";
@@ -123,7 +126,8 @@ openInterview1.onclick = function(){
         closeWall.style.display = "none";
         essay.style.visibility = "visible";
         essayTitle.style.visibility = "visible";
-    }else{
+        interview3a.style.display = "none";
+    } else {
         setTimeout(() => {
             wallEssay.style.height = "80%";
             wallEssay.style.opacity = "1";
@@ -132,36 +136,24 @@ openInterview1.onclick = function(){
         interview1.style.display = "block";
         wallEssay.style.display = "block";
         wallNotion.style.display = "block";
-        closeWall.style.display = "block"
+        closeWall.style.display = "block";
         essay.style.visibility = "hidden";
         essayTitle.style.visibility = "hidden";
+        interview3a.style.display = "block";
     }
+};
 
-    isToggled = !isToggled;
 
-}
 
-openInterview2.onclick = function(){
-    if (isToggled){
-        interview2.style.display = "none";
-    }else{
-        interview2.style.display = "block";
-    }
+openInterview2.onclick = function () {
+    interview2.style.display = (interview2.style.display === "block") ? "none" : "block";
+    interview3.style.display = "none";
+};
 
-    isToggled = !isToggled;
-
-}
-
-openInterview3.onclick = function(){
-    if (isToggled){
-        interview3.style.display = "none";
-    }else{
-        interview3.style.display = "block";
-    }
-
-    isToggled = !isToggled;
-
-}
+openInterview3.onclick = function () {
+    interview3.style.display = (interview3.style.display === "block") ? "none" : "block";
+    interview2.style.display = "none";
+};
 
 const closeWall = document.getElementById("close-wall");
 
@@ -178,6 +170,7 @@ closeWall.onclick = function(){
     essay.style.visibility = "visible";
     essayTitle.style.visibility = "visible";
     closeWall.style.display = "none";
+    interview3a.style.display = "none";
 }
 
 
@@ -195,3 +188,9 @@ closeWall.onclick = function(){
 // }
 
 // addLines(10, 10);
+
+
+
+function openPopup3(url) {
+    window.open(url, '_blank', `width=${screen.width},height=${screen.height},top=0,left=0`);
+}
