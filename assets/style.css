@@ -267,15 +267,102 @@ transition: background-color .5s ease-in-out;
 
 
 
+#water{
+    position: absolute;
+    top: -6%;
+    left: 50%;
+    width: 40%;
+}
 
+  
   
 
 #heading{
     position: relative;
-    top: 15px;
-    left: 20px;
-    width: 70vw;
+    top: -5%;
+    left: -2%;
+    width: 75%;
     
+}
+
+
+#shine1{
+    position: absolute;
+    top: 15.5%;
+    left: -3.5%;
+    width: 15%;
+    animation: shrink 3s infinite alternate;
+}
+
+#shine2{
+    position: absolute;
+    top: -9.5%;
+    left: 2.3%;
+    /* top: 10.5%;
+    left: 45%; */
+    width: 15%;
+    animation: shrink 3s infinite alternate;
+}
+
+#shine3{
+    position: absolute;
+    top: 10.5%;
+    left: 45%;
+    width: 15%;
+    animation: shrink 3s infinite alternate;
+}
+
+#shine4{
+    position: absolute;
+    top: 10.5%;
+    left: 17.9%;
+    width: 20%;
+    animation: shrink 3s infinite alternate;
+}
+
+#shine5{
+    position: absolute;
+    top: 10.5%;
+    left: 17.9%;
+    width: 20%;
+    animation: shrink 3s infinite alternate;
+}
+
+#shine6{
+    position: absolute;
+    top: 42%;
+    left: 18%;
+    width: 10%;
+    animation: shrink 3s infinite alternate;
+}
+
+#shine7{
+    position: absolute;
+    top: 25%;
+    left: 61%;
+    width: 15%;
+    animation: shrink 3s infinite alternate;
+}
+
+
+@keyframes shrink{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.5);
+    }
+}
+
+
+#link2{
+    position: absolute;
+    top: 13%;
+    left: 19%;
+    width: 15%;
+    height: 3%;
+    z-index: 2;
+    /* background-color: red; */
 }
 
 #text1{
@@ -300,8 +387,18 @@ margin-left: -10px; */
     /* z-index: 12; */
 }
 
+#link1{
+    position: absolute;
+    top: 83%;
+    left: 35%;
+    width: 60%;
+    height: 6%;
+    transform: rotate(-10deg);
+    z-index: 12;
+    /* background-color: red; */
+}
 
-#text2 a, #text2 img {
+a{
     cursor: none;
 }
 

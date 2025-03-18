@@ -127,12 +127,24 @@ createSparks2();
 //   group.appendChild(ray.cloneNode(true));
 // }
 
-
-const nextButton = document.getElementById("text2");
+const pageLink = document.getElementById("link2");
+const nextButton = document.getElementById("link1");
 // const cursorCircle = document.getElementById("c-circle1");
 
+pageLink.onmouseenter = function(){
+  cursor.style.backgroundColor = "rgba(255, 17, 0, 0.8)";
+
+}
+
+pageLink.onmouseleave = function(){
+  cursor.style.backgroundColor = "";
+
+}
+
+
+
 nextButton.onmouseenter = function(){
-  cursor.style.backgroundColor = "rgba(255, 17, 0, 0.5)";
+  cursor.style.backgroundColor = "rgba(255, 17, 0, 0.8)";
 
 }
 
