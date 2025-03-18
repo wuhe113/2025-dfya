@@ -1,6 +1,7 @@
 html{
     overflow: hidden;
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
 
@@ -178,6 +179,7 @@ transition: background-color .5s ease-in-out;
     position: absolute;
     bottom: 0;
     mix-blend-mode: screen;
+    overflow: hidden;
 }
 
 #circle-light{
@@ -589,20 +591,37 @@ a{
     100% {transform: translateY(-30px) translateX(30px) scale(1.2);}
 }
 
-#behind-matter{
+/* #behind-matter{
     position: absolute;
     bottom: 0;
-    /* cursor: pointer; */
 }
 
 #front-matter{
     position: absolute;
     bottom: 0;
-    /* cursor: pointer; */
+} */
+
+#front-matter, #behind-matter {
+    position: absolute;
+    transform-origin: bottom center;
+    /* max-width: 100vw;
+    bottom: 0; */
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 
+
+
+
 @media only screen and (min-width: 2560px){
+
+    #cursor{
+        transform: scale(2);
+    }
 
     #water{
         position: absolute;
@@ -670,8 +689,8 @@ a{
     
     #shine7{
         position: absolute;
-        top: 25%;
-        left: 61%;
+        top: 20%;
+        left: 57.5%;
         width: 15%;
         animation: shrink 3s infinite alternate;
     }
@@ -731,6 +750,7 @@ a{
 }
 
 #fire{
+    position: absolute;
     transform: scale(2);
     transform-origin: bottom center;
     max-width: 100vw;
@@ -739,11 +759,15 @@ a{
 }
 
 #front-matter, #behind-matter {
-    transform: scale(2) translateX(25%);
-    transform-origin: bottom center;
+    position: absolute;
+    /* transform: scale(2) translateX(25%);
+    transform-origin: bottom center; */
     max-width: 100vw;
     bottom: 0;
     overflow: hidden;
+    /* position: absolute;
+    width: 100vw;
+    height: 100vh; */
 }
     
 }

@@ -153,19 +153,19 @@ nextButton.onmouseleave = function(){
 }
 
 
-const sectionButton = document.getElementById("section-button");
-const sectionChoice = document.getElementById("sections");
+// const sectionButton = document.getElementById("section-button");
+// const sectionChoice = document.getElementById("sections");
 
 
-sectionButton.onclick = function(event){
-    event.preventDefault();
+// sectionButton.onclick = function(event){
+//     event.preventDefault();
 
-    let currentDisplay = window.getComputedStyle(sectionChoice).display;
+//     let currentDisplay = window.getComputedStyle(sectionChoice).display;
 
-    if (currentDisplay === "none"){
-        sectionChoice.style.display = "block";
-    }else{
-        sectionChoice.style.display = "none";
-    }
+//     if (currentDisplay === "none"){
+//         sectionChoice.style.display = "block";
+//     }else{
+//         sectionChoice.style.display = "none";
+//     }
 
-}
+// }
