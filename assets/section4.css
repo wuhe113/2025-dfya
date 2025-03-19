@@ -1,0 +1,612 @@
+body{
+    background-color: black;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+
+#opening-logo{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    animation: disappear 5s ease-in-out forwards;
+}
+
+@keyframes disappear{
+    0%{
+        display:none;
+        opacity:0;
+    }
+
+    30%{
+        display:block;
+        opacity:1;
+    }
+
+    70%{
+        display:block;
+        opacity:1;
+    }
+
+    100%{
+        display:none;
+        opacity:0;
+    }
+
+}
+
+#end{
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 900, 'slnt' 0;
+    color: white;
+    font-size: 25vw;
+    text-wrap: nowrap;
+}
+
+
+.disappear{
+    animation: disappear 5s ease-in-out forwards;
+}
+
+
+#ending-credits{
+    position: relative;
+    visibility: hidden;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    top: 200%;
+
+}
+
+/* @keyframes scrolling{
+    from{
+        top:200%
+    }
+
+    to{
+        top:-500%
+    }
+}
+
+.scrolling-animation{
+    animation: scrolling 60s ease-in forwards;
+} */
+
+#part1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+}
+
+#part2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(30%);
+    gap: 5vw;
+}
+
+#part3{
+    display: flex;
+    flex-direction: column;
+    /* width: 50%; */
+    align-items: center;
+    transform: translateY(25vw);
+    gap: 5vw;
+}
+
+#designed, #edited, #coded, #cast{
+    position: relative;
+    text-align: center;
+    line-height: 2.1vw;
+}
+
+#excerpt{
+    position: relative;
+    text-align: center;
+}
+
+
+#author{
+    line-height: 2.1vw;
+}
+
+#excerpt h2{
+    line-height: 3vw;
+}
+
+
+
+
+
+
+#essay-title{
+    font-family: "dejavu-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5vw;
+}
+
+
+#cast-notion{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 10;
+    font-size: 1.5vw;
+
+}
+
+
+#interviewees{
+    transform: translateX(28%);
+    text-align: left;
+    align-items: baseline;
+}
+
+.move-left{
+    transform: translateX(-1.4%);
+}
+
+.move-left2{
+    transform: translateX(-2.2%);
+}
+
+.move-left3{
+    transform: translateX(-1.3%);
+}
+
+
+
+
+#typefaces{
+    position: relative;
+    transform: translateX(-10vw);
+    text-align: center;
+}
+
+#typeface-in-use{
+    transform: translateY(5%);
+    line-height: 2.5vw;
+    font-size: 1.5vw;
+}
+
+#mincho{
+    font-family: hiragino-mincho-pron, sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+
+#owners{
+    font-family: owners, sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+#isemin{
+    font-family: "isemin", sans-serif;
+font-weight: 900;
+font-style: normal;
+}
+
+#edu{
+    font-family: edu-au-vic-wa-nt-guides, sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+#tale{
+    font-family: dickens-tale-script, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+#plant{
+    font-family: plantagenet-cherokee;
+}
+
+@font-face {
+    font-family: plantagenet-cherokee;
+    src: url(fonts/plantagenet-cherokee.ttf);
+  }
+
+
+#arial{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#noto{
+    font-family: "Noto Sans JP", serif;
+    font-weight: 800;
+}
+
+#lores{
+    font-family: lores-12, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+#merchant{
+    font-family: 'Merchant Copy Doublesize', sans-serif;
+    font-weight: 400;
+}
+
+#pf{
+    font-family: "pf-pixelscript", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#thermal{
+    font-family: "thermal-variable", sans-serif;
+    font-variation-settings: "opsz" 500, "wght" 400;
+}
+
+#beachwood{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 800, 'slnt' 0;
+}
+
+#dejavu{
+    font-family: "dejavu-serif", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#align-part{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#others{
+    position: relative;
+    transform: translateX(15vw);
+    text-align: center;
+    line-height: 1.5vw;
+}
+
+#music{
+    transform: translateY(6vw);
+}
+
+#sound{
+    transform: translateY(6vw);
+}
+
+#sound-link{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#pixel{
+    transform: translateY(11vw);
+}
+
+#name3{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 600, 'slnt' 0;
+    font-size:1.3vw;
+}
+
+
+#logo-design{
+    position: relative;
+    text-align: center;
+    width: 30%;
+}
+
+#project-title{
+    position: relative;
+    text-align: center;
+    line-height: 3vw;
+}
+
+#supervised{
+    position: relative;
+    text-align: center;
+    line-height: 2.1vw;
+}
+
+#thanks{
+    position: relative;
+    text-align: center;
+    line-height: 2.1vw;
+}
+
+#thanks-names{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font-size: 1.3vw;
+}
+
+#last-words{
+    transform: translateY(70vw);
+    text-align: center;
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 400, 'slnt' 10;
+    font-size: 2.5vw;
+}
+
+#copyright{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font-size: 1.3vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.position1{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font-size: 1.5vw;
+}
+
+.name1{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 800, 'slnt' 0;
+    font-size: 2vw;
+}
+
+.position2{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 800, 'slnt' 0;
+    font-size: 2.2vw;
+}
+
+.order{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 200, 'slnt' 0;
+    font-size: 1.5vw;
+}
+
+.name2{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 600, 'slnt' 0;
+    font-size:1.7vw;
+}
+
+.character1{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font: 1.3vw;
+}
+
+.character2{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 600, 'slnt' 0;
+    font: 1.3vw;
+}
+
+.regular1{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font-size: 1.7vw;
+}
+
+
+.regular2{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font-size: 1.6vw;
+}
+
+.regular3{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font-size: 1.3vw;
+}
+
+.regular4{
+    font-family: "beachwood-variable",sans-serif;
+    font-variation-settings: 'wdth' 100, 'wght' 300, 'slnt' 0;
+    font-size: 2.5vw;
+}
+
+
+
+
+
+.slidecontainer {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 5%;
+    width: 90%;
+  }
+  
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #484848;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+.slider:hover {
+    opacity: 1;
+  }
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #767676;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+/* .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  } */
+
+
+
+
+
+
+#input-form{
+    position: fixed;
+    left: 5%;
+    bottom: 10%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    /* background-color: white; */
+}
+
+#comment-input{
+    width: 45%;
+    padding: 8px;
+    border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(174, 174, 174);
+    background-color: #484848;
+}
+
+#send-button{
+    padding: 8px;
+    border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(174, 174, 174);
+    background-color: #484848;
+    cursor: pointer;
+}
+
+#send-button:active{
+    background-color: #343434;
+}
+
+#section-button{
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(174, 174, 174);
+    background-color: #484848;
+    cursor: pointer;
+}
+
+#section-button:active{
+    background-color: #343434;
+}
+
+#sections{
+    position: fixed;
+    text-align: center;
+    display:none;
+    transform: translate(-20%,-13vw);
+    /* text-shadow: 0px 0px 5px rgb(0, 0, 0); */
+    line-height: 2vw;
+    background: #484848;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    padding: 10px;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+
+#sections:hover {
+    opacity: 1;
+  }
+
+
+#color-picker{
+    width: 3vw;
+    height: 3vw;
+}
+
+#closeChat-button{
+    width: 2.7vw;
+    height: 2.7vw;
+    padding: 2px;
+    border: 1px solid #ddd;
+	border-radius: 4px;
+    color: rgb(174, 174, 174);
+    background-color: #484848;
+    cursor: pointer;
+}
+
+#open{
+    visibility: visible;
+    width: 60%;
+    transform: translate(100%, -20%);
+}
+
+#chat{
+    position: absolute;
+    visibility: visible;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.bullet-chat {
+    position: absolute;
+    left: 100%;
+    white-space: nowrap;
+    color: white;
+    font-size: 16px;
+    animation: bulletMove linear infinite;
+}
+
+@keyframes bulletMove {
+    from {
+        left: 150%;
+    }
+    to {
+        left: -150%;
+    }
+}
+
+#back{
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 2vw;
+    cursor: pointer;
+}
