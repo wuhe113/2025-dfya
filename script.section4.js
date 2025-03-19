@@ -116,17 +116,12 @@ sectionButton.onclick = function(event){
 
 
 
-function openPopup1(url, width, height) {
+function openPopup(url, width, height) {
     let left = (screen.width - width) / 2;
     let top = (screen.height - height) / 2;
     window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
 }
 
-function openPopup2(url, width, height) {
-    let left = (screen.width - width) / 2;
-    let top = (screen.height - height) / 2;
-    window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top},resizable=no`);
-}
 
 
 
