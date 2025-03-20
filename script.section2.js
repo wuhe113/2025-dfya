@@ -1,5 +1,19 @@
 // window.open('page5.html', '_blank', 'width=922,height=663,resizable=no,scrollbars=no');
 // part of code is assisted with the help from ChatGPT for debugging and revising functions *especially the part that require user's clicking interaction and character's dialogue process
+const cursor = document.getElementById("cursor");
+
+document.onmousemove = function(e){
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+}
+
+document.onclick = function(e){
+    document.body.style.cursor = 'none';
+}
+
+
+
+
 
 const scrollScenes = document.getElementById("scenes");
 
@@ -502,6 +516,10 @@ const likeImg = document.getElementById("like");
 const closeObject = document.getElementById("close-object");
 
 
+const closeInstruction = document.getElementById("close-instruction");
+const instruction = document.getElementById("game-instruction");
+
+
 trigger3.onclick = function () {
     object1.style.visibility = "visible";
     postImg.style.visibility = "visible";
@@ -543,6 +561,11 @@ closeObject.onclick = function () {
 
 likeImg.onclick = function(){
     likeImg.setAttribute("src", "assets/PNG/like2.png");
+}
+
+closeInstruction.onclick = function(){
+    instruction.style.display = "none";
+    
 }
 
 

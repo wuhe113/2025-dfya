@@ -4,11 +4,33 @@ body,html {
     overflow: hidden;
     height: 100vh;
     width: 100vw;
+    cursor: none;
 }
 
 @font-face {
     font-family: Redaction35;
     src: url(fonts/Redaction_35-Regular.woff2);
+  }
+
+  #cursor{
+    position: fixed;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  #cursor img{
+    width: 3vw;
+  }
+
+  a {
+    cursor: none;
+  }
+
+  button{
+    cursor: none;
   }
   
 
@@ -50,7 +72,7 @@ body,html {
     height: 15vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #trigger2{
@@ -61,7 +83,7 @@ body,html {
     height: 15vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #trigger3{
@@ -72,7 +94,7 @@ body,html {
     height: 5vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #trigger4{
@@ -83,7 +105,7 @@ body,html {
     height: 7vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #trigger5{
@@ -94,7 +116,7 @@ body,html {
     height: 2.5vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #trigger6{
@@ -105,7 +127,7 @@ body,html {
     height: 23.5vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #scene2{
@@ -120,7 +142,7 @@ body,html {
     height: 24vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #trigger8{
@@ -131,7 +153,7 @@ body,html {
     height: 18vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #trigger9{
@@ -142,7 +164,7 @@ body,html {
     height: 5.5vw;
     background-color: pink;
     opacity: 0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 
@@ -163,7 +185,7 @@ body,html {
     position: relative;
     width: 18%;
     height: 100%;
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 101;
 }
 
@@ -183,7 +205,7 @@ body,html {
     color: rgb(124, 120, 97);
     font-family: lores-12, sans-serif;
     font-weight: 400;
-    cursor: pointer;
+    /* cursor: pointer; */
     text-align: center;
 }
 
@@ -200,7 +222,7 @@ body,html {
     font-size: 1.8vw;
     color: rgb(57, 56, 48);
     text-shadow: rgb(238, 237, 230) 1px 0 10px;
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 100;
 }
 
@@ -211,7 +233,7 @@ body,html {
     width: 18%;
     height: 100%;
     transform: translateX(-15px);
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 101;
     visibility: hidden;
 }
@@ -232,7 +254,7 @@ body,html {
     color: rgb(124, 120, 97);
     font-family: lores-12, sans-serif;
     font-weight: 400;
-    cursor: pointer;
+    /* cursor: pointer; */
     text-align: center;
 }
 
@@ -244,7 +266,7 @@ body,html {
     width: 31px;
     height: 31px;
     transform: scale(1.5);
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 105;
 }
 
@@ -351,7 +373,7 @@ body,html {
     bottom: 0px;  
     width: 100%;
     /* visibility: hidden; */
-    cursor: pointer;
+    /* cursor: pointer; */
     opacity: 90%;
 }
 
@@ -383,7 +405,7 @@ body,html {
     font-weight: 400;
     font-size: 1.2vw;
     color: rgb(238, 237, 230);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #choice1{
@@ -401,7 +423,7 @@ body,html {
     left: 14%;
     display: flex;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #choicetext1{
@@ -427,7 +449,7 @@ body,html {
     bottom: 0px;  
     width: 100%;
     /* visibility: hidden; */
-    cursor: pointer;
+    /* cursor: pointer; */
     opacity: 90%;
 }
 
@@ -459,7 +481,7 @@ body,html {
     font-weight: 400;
     font-size: 1.2vw;
     color: rgb(238, 237, 230);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #choice2{
@@ -478,7 +500,7 @@ body,html {
     left: 35%;
     display: flex;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #choicetext2{
@@ -503,7 +525,7 @@ body,html {
     bottom: 0px;  
     width: 100%;
     /* visibility: hidden; */
-    cursor: pointer;
+    /* cursor: pointer; */
     opacity: 90%;
 }
 
@@ -536,7 +558,7 @@ body,html {
     font-weight: 400;
     font-size: 1.2vw;
     color: rgb(238, 237, 230);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #choice3{
@@ -554,7 +576,7 @@ body,html {
     left: 14%;
     display: flex;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #choicetext3{
@@ -618,7 +640,7 @@ figcaption{
     position: fixed;
     width: 100%;
     top:10%;
-    cursor:pointer;
+    /* cursor:pointer; */
 }
 
 
@@ -704,7 +726,7 @@ figcaption{
     left: 66.5%;
     width: 2vw;
     height: 2vw;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #logo{
@@ -730,7 +752,51 @@ figcaption{
     color: rgb(57, 56, 48);
     text-shadow: rgb(238, 237, 230) 1px 0 10px;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
+}
+
+#game-instruction{
+    position: fixed;
+    display: block;
+    top: 0;
+    width: 100%;
+    align-items: center;
+
+}
+
+#instruction-text{
+    position: fixed;
+    top: 50.5%;
+    left: 52%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    color: rgb(165, 160, 130);
+
+}
+
+#instruction-list{
+    margin-top: 5%;
+    font-size: 1.8vw;
+    width: 85%;
+}
+
+
+.underline{
+    text-decoration: underline;
+}
+
+#close-instruction{
+    position: fixed;
+    top: 26.5%;
+    left: 71.5%;
+    transform: translate(-50%, -50%);
+    width: 2.5vw;
+    height: 2.5vw;
+    /* background-color: pink; */
 }
 
 #game-opening{
@@ -759,7 +825,7 @@ figcaption{
     font-style: normal;
     font-size: 4vw;
     color: rgb(124, 120, 97);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #title{
