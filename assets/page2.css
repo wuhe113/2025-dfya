@@ -430,8 +430,8 @@ body{
 #text1{
     position: absolute;
     top: 10px;
-    left: 420px;
-    width: 60%;
+    left: 430px;
+    width: 65%;
     color: #1A1A1A;
     transform: perspective(20em) rotateX(-20deg) skew(15deg);
     font-family: Arial, sans-serif;
@@ -441,6 +441,40 @@ body{
     text-wrap: balance;
     box-sizing: border-box;
     padding: 10px;
+    /* background-color: aqua; */
+}
+
+#text2{
+    position: absolute;
+    top: 278px;
+    left: 650px;
+    width: 45%;
+    color: #1A1A1A;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-indent: -8em;
+    text-wrap: balance;
+    box-sizing: border-box;
+    padding: 10px;
+    /* background-color: aqua; */
+}
+
+#text3{
+    transform: translateX(15%);
+    width: 90%;
+}
+
+#floor{
+    position: fixed;
+    transform: perspective(400px) rotateX(50deg);
+    transform-origin: bottom;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    height: 10%;
+    border-right: 3px solid #1A1A1A;
+    overflow: hidden;
     /* background-color: aqua; */
 }
 
@@ -466,6 +500,7 @@ body{
 
 #background-lines{
     position: absolute;
+
 }
 
 #manga-textbox1{
@@ -475,6 +510,52 @@ body{
     top: -20%;
     width: 35%;
     z-index: 100;
+}
+
+#section{
+    position: absolute;
+    top: -3%;
+    left: 10%;
+    transform: rotate(3deg) skew(3deg, 3deg);
+    font-size: 2.5vw;
+    font-family: owners, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #1A1A1A;
+    line-height: 28px;
+    z-index: 100;
+    text-align: center;
+}
+
+#section-jp{
+    position: absolute;
+    top: -3%;
+    left: 15%;
+    transform: rotate(3deg) skew(3deg, 3deg);
+    font-size: 1vw;
+    font-family: "Noto Sans JP", serif;
+    font-weight: 800;
+    color: #1A1A1A;
+    line-height: 2vw;
+    z-index: 100;
+    text-align: center;
+}
+
+#section-choice{
+    position: fixed;
+    top: 28%;
+    left: 8%;
+    transform: rotate(-30deg) skew(20deg);
+    font-family: "flood-std", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5vw;
+    line-height: 5vw;
+    -webkit-text-fill-color: #1A1A1A;
+    -webkit-text-stroke:  6px #EFEFEF;
+    text-stroke: 6px #EFEFEF;
+    paint-order: stroke fill;
+    z-index: 101;
 }
 
 #manga-textbox2{
@@ -502,12 +583,12 @@ body{
     top: 0px;
     left: 10px;
     height: 100%;
-    width: auto;
+    width: 10%;
   }
 
 #logo{
     transform: translateX(-20%);
-    width: 4.5%;
+    width: 45%;
 }
 
 #scrolling-text p{
