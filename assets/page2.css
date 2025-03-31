@@ -634,12 +634,13 @@ body{
     left: 10px;
     height: 100%;
     width: 6%;
+    align-items: center;
     /* background-color: aqua; */
 }
 
 #time{
-    transform: translateY(2%);
-    width: 45%;
+    transform: translate(-6%, 2%);
+    width: 48%;
 }
 
 
