@@ -147,7 +147,7 @@ let dots5Canvas = function(dots5) {
     };
 
     dots5.draw = function() {
-            drawGrid1(dots5, 0, 0, dots5.width, dots5.height * 0.1);
+            drawGrid1(dots5, 0, 0, dots5.width, dots5.height * 0.2);
 
     };
 

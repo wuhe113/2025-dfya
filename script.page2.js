@@ -49,3 +49,8 @@ sectionButton.onclick = function(event) {
   }
 };
 
+
+
+
+const clicking = new Audio();
+clicking.src = "assets/Music/persona.m4a";
