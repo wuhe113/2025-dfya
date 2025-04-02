@@ -157,7 +157,7 @@ body{
     position: absolute;
     width: 90%;
     height: 100%;
-    /* animation: scale 2s infinite alternate; */
+    animation: scale 2s infinite alternate;
 }
 
 @keyframes scale{
@@ -249,20 +249,63 @@ body{
     border-right: 1.5px solid #1A1A1A;
 }
 
+#block5{
+    position: absolute;
+    right: 23.8%;
+    width: 2.6%;
+    height: 100%;
+    background-color: #EFEFEF;
+    border-left: 3px solid #1A1A1A;
+    border-right: 3px solid #1A1A1A;
+}
+
+#block6{
+    position: absolute;
+    right: 24.5%;
+    width: 1.3%;
+    height: 100%;
+    background-color: #EFEFEF;
+    border-right: 3px solid #1A1A1A;
+    border-left: 1.5px solid #1A1A1A;
+}
+
+#block7{
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 70%;
+    height: 10%;
+    background-color: #EFEFEF;
+    border-left: 1.5px solid #1A1A1A;
+    border-right: 1.5px solid #1A1A1A;
+    border-top: 3px solid #1A1A1A;
+    border-bottom: 3px solid #1A1A1A;
+}
+
 #dots5{
     position: absolute;
-    width: 95%;
+    width: 67%;
     height: 100%;
     left: 6.5%;
+    background: linear-gradient(180deg, rgba(149,149,149,0) 0%, rgba(0,0,0,1) 100%);
     /* background-color: aqua; */
     overflow: hidden;
     opacity: 0.3;
 }
 
+#dots7{
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    right: 0;
+    background: linear-gradient(-90deg, rgba(149,149,149,1) 0%, rgba(0,0,0,1) 100%);
+    /* background-color: aqua; */
+}
+
 #text3{
     position: absolute;
     left: 6.5%;
-    width: 90%;
+    width: 65%;
     /* color: #1A1A1A; */
     -webkit-text-fill-color: #1A1A1A;
     -webkit-text-stroke: 2px #EFEFEF;
@@ -290,7 +333,6 @@ body{
     background-color: #1A1A1A;
     border-radius: 100%;
 }
-
 #next{
     position: absolute;
     /* display: inline-block;
@@ -298,8 +340,12 @@ body{
     bottom: 10%;
     right: 2%;
     font-family: plantagenet-cherokee;
-    color: #1A1A1A;
-    font-size: 20px;
+    /* color: #1A1A1A; */
+    -webkit-text-fill-color: #1A1A1A;
+    -webkit-text-stroke: 3px #EFEFEF;
+    text-stroke: 3px #EFEFEF;
+    paint-order: stroke fill;
+    font-size: 21px;
     line-height: 20px;
     text-decoration: underline;
     z-index:110;

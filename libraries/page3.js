@@ -147,7 +147,7 @@ let dots5Canvas = function(dots5) {
     };
 
     dots5.draw = function() {
-            drawGrid1(dots5, 0, 0, dots5.width * 0.6, dots5.height);
+            drawGrid1(dots5, 0, 0, dots5.width * 0.7, dots5.height);
 
     };
 
@@ -208,6 +208,41 @@ let dots6Canvas = function(dots6) {
     };
 }
 
+let dots7Canvas = function(dots7) {
+
+    dots7.setup = function() {
+        dots7.canvas = dots7.createCanvas(dots7.windowWidth * 0.6, dots7.windowHeight);
+        dots7.canvas.parent("dots7");
+
+    };
+
+    dots7.draw = function() {
+            drawGrid1(dots7, 0, 0, dots7.width, dots7.height);
+
+    };
+
+    function drawGrid1(dots7, rectX, rectY, rectW, rectH) {
+        let gap = 3;
+        let from = dots7.color(239, 239, 239, 10);
+        let to = dots7.color('black');
+
+        for (let x = rectX + gap / 2; x < rectX + rectW; x += gap) {
+            for (let y = rectY + gap / 2; y < rectY + rectH; y += gap) {
+                let amt = dots7.map(x, rectX + rectW, rectX, 1, 0);
+                let gradientColor = dots7.lerpColor(from, to, amt);
+                
+                dots7.fill(gradientColor);
+                dots7.noStroke();
+                dots7.circle(x, y, 2);
+            }
+        }
+    }
+
+    dots7.windowResized = function() {
+        dots7.resizeCanvas(dots7.windowWidth, dots7.windowHeight);
+    };
+}
+
 
 let dotsInstance = new p5(dotsCanvas);
 let dots2Instance = new p5(dots2Canvas);
@@ -215,3 +250,4 @@ let dots3Instance = new p5(dots3Canvas);
 let dots4Instance = new p5(dots4Canvas);
 let dots5Instance = new p5(dots5Canvas);
 let dots6Instance = new p5(dots6Canvas);
+let dots7Instance = new p5(dots7Canvas);
