@@ -211,7 +211,7 @@ let dots6Canvas = function(dots6) {
 let dots7Canvas = function(dots7) {
 
     dots7.setup = function() {
-        dots7.canvas = dots7.createCanvas(dots7.windowWidth * 0.6, dots7.windowHeight);
+        dots7.canvas = dots7.createCanvas(dots7.windowWidth, dots7.windowHeight);
         dots7.canvas.parent("dots7");
 
     };
