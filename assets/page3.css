@@ -40,17 +40,28 @@ body{
     overflow: hidden;
 }
 
-#textbox{
+/* #textbox{
     position: absolute;
     width: 120%;
     top: -46%;
     left: -10%;
+} */
+
+#phone2{
+    position: absolute;
+    transform: scale(1.2);
+    top: -20%;
+    left: 0%;
 }
 
 #text1{
     position: absolute;
-    width: 100%;
+    top: 2%;
+    left: 13%;
+    width: 68%;
+    height: 100%;
     color: #1A1A1A;
+    transform: rotate(9.5deg) skew(-18deg, -5deg);
     font-family: Arial, sans-serif;
     font-size: 18px;
     line-height: 21px;
@@ -58,6 +69,8 @@ body{
     box-sizing: border-box;
     padding-left: 10px;
     padding-top: 5px;
+    overflow-y: scroll;
+
 }
 
 
@@ -135,9 +148,25 @@ body{
     top: 4%;
     width: 20%;
     height: 60.5%;
+    background-color: #a4a4a4;
     border: 3px solid #1A1A1A;
     overflow: hidden;
 } 
+
+#background-lines{
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    /* animation: scale 2s infinite alternate; */
+}
+
+@keyframes scale{
+    from{
+        transform: scale(2);
+    }
+    to{
+        transform: scale(1);}
+}
 
 #phone{
     position: absolute;
@@ -159,6 +188,22 @@ body{
 
 #draw{
     position: absolute;
+}
+
+#draw-hand{
+    position: absolute;
+    top: -10%;
+    animation: move 1s infinite alternate ease-in-out;
+    /* transition: animation ease-in-out; */
+}
+
+@keyframes move{
+    from{
+        top: -10%;
+    }
+    to{
+        top: -5%;
+    }
 }
 
 
