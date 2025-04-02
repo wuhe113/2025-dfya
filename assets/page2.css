@@ -476,8 +476,8 @@ body{
     display: inline-block;
     color:#EFEFEF;
     text-indent: 0em;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.4vw;
+    height: 1.4vw;
     text-align: center;
     font-size: 15px;
     background-color: #1A1A1A;
@@ -488,11 +488,15 @@ body{
     position: absolute;
     /* display: inline-block;
     transform: translateX(11vw); */
-    bottom: 10%;
-    right: 8%;
+    bottom: 2%;
+    right: 5%;
     font-family: plantagenet-cherokee;
-    color: #1A1A1A;
-    font-size: 20px;
+    /* color: #1A1A1A; */
+    -webkit-text-fill-color: #1A1A1A;
+    -webkit-text-stroke: 3px #EFEFEF;
+    text-stroke: 3px #EFEFEF;
+    paint-order: stroke fill;
+    font-size: 21px;
     line-height: 20px;
     text-decoration: underline;
     z-index:110;

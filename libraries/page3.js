@@ -7,7 +7,7 @@ let dotsCanvas = function(dots) {
     };
 
     dots.draw = function() {
-            drawGrid1(dots, 0, 0, dots.width / 5.5, dots.height);
+            drawGrid1(dots, 0, 0, dots.width, dots.height * 0.05 + 10);
 
     };
 
@@ -18,7 +18,7 @@ let dotsCanvas = function(dots) {
 
         for (let x = rectX + gap / 2; x < rectX + rectW; x += gap) {
             for (let y = rectY + gap / 2; y < rectY + rectH; y += gap) {
-                let amt = dots.map(x, rectX + rectW, rectX, 0, 1);
+                let amt = dots.map(y, rectY + rectH, rectY, 1, 0);
                 let gradientColor = dots.lerpColor(from, to, amt);
                 
                 dots.fill(gradientColor);
@@ -42,7 +42,7 @@ let dots2Canvas = function(dots2) {
     };
 
     dots2.draw = function() {
-            drawGrid1(dots2, 0, 0, dots2.width * 0.01, dots2.height);
+            drawGrid1(dots2, 0, 0, dots2.width * 0.05, dots2.height);
 
     };
 
@@ -53,7 +53,7 @@ let dots2Canvas = function(dots2) {
 
         for (let x = rectX + gap / 2; x < rectX + rectW; x += gap) {
             for (let y = rectY + gap / 2; y < rectY + rectH; y += gap) {
-                let amt = dots2.map(x, rectX + rectW, rectX, 0, 1);
+                let amt = dots2.map(x, rectX + rectW, rectX, 1, 0);
                 let gradientColor = dots2.lerpColor(from, to, amt);
                 
                 dots2.fill(gradientColor);
@@ -77,7 +77,7 @@ let dots3Canvas = function(dots3) {
     };
 
     dots3.draw = function() {
-            drawGrid1(dots3, 0, 0, dots3.width, dots3.height * 0.05 - 10);
+            drawGrid1(dots3, 0, 0, dots3.width * 0.3, dots3.height);
 
     };
 
@@ -112,7 +112,7 @@ let dots4Canvas = function(dots4) {
     };
 
     dots4.draw = function() {
-            drawGrid1(dots4, 0, 0, dots4.width * 0.01, dots4.height);
+            drawGrid1(dots4, 0, 0, dots4.width  * 0.05, dots4.height);
 
     };
 
@@ -123,7 +123,7 @@ let dots4Canvas = function(dots4) {
 
         for (let x = rectX + gap / 2; x < rectX + rectW; x += gap) {
             for (let y = rectY + gap / 2; y < rectY + rectH; y += gap) {
-                let amt = dots4.map(x, rectX + rectW, rectX, 0, 1);
+                let amt = dots4.map(x, rectX + rectW, rectX, 1, 0);
                 let gradientColor = dots4.lerpColor(from, to, amt);
                 
                 dots4.fill(gradientColor);
@@ -142,12 +142,12 @@ let dots5Canvas = function(dots5) {
 
     dots5.setup = function() {
         dots5.canvas = dots5.createCanvas(dots5.windowWidth, dots5.windowHeight);
-        dots5.canvas.parent("floor");
+        dots5.canvas.parent("dots5");
 
     };
 
     dots5.draw = function() {
-            drawGrid1(dots5, 0, 0, dots5.width, dots5.height * 0.2);
+            drawGrid1(dots5, 0, 0, dots5.width * 0.6, dots5.height);
 
     };
 
@@ -158,7 +158,7 @@ let dots5Canvas = function(dots5) {
 
         for (let x = rectX + gap / 2; x < rectX + rectW; x += gap) {
             for (let y = rectY + gap / 2; y < rectY + rectH; y += gap) {
-                let amt = dots5.map(y, rectY + rectH, rectY, 1, 0);
+                let amt = dots5.map(x, rectX + rectW, rectX, 0, 1);
                 let gradientColor = dots5.lerpColor(from, to, amt);
                 
                 dots5.fill(gradientColor);
@@ -173,8 +173,45 @@ let dots5Canvas = function(dots5) {
     };
 }
 
+let dots6Canvas = function(dots6) {
+
+    dots6.setup = function() {
+        dots6.canvas = dots6.createCanvas(dots6.windowWidth, dots6.windowHeight);
+        dots6.canvas.parent("frame3");
+
+    };
+
+    dots6.draw = function() {
+            drawGrid1(dots5, 0, 0, dots6.width, dots6.height);
+
+    };
+
+    function drawGrid1(dots6Canvas, rectX, rectY, rectW, rectH) {
+        let gap = 3;
+        let from = dots6.color(239, 239, 239, 10);
+        let to = dots6.color('black');
+
+        for (let x = rectX + gap / 2; x < rectX + rectW; x += gap) {
+            for (let y = rectY + gap / 2; y < rectY + rectH; y += gap) {
+                let amt = dots6.map(x, rectX + rectW, rectX, 0, 1);
+                let gradientColor = dots6.lerpColor(from, to, amt);
+                
+                dots6.fill(gradientColor);
+                dots6.noStroke();
+                dots6.circle(x, y, 2);
+            }
+        }
+    }
+
+    dots6.windowResized = function() {
+        dots6.resizeCanvas(dots6.windowWidth, dots6.windowHeight);
+    };
+}
+
+
 let dotsInstance = new p5(dotsCanvas);
 let dots2Instance = new p5(dots2Canvas);
 let dots3Instance = new p5(dots3Canvas);
 let dots4Instance = new p5(dots4Canvas);
 let dots5Instance = new p5(dots5Canvas);
+let dots6Instance = new p5(dots6Canvas);
