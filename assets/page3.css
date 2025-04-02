@@ -157,7 +157,7 @@ body{
     position: absolute;
     width: 90%;
     height: 100%;
-    animation: scale 2s infinite alternate;
+    /* animation: scale 2s infinite alternate; */
 }
 
 @keyframes scale{
