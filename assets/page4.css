@@ -1,0 +1,106 @@
+body{
+    background-color: #EFEFEF;
+    animation: show 2s forwards;
+    overflow: hidden;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@font-face {
+    font-family: plantagenet-cherokee;
+    src: url(fonts/plantagenet-cherokee.ttf);
+}
+
+#frame1{
+    position: fixed;
+    left: 0%;
+    top: 0;
+    width: 30%;
+    height: 36%;
+    border-right: 3px solid #1A1A1A;
+    border-bottom: 3px solid #1A1A1A;
+    overflow: hidden;
+}  
+
+
+#text1{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 95%;
+    height: 100%;
+    color: #1A1A1A;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-wrap: balance;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 5px;
+    overflow-y: scroll;
+
+}
+
+#frame2{
+    position: fixed;
+    left: 31%;
+    top: 6%;
+    width: 65%;
+    height: 30%;
+    border: 3px solid #1A1A1A;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#text2{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 100%;
+    color: #1A1A1A;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-wrap: balance;
+    box-sizing: border-box;
+    padding: 5px;
+    overflow-y: scroll;
+
+}
+
+#frame3{
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    width: 96%;
+    height: 60%;
+    border-top: 3px solid #1A1A1A;
+    border-right: 3px solid #1A1A1A;
+    overflow: hidden;
+}
+
+#table{
+    position: absolute;
+    width: 100%;
+    top: -2%;
+    left: 0.5px;
+    /* transform: scale(1); */
+}
+
+#dots-move{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
