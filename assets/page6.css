@@ -1,0 +1,34 @@
+body{
+    background-color: #EFEFEF;
+    animation: show 2s forwards;
+    overflow: hidden;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@font-face {
+    font-family: plantagenet-cherokee;
+    src: url(fonts/plantagenet-cherokee.ttf);
+}
+
+
+#background-stars{
+    position: fixed;
+    height: 100%;
+}
+
+#pg1{
+    position: fixed;
+}
+
+#blossom{
+    width: 20%;
+}

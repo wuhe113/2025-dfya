@@ -1,0 +1,250 @@
+body{
+    background-color: #EFEFEF;
+    animation: show 2s forwards;
+    overflow: hidden;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@font-face {
+    font-family: plantagenet-cherokee;
+    src: url(fonts/plantagenet-cherokee.ttf);
+}
+
+#frame1{
+    position: fixed;
+    left: 4%;
+    top: 0;
+    width: 30%;
+    height: 80%;
+    border-left: 3px solid #1A1A1A;
+    border-right: 3px solid #1A1A1A;
+    border-bottom: 3px solid #1A1A1A;
+    overflow: hidden;
+}  
+
+#laptop{
+    position: absolute;
+}
+
+#frame2{
+    position: fixed;
+    left: 35%;
+    top: 4%;
+    width: 61%;
+    height: 35%;
+    border: 3px solid #1A1A1A;
+    overflow: hidden;
+    align-items: center;
+    overflow: hidden;
+}
+
+#text1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    /* top: 1%;
+    left: 2%; */
+    color: #1A1A1A;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-wrap: pretty;
+    box-sizing: border-box;
+    /* padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px; */
+    overflow-y: scroll;
+
+}
+
+#frame3{
+    position: fixed;
+    left: 35%;
+    bottom: 0;
+    width: 50%;
+    height: 59%;
+    border-top: 3px solid #1A1A1A;
+    border-left: 3px solid #1A1A1A;
+    border-right: 3px solid #1A1A1A;
+    overflow: hidden;
+}
+
+#text2{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 95%;
+    color: #1A1A1A;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-wrap: balance;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    overflow-y: scroll;
+
+}
+
+#bottom-text{
+    position: fixed;
+    display: flex;
+    left: 3.5%;
+    bottom: 0%;
+    align-items: center;
+}
+
+#logo{
+    width: 10%;
+}
+
+#bottom-text p{
+    display: inline-block;
+    white-space: nowrap;
+    margin-top: 20px;
+    font-size: 1.5vw;
+    font-family: "Noto Sans JP", serif;
+    font-weight: 800;
+    color: #1A1A1A;
+    cursor: default;
+}
+
+
+#next{
+    position: absolute;
+    /* display: inline-block;
+    transform: translateX(11vw); */
+    bottom: 2%;
+    right: 18%;
+    font-family: plantagenet-cherokee;
+    color: #1A1A1A;
+    /* -webkit-text-fill-color: #1A1A1A;
+    -webkit-text-stroke: 3px #EFEFEF;
+    text-stroke: 3px #EFEFEF;
+    paint-order: stroke fill; */
+    font-size: 21px;
+    line-height: 20px;
+    text-decoration: underline;
+    z-index:110;
+}
+
+#next span{
+    font-family: hiragino-mincho-pron, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
+
+
+#side-text {
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
+    width: 6%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: aqua; */
+    cursor: default;
+}
+
+
+
+#side-text p{
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    font-family: "Noto Sans JP", serif;
+    font-weight: 800;
+    /* color: #EFEFEF; */
+     -webkit-text-fill-color: #EFEFEF;
+    -webkit-text-stroke: 5px #1A1A1A;
+    text-stroke: 5px #1A1A1A;
+    paint-order: stroke fill;
+    text-shadow: #1A1A1A 5px 2px;
+}
+
+#side-text p span{
+    display: inline-block;
+    letter-spacing: -5px;
+    margin-left: -10px;
+    transform: rotate(10deg);
+}
+
+#side-text span{
+    display: inline-block;
+    transform: scale(1);
+    opacity: 0.3;
+}
+
+#side-text:hover span {
+    animation: popIn 1s forwards;
+  }
+
+@keyframes popIn {
+    0% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+
+  
+
+
+.footnote{
+    /* -webkit-text-fill-color: #EFEFEF;
+    -webkit-text-stroke: 0px;
+    text-stroke: 0px;
+    text-indent: 0em; */
+    width: 1.4vw;
+    height: 1.4vw;
+    text-align: center;
+    font-size: 14px;
+    color: #949494;
+    cursor: default;
+}
+
+#footnote-container{
+    position: fixed;
+    top: 81%;
+    left: 4%;
+    width: 30%;
+    background-color: aqua;
+}
+
+.reference{
+    position: absolute;
+    color: #1A1A1A;
+    font-family: Arial, sans-serif;
+    /* font-size: smaller; */
+    font-size: 12px;
+    text-wrap: balance;
+    visibility: hidden;
+    cursor: default;
+}
+
+
