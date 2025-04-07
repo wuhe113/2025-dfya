@@ -68,7 +68,7 @@ body{
 #frame1{
     position: fixed;
     left: 4%;
-    top: 8%;
+    top: 4%;
     width: 40%;
     height: 43%;
     background-color: #EFEFEF;
@@ -106,7 +106,7 @@ body{
 
 #frame2{
     position: fixed;
-    top:8%;
+    top:4%;
     left: 46%;
     width: 50%;
     height: 100%;
