@@ -116,10 +116,24 @@ body{
     white-space: nowrap;
     margin-top: 20px;
     font-size: 1.5vw;
-    font-family: "Noto Sans JP", serif;
-    font-weight: 800;
+    font-family: owners, sans-serif;
+    font-weight: 700;
+    font-style: normal;
     color: #1A1A1A;
     cursor: default;
+}
+
+#section-choices{
+    margin-top: 15px;
+    margin-left: 5px;
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+    font-family: owners, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #1A1A1A;
+    text-align: center;
+
 }
 
 

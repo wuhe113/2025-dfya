@@ -1,3 +1,17 @@
+function openPopup1(url, width, height) {
+    let left = (screen.width - width) / 2;
+    let top = (screen.height - height) / 2;
+    window.open(url, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
+}
+
+function openPopup2(url) {
+    window.open(url, '_blank', `width=${screen.width},height=${screen.height},top=0,left=0`);
+}
+
+
+
+
+
 const p = document.querySelector('#side-text p');
   const text = p.innerText.trim().split('\n');
   p.innerHTML = '';
