@@ -380,6 +380,11 @@ body{
     padding-top: 5px;
 }
 
+#text3 sub{
+    -webkit-text-fill-color: #949494
+
+}
+
 .footnote{
     width: 1.4vw;
     height: 1.4vw;
