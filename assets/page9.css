@@ -2,6 +2,7 @@ body{
     background-color: #EFEFEF;
     animation: show 2s forwards;
     /* overflow: hidden; */
+    overflow-x: hidden;
 }
 
 @keyframes show {
@@ -23,7 +24,7 @@ body{
     position: fixed;
     width: 100%;
     height: 100%;
-    transition: all 2s ease;
+    transition: all 1s ease;
 }
 
 #gradient{
@@ -31,9 +32,17 @@ body{
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(26,26,26,0) 100%);
-    transition: all 2s ease;
+    transition: all 1s ease;
 }
 
+#interview-logo{
+    position: absolute;
+    width: 45%;
+    top: 0;
+    right: -3%;
+    transition: all 2s ease;
+
+}
 
 
 #interview-content{
@@ -57,7 +66,14 @@ body{
     /* background-color: aqua; */
 }
 
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+
 .text-box{
+    position: relative;
     background-color: #EFEFEF;
     color: #1A1A1A;
     font-family: Arial, sans-serif;
