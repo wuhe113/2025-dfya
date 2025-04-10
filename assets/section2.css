@@ -72,8 +72,8 @@ body,html {
     position: absolute;
     top: 57%;
     left: 36%;
-    width: 5vw;
-    height: 15vw;
+    width: 40px;
+    height: 140px;
     background-color: pink;
     opacity: 0;
     /* cursor: pointer; */
@@ -83,8 +83,8 @@ body,html {
     position: absolute;
     top: 57%;
     left: 60%;
-    width: 5vw;
-    height: 15vw;
+    width: 40px;
+    height: 140px;
     background-color: pink;
     opacity: 0;
     /* cursor: pointer; */
@@ -94,8 +94,8 @@ body,html {
     position: absolute;
     top: 70%;
     left: 47%;
-    width: 5vw;
-    height: 5vw;
+    width: 40px;
+    height: 40px;
     background-color: pink;
     opacity: 0;
     /* cursor: pointer; */
@@ -105,8 +105,8 @@ body,html {
     position: absolute;
     top: 26%;
     left: 87%;
-    width: 4vw;
-    height: 7vw;
+    width: 40px;
+    height: 68px;
     background-color: pink;
     opacity: 0;
     /* cursor: pointer; */
@@ -116,8 +116,8 @@ body,html {
     position: absolute;
     top: 66.5%;
     left: 42.8%;
-    width: 1.5vw;
-    height: 2.5vw;
+    width: 15px;
+    height: 25px;
     background-color: pink;
     opacity: 0;
     /* cursor: pointer; */
@@ -127,12 +127,32 @@ body,html {
     position: absolute;
     top: 7%;
     left: 3.5%;
-    width: 18vw;
-    height: 23.5vw;
+    width: 165px;
+    height: 217px;
     background-color: pink;
     opacity: 0;
     /* cursor: pointer; */
 }
+
+#text-trigger1{
+    position: absolute;
+    top: 50%;
+    left: 78%;
+    width: 50px;
+    height: 68px;
+    transform: rotate(10deg);
+    background-color: pink;
+    opacity: 0;
+    /* cursor: pointer; */
+}
+
+
+
+
+
+
+
+
 
 #scene2{
     position: relative;
@@ -770,7 +790,7 @@ figcaption{
 
 #instruction-text{
     position: fixed;
-    top: 50.5%;
+    top: 50%;
     left: 52%;
     width: 40%;
     transform: translate(-50%, -50%);
@@ -778,12 +798,13 @@ figcaption{
     font-weight: 400;
     font-style: normal;
     font-size: 2vw;
+    line-height: 16px;
     color: rgb(165, 160, 130);
 
 }
 
 #instruction-list{
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 1.8vw;
     width: 85%;
 }
@@ -866,12 +887,12 @@ figcaption{
 }
 
 
-#essay-box1{
+#essay-box{
     position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
-    display: block;
+    display: none;
     overflow: hidden;
 }
 
@@ -897,10 +918,23 @@ figcaption{
 }
 
 #essay-content1{
-    display: block;
+    display: none;
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+#essay-content2{
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+#essay-content2 .essay-p2{
+    transform: translateY(180px);
+}
+
+
 
 .essay{
     position: absolute;
@@ -963,10 +997,62 @@ figcaption{
 }
 
 
-.footnote-container2 div:nth-child(4) {
-    transform: translateY(300px);
+#essay-content1 .footnote-container2 div:nth-child(4) {
+    transform: translateY(250px);
 }
 
-.footnote-container2 div:nth-child(5) {
-    transform: translateY(300px);
+#essay-content1 .footnote-container2 div:nth-child(5) {
+    transform: translateY(250px);
+}
+
+
+#essay-content2 .footnote-container1{
+    transform: translateY(50px);
+}
+
+#essay-content2 .footnote-container2{
+    transform: translateY(20px);
+}
+
+#essay-content2 .footnote-container2 div:nth-child(2) {
+    transform: translateY(170px);
+}
+
+
+#essay-content2 .footnote-container2 div:nth-child(3) {
+    transform: translateY(480px);
+}
+
+
+#close-essay{
+    position: fixed;
+    display: flex;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    color: rgb(57, 56, 48);
+    text-shadow: rgb(238, 237, 230) 1px 0 10px;
+    /* cursor: pointer; */
+}
+
+#key-to-read{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 12%;
+    left: 10.5%;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: rgb(238, 237, 230);
+    /* background-color: aqua; */
+}
+
+#key2{
+    width: 12%;
 }

@@ -11,29 +11,36 @@ document.onclick = function(e){
     document.body.style.cursor = 'none';
 }
 
+
+const essayBox = document.getElementById("essay-box");
+
 const essayContent1 = document.getElementById("essay-content1");
+const essayContent2 = document.getElementById("essay-content2");
 
 essayContent1.addEventListener("wheel", function(event) {
     event.preventDefault();
-    essayContent1.scrollTop += event.deltaY * 0.5;
 }, { passive: false });
 
-function showEssayContent1() {
-    essayContent1.style.display = 'block';
-    essayContent1.focus();
-}
+essayContent2.addEventListener("wheel", function(event) {
+    event.preventDefault();
+}, { passive: false });
 
-showEssayContent1();
+// function showEssayContent1() {
+//     essayContent1.style.display = 'block';
+//     essayContent1.focus();
+// }
 
-essayContent1.addEventListener('keydown', function(event) {
+// showEssayContent1();
+
+// essayContent1.addEventListener('keydown', function(event) {
     
 
-    if (event.key === 'ArrowDown') {
-        essayContent1.scrollTop += 10;
-    } else if (event.key === 'ArrowUp') {
-        essayContent1.scrollTop -= 10;
-    }
-});
+//     if (event.key === 'ArrowDown') {
+//         essayContent1.scrollTop += 10;
+//     } else if (event.key === 'ArrowUp') {
+//         essayContent1.scrollTop -= 10;
+//     }
+// });
 
 
 const scrollScenes = document.getElementById("scenes");
@@ -64,6 +71,7 @@ scrollScenes.addEventListener("wheel", (event) => {
 document.addEventListener("keydown", (event) => {
     const scrollScenesVisible = window.getComputedStyle(scrollScenes).display !== 'none';
     const essayContent1Visible1 = window.getComputedStyle(essayContent1).display !== 'none';
+    const essayContent1Visible2 = window.getComputedStyle(essayContent2).display !== 'none';
 
     if (scrollScenesVisible) {
         if (event.key === "ArrowRight") {
@@ -89,7 +97,26 @@ document.addEventListener("keydown", (event) => {
             essayContent1.scrollBy({ top: -50, behavior: "smooth" });
         }
     }
+
+    if (essayContent1Visible2) {
+        if (event.key === "ArrowDown") {
+            // essayContent1.scrollTop += 10;
+            essayContent2.scrollBy({ top: 50, behavior: "smooth" });
+        } else if (event.key === "ArrowUp") {
+            essayContent2.scrollBy({ top: -50, behavior: "smooth" });
+        }
+    }
 });
+
+
+const closeEssay = document.getElementById("close-essay");
+
+closeEssay.onclick = function(e){
+    essayBox.style.display = "none";
+    essayContent1.style.display = "none";
+    essayContent2.style.display = "none";
+
+}
 
 
 function openPopup1(url, width, height) {
@@ -562,6 +589,7 @@ const trigger3 = document.getElementById("trigger3");
 const trigger4 = document.getElementById("trigger4");
 const trigger5 = document.getElementById("trigger5");
 const trigger6 = document.getElementById("trigger6");
+const textTrigger1 = document.getElementById("text-trigger1");
 
 const object1 = document.getElementById("object1");
 const object2 = document.getElementById("object2");
@@ -603,6 +631,12 @@ trigger6.onclick = function () {
     postImg.style.visibility = "visible";
     likeImg.style.visibility = "visible";
     closeObject.style.display = "block";
+}
+
+textTrigger1.onclick = function () {
+    essayBox.style.display = "block";
+    essayContent1.style.display = "block";
+
 }
 
 closeObject.onclick = function () {
