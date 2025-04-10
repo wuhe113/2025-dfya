@@ -14,6 +14,8 @@ body,html {
 
   #cursor{
     position: fixed;
+    width: 30px;
+    height: auto;
     transform: translate(-50%, -50%);
     justify-content: center;
     align-items: center;
@@ -22,7 +24,9 @@ body,html {
   }
 
   #cursor img{
-    width: 3vw;
+    /* width: 3vw; */
+    /* width: 30px;
+    height: auto; */
   }
 
   a {
@@ -859,4 +863,110 @@ figcaption{
     color: rgb(255, 210, 241);
     text-shadow: rgb(238, 237, 230) 1px 0 20px;
     
+}
+
+
+#essay-box1{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+#gradient-block1{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 3%;
+    background: linear-gradient(180deg, rgba(68,66,62,1) 80%, rgba(68,66,62,0) 100%);
+}
+
+#gradient-block2{
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 3%;
+    /* background-color: aqua; */
+    background: linear-gradient(0deg, rgba(68,66,62,1) 80%, rgba(68,66,62,0) 100%);
+}
+
+#essay-content1{
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.essay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    font-family: "lores-21-serif", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: rgb(238, 237, 230);
+    box-sizing: border-box;
+    padding: 5px;
+    /* box-shadow: inset 0px 0px 40px 40px #44423e; */
+    /* background-color: aqua; */
+}
+
+
+.essay::-webkit-scrollbar {
+    display: none;
+  }
+
+
+/* .essay::-webkit-scrollbar-track {
+    background: rgb(238, 237, 230);
+  } */
+
+.essay-p1{
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.essay-p2{
+    font-size: 16px;
+    line-height: 18px;
+    text-indent: 50px;
+    margin: auto;
+    transform: translateY(10%);
+    width: 45%;
+}
+
+.footnote-container1{
+    position: absolute;
+    top: 20%;
+    font-size: 12px;
+    width: 20%;
+}
+
+.footnote-container2{
+    position: absolute;
+    top: 70%;
+    right: 0;
+    font-size: 12px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+
+.footnote-container2 div:nth-child(4) {
+    transform: translateY(300px);
+}
+
+.footnote-container2 div:nth-child(5) {
+    transform: translateY(300px);
 }

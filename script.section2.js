@@ -11,8 +11,29 @@ document.onclick = function(e){
     document.body.style.cursor = 'none';
 }
 
+const essayContent1 = document.getElementById("essay-content1");
 
+essayContent1.addEventListener("wheel", function(event) {
+    event.preventDefault();
+    essayContent1.scrollTop += event.deltaY * 0.5;
+}, { passive: false });
 
+function showEssayContent1() {
+    essayContent1.style.display = 'block';
+    essayContent1.focus();
+}
+
+showEssayContent1();
+
+essayContent1.addEventListener('keydown', function(event) {
+    
+
+    if (event.key === 'ArrowDown') {
+        essayContent1.scrollTop += 10;
+    } else if (event.key === 'ArrowUp') {
+        essayContent1.scrollTop -= 10;
+    }
+});
 
 
 const scrollScenes = document.getElementById("scenes");
@@ -23,20 +44,53 @@ scrollScenes.addEventListener("wheel", (event) => {
     event.preventDefault(); 
 });
 
+// document.addEventListener("keydown", (event) => {
+//     if (event.key === "ArrowRight") {
+//         scrollScenes.scrollLeft += 50;
+//     } else if (event.key === "ArrowLeft") {
+//         scrollScenes.scrollLeft -= 50;
+//     }
+
+//     if (scrollScenes.scrollLeft + scrollScenes.clientWidth >= scrollScenes.scrollWidth - 5) {
+//         nextButton.style.visibility = "visible"; 
+//     } else {
+//         nextButton.style.visibility = "hidden"; 
+//     }
+
+// });
+
+
+
 document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") {
-        scrollScenes.scrollLeft += 50;
-    } else if (event.key === "ArrowLeft") {
-        scrollScenes.scrollLeft -= 50;
+    const scrollScenesVisible = window.getComputedStyle(scrollScenes).display !== 'none';
+    const essayContent1Visible1 = window.getComputedStyle(essayContent1).display !== 'none';
+
+    if (scrollScenesVisible) {
+        if (event.key === "ArrowRight") {
+            // scrollScenes.scrollLeft += 50;
+            scrollScenes.scrollBy({ left: 50, behavior: "smooth" });
+        } else if (event.key === "ArrowLeft") {
+            // scrollScenes.scrollLeft -= 50;
+            scrollScenes.scrollBy({ left: -50, behavior: "smooth" });
+        }
+
+        if (scrollScenes.scrollLeft + scrollScenes.clientWidth >= scrollScenes.scrollWidth - 5) {
+            nextButton.style.visibility = "visible"; 
+        } else {
+            nextButton.style.visibility = "hidden"; 
+        }
     }
 
-    if (scrollScenes.scrollLeft + scrollScenes.clientWidth >= scrollScenes.scrollWidth - 5) {
-        nextButton.style.visibility = "visible"; 
-    } else {
-        nextButton.style.visibility = "hidden"; 
+    if (essayContent1Visible1) {
+        if (event.key === "ArrowDown") {
+            // essayContent1.scrollTop += 10;
+            essayContent1.scrollBy({ top: 50, behavior: "smooth" });
+        } else if (event.key === "ArrowUp") {
+            essayContent1.scrollBy({ top: -50, behavior: "smooth" });
+        }
     }
-
 });
+
 
 function openPopup1(url, width, height) {
     let left = (screen.width - width) / 2;
@@ -47,6 +101,9 @@ function openPopup1(url, width, height) {
 function openPopup2(url) {
     window.open(url, '_blank', `width=${screen.width},height=${screen.height},top=0,left=0`);
 }
+
+
+
 
 
 
