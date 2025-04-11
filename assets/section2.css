@@ -195,6 +195,15 @@ body,html {
 
 
 
+#scene3{
+    position: relative;
+}
+
+
+
+
+
+
 
 #buttons {
     display: flex;
