@@ -323,10 +323,14 @@ font-style: normal;
     font-size: 15px;
 }
 
+
+
 #text1{
     position: absolute;
-    top: 45px;
-    left: 730px;
+    top: 12%;
+    left: 54%;
+    /* top: 45px;
+    left: 730px; */
     width: 40%;
     height: 100%;
     color: #1A1A1A;
@@ -346,7 +350,7 @@ font-style: normal;
 #frame2{
     position: absolute;
     bottom: 0px;
-    left: 60px;
+    left: 4.5%;
     height: 48%;
     width: 35%;
     border-top: 3px solid #1A1A1A;
@@ -357,17 +361,23 @@ font-style: normal;
 
 #comicbook{
     position: absolute;
-    top: -30px;
+    top: -10%;
+    left: -10%;
+    width: 90%;
+    /* top: -30px;
     left: -40px;
-    width: 400px;
+    width: 400px; */
     transform: rotate(-20deg);
 }
 
 #mangabook{
     position: absolute;
-    top: -55px;
+    top: -12%;
+    left: -12%;
+    width: 100%;
+    /* top: -55px;
     left: -55px;
-    width: 450px;
+    width: 450px; */
     transition: all 5s ease;
     cursor: pointer;
 }
@@ -528,339 +538,73 @@ font-style: normal;
     font-style: normal;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 1440px){
-    #text1{
-        position: absolute;
-        top: 50px;
-        left: 730px;
-        width: 45%;
-        height: 100%;
-        transform: perspective(40em) rotateY(20deg) rotate(2deg) skew(2deg);
-        /* transform: perspective(4cm); */
-        font-family: Arial, sans-serif;
-        font-size: 25px;
-        line-height: 30px;
-        text-wrap: balance;
-        /* background-color: aqua; */
-        overflow: scroll;
-        box-sizing: border-box;
-        padding: 10px;
-    }
+#content-wrapper{
+    width: 100%;
+    height: 100%;
 }
 
-@media only screen and (min-width: 2560px){
+#resize-notion{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    font-family: plantagenet-cherokee;
+    color: #1A1A1A;
+    font-size: 2vw;
+    line-height: 2.3vw;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-align: center;
+    visibility: hidden;
+}
 
-    #tree{
-        position: absolute;
-        left: 205px;
-        width: 1000px;
-        z-index: 110;
-    }
-
-    #petals{
-        position: absolute;
-        left: 450px;
-        width: 500px;
-        height: 100%;
-        transform: scale(2);
-        overflow: hidden;
-    }
-    
-    #reflection1{
-        position: absolute;
-        left: 650px;
-        width: 130px;
-        height: 500px;
-        transform: skew(-40deg, 0deg);
-        opacity: 0.8;
-        z-index: 99;
-        /* background-color: aqua; */
-        background: linear-gradient(180deg, rgb(248, 248, 248) 30%, rgba(255,255,255,0) 100%);
-    }
-    
-    #reflection2{
-        position: absolute;
-        top: 70px;
-        left: 1550px;
-        width: 50px;
-        height: 400px;
-        transform: skew(-40deg) rotate(2deg);
-        opacity: 0.8;
-        z-index: 99;
-        /* background-color: aqua; */
-        background: linear-gradient(180deg, rgb(248, 248, 248) 30%, rgba(255,255,255,0) 100%);
-    }
-    
-    #windowLines1{
-        position: absolute;
-        left: 205px;
-        width: 1000px;
-        height: 100%;
-        overflow: hidden;
-        z-index: 100;
-    }
-    
-    
-    #windowLines2{
-        position: absolute;
-        left: 1300px;
-        width: 1100px;
-        height: 100%;
-        overflow: hidden;
-        z-index: 100;
-    }
-    
-    #frame1{
-        position: relative;
-        height: 48%;
-        border-bottom: 4px solid #1A1A1A;
-        overflow: hidden;
-    }
-    
-    #line1{
-        position: absolute;
-        left: 40px;
-        height: 100%;
-        width: 3px;
-        background-color: #1A1A1A;
-    }
-    
-    #line2{
-        position: absolute;
-        left: 48px;
-        height: 100%;
-        width: 3px;
-        background-color: #1A1A1A;
-    }
-    
-    #line3{
-        position: absolute;
-        left: 55px;
-        height: 100%;
-        width: 4px;
-        background-color: #1A1A1A;
-    }
-    
-    #line4{
-        position: absolute;
-        left: 160px;
-        height: 100%;
-        width: 4px;
-        background-color: #1A1A1A;
-    }
-    
-    #line5{
-        position: absolute;
-        left: 205px;
-        height: 100%;
-        width: 3px;
-        background-color: #1A1A1A;
-    }
-    
-    #line6{
-        position: absolute;
-        left: 1200px;
-        height: 100%;
-        width: 4px;
-        background-color: #1A1A1A;
-    }
-    
-    #line7{
-        position: absolute;
-        left: 1300px;
-        height: 100%;
-        width: 4px;
-        background-color: #1A1A1A;
-    }
-    
-    #block1{
-        position: absolute;
-        top: -65px;
-        left: 1500px;
-        height: 100px;
-        width: 1500px;
-        transform:rotate(6deg);
-        background-color: #EFEFEF;
-        /* background-color: aqua; */
-    
-    }
-    
-    #line12{
-        position: absolute;
-        top: 35px;
-        left: 1500px;
-        height: 4px;
-        width: 1500px;
-        transform:rotate(6deg);
-        background-color: #1A1A1A;
-    }
-    
-    
-    #line13{
-        position: absolute;
-        top: 35px;
-        left: 1600px;
-        height: 3px;
-        width: 1500px;
-        transform:rotate(6deg);
-        background-color: #1A1A1A;
-    }
-    
-    #line8{
-        position: absolute;
-        right: 150px;
-        height: 100%;
-        width: 60px;
-        transform: skew(-7deg, -7deg) rotate(-7deg);
-        background-color: #EFEFEF;
-        border: 3px solid #1A1A1A;
-        transition: top 0.01s ease;
-        z-index: 100;
-    }
-
-    #line10{
-        position: absolute;
-        right: 133px;
-        height: 100%;
-        width: 3px;
-        background-color: #1A1A1A;
-        z-index: 100;
-    }
-    
-    #line11{
-        position: absolute;
-        right: 115px;
-        height: 100%;
-        width: 4px;
-        background-color: #1A1A1A;
-        z-index: 100;
-    }
-    
-    #block3{
-        position: absolute;
-        right: 0px;
-        height: 100%;
-        width: 150px;
-        /* background-color: aqua; */
-        background-color: #EFEFEF;
-        z-index: 100;
-    }
-
-    #block2{
-        position: absolute;
-        top: 25px;
-        left: 1525px;
-        height: 24px;
-        width: 1200px;
-        transform:rotate(6deg);
-        background-color: #1A1A1A;
-    
-    }
-    
-    #line14{
-        position: absolute;
-        top: 80px;
-        left: 1300px;
-        height: 3px;
-        width: 1300px;
-        transform:rotate(6deg);
-        background-color: #1A1A1A;
-    }
-    
-    
-    #line15{
-        position: absolute;
-        top: 0px;
-        left: 1100px;
-        height: 3px;
-        width: 100px;
-        transform:rotate(6deg);
-        background-color: #1A1A1A;
-    }
-    
-    #block4{
-        position: absolute;
-        top: -20px;
-        left: 1100px;
-        height: 20px;
-        width: 100px;
-        transform:rotate(6deg);
-        /* background-color: aqua; */
-        background-color: #EFEFEF;
-    }
-    
-    #title{
-        position: absolute;
-        top: -40px;
-        left: -80px;
-        width: 1500px;
-        z-index: 110;
-    }
-    
-    /* #title p{
-        font-family: "edu-au-vic-wa-nt-guides", sans-serif;
+#resize-notion span{
+    font-family: hiragino-mincho-pron, sans-serif;
     font-weight: 600;
     font-style: normal;
-    } */
-
-    #title2{
-        position: absolute;
-        font-family: plantagenet-cherokee;
-        color: #1A1A1A;
-        -webkit-text-stroke: 5px #EFEFEF;
-        text-stroke: 5px #EFEFEF;
-        font-size: 35px;
-        paint-order: stroke fill;
-        line-height: 35px;
-        left: 230px;
-        bottom: 10px;
-        z-index: 110;
-        /* -webkit-text-fill-color: #1A1A1A; */
-    }
-    
-    #title2 span{
-        font-family: "edu-au-vic-wa-nt-guides", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 25px;
-    }
-    
-    #text1{
-        position: absolute;
-        top: 100px;
-        left: 1370px;
-        width: 40%;
-        height: 100%;
-        transform: perspective(40em) rotateY(20deg) rotate(2deg) skew(2deg);
-        /* transform: perspective(4cm); */
-        font-family: Arial, sans-serif;
-        font-size: 44px;
-        line-height: 48px;
-        text-wrap: balance;
-        /* background-color: aqua; */
-        overflow: scroll;
-        box-sizing: border-box;
-        padding: 10px;
-    }
-    
 }
+
+
+
+
+
+
+
+
+@media (max-width: 1199px) {
+    #content-wrapper{
+        filter: blur(20px);
+        transition: filter 0.5s ease;
+
+    }
+
+    #resize-notion{
+        visibility: visible !important; 
+    }
+
+  }
+  
+
+@media (min-width: 1401px) {
+    #content-wrapper{
+        filter: blur(20px);
+        transition: filter 0.5s ease;
+
+    }
+
+    #resize-notion{
+        visibility: visible !important; 
+    }
+
+  }
+  
+
+
+
+
+
+
 
 
 

@@ -39,6 +39,7 @@
     </head>
 
     <body>
+      <div id="content-wrapper">
         <div id="frame1">
             <div id="dots"></div>
             <div id="window1"></div>
@@ -166,10 +167,10 @@
 
             <div id="section-choice">
               <ul>
-              <li class="choices">Section 1</li>
-              <li class="choices">Section 2</li>
-              <li class="choices">Section 3</li>
-              <li class="choices">Section 4</li>
+              <a href="index.html" onclick="openPopup1('index.html', 1353, 725); return false;"><li class="choices">Section 1</li></a>
+              <a href="section2.html" onclick="openPopup1('section2.html', 922, 574); return false;"><li class="choices">Section 2</li></a>
+              <a href="section3.html" onclick="openPopup1('page6.html', 1200, 825); return false;"><li class="choices">Section 3</li></a>
+              <a href="section4.html" onclick="openPopup2('section4.html'); return false;"><li class="choices">Section 4</li></a>
               </ul>
             </div>
 
@@ -222,6 +223,14 @@
                 <br><span>!!</span>
             </p>
         </div>
+      </div>
+
+
+      <div id="resize-notion">
+        <span>⍇ 表示サイズを調整して読む ⍈</span>
+        <br>!! Resize to view the content !!
+    </div>
+
     </body>
 
 
