@@ -220,29 +220,44 @@ startButton.onclick = function(){
 const trigger1 = document.getElementById("trigger1");
 const trigger2 = document.getElementById("trigger2");
 const trigger7 = document.getElementById("trigger7");
+const trigger10 = document.getElementById("trigger10");
+const trigger11 = document.getElementById("trigger11");
 
 const characterImg1 = document.getElementById("character1-img");
 const characterImg2 = document.getElementById("character2-img");
 const characterImg3 = document.getElementById("character3-img");
+const characterImg4 = document.getElementById("character4-img");
+const characterImg5 = document.getElementById("character5-img");
 
 const textbox1 = document.getElementById("textbox1");
 const textbox2 = document.getElementById("textbox2");
 const textbox3 = document.getElementById("textbox3");
+const textbox4 = document.getElementById("textbox4");
+const textbox5 = document.getElementById("textbox5");
+
 const character1 = document.getElementById("character1");
 const character2 = document.getElementById("character2");
 const character3 = document.getElementById("character3");
+const character4 = document.getElementById("character4");
+const character5 = document.getElementById("character5");
 
 const textElement = document.getElementById("text1");
 const textElement2 = document.getElementById("text2");
 const textElement3 = document.getElementById("text3");
+const textElement4 = document.getElementById("text4");
+const textElement5 = document.getElementById("text5");
 
 const choice1 = document.getElementById("choice1");
 const choice2 = document.getElementById("choice2");
 const choice3 = document.getElementById("choice3");
+const choice4 = document.getElementById("choice4");
+const choice5 = document.getElementById("choice5");
 
 const choiceContainer1 = document.getElementById("choice-container1");
 const choiceContainer2 = document.getElementById("choice-container2");
 const choiceContainer3 = document.getElementById("choice-container3");
+const choiceContainer4 = document.getElementById("choice-container4");
+const choiceContainer5 = document.getElementById("choice-container5");
 
 
 
@@ -376,6 +391,62 @@ const choiceTexts3 = [
 ];
 
 
+const texts4 = [
+    "Games, specifically console games, not mobile games.",
+    "I think games are inherently more immersive compared to other mediums.",
+    "Firstly, the game allows players to build romantic relationships with characters.",
+    "The turning point was replaying the game.",
+    "Astarion’s humor, particularly his dark humorous jokes, resonated with me.",
+    "It’s really complicated. I think there are both good and bad aspects to its impact on me.",
+    "First and foremost, I’ve invested a significant amount of time into the game.",
+
+
+];
+
+
+const choiceTexts4 = [
+    "Why do you think console games are the medium that allows you to feel the deepest connection with fictional characters?",
+    "Based on this medium, how did you establish a parasocial relationship with the fictional character?",
+    "What was the turning point that changed your perception of this character and made you want to establish a parasocial relationship with him?",
+    "How did the character emotionally or otherwise resonate with you, making you genuinely like him?",
+    "This storyline feels very realistic… So, do you think this relationship has had an impact on your real life? Is it positive, negative, or both?",
+    "There are indeed many people who don’t understand such relationships, which is why I think it’s important to explore why people like us form these connections with fictional characters and what emotional dynamics accompany these relationships. After establishing this relationship, have you made any efforts to nurture it?",
+
+
+
+
+
+
+];
+
+const texts5 = [
+    "When I was in middle school, I stumbled upon a fan comic of him online and was instantly drawn to him.",
+    "I think it depends on the game.",
+    "I think it was a natural emotional impulse—a feeling of love.",
+    "At first, I enjoyed more about his interaction with other characters from the game and imagined fewer stories between us.",
+    "Actually, I’ve been drawing him and myself since I first started making art.",
+    "Both, I think.",
+    "Yes…He’ll always be here."
+
+
+];
+
+
+const choiceTexts5 = [
+    "Video game live streaming is an indirect way to engage with a game’s characters compared to playing the game yourself, yet people like you still form intense bonds with the fictional characters. Given this, how did you build such a strong connection with Kokichi Oma through this medium?",
+    "Why do you think you formed this kind of relationship? How did the character resonate with you emotionally or in other ways?",
+    "You mentioned that this relationship has been established for eight years and you said your love for him has only grown. Beyond that, how else do you feel this relationship has evolved over time?",
+    "Since you brought it up, what inspired you to start creating art related to Kokichi Oma?",
+    "Both a lover and a muse! Do you feel this relationship has impacted your real life? Positively, negatively, or both?",
+
+
+
+
+
+
+];
+
+
 
 
 let textIndex1 = 0;
@@ -387,16 +458,27 @@ let choiceIndex2 = 0;
 let textIndex3 = 0;
 let choiceIndex3 = 0;
 
-let timeout1, timeout2, timeout3, timeout4, timeout5, timeout6;
+let textIndex4 = 0;
+let choiceIndex4 = 0;
+
+let textIndex5 = 0;
+let choiceIndex5 = 0;
+
+
+let timeout1, timeout2, timeout3, timeout4, timeout5, timeout6, timeout7, timeout8, timeout9, timeout10;
 
 
 const choiceText = document.getElementById("choicetext1");
 const choiceText2 = document.getElementById("choicetext2");
 const choiceText3 = document.getElementById("choicetext3");
+const choiceText4 = document.getElementById("choicetext4");
+const choiceText5 = document.getElementById("choicetext5");
 
 const facial1 = ["assets/PNG/penny1.png", "assets/PNG/penny2.png", "assets/PNG/penny3.png"];
 const facial2 = ["assets/PNG/catherine1.png", "assets/PNG/catherine2.png", "assets/PNG/catherine3.png"];
 const facial3 = ["assets/PNG/sammi1.png", "assets/PNG/sammi2.png", "assets/PNG/sammi3.png"];
+const facial4 = ["assets/PNG/tasty1.png", "assets/PNG/tasty2.png", "assets/PNG/tasty3.png"];
+const facial5 = ["assets/PNG/skirua1.png", "assets/PNG/skirua2.png", "assets/PNG/skirua3.png"];
 
 const closeDialogue = document.getElementById("close-dialogue");
 
@@ -412,6 +494,12 @@ closeDialogue.onclick = function () {
     clearTimeout(timeout5);
     clearTimeout(timeout6);
 
+    clearTimeout(timeout7);
+    clearTimeout(timeout8);
+
+    clearTimeout(timeout9);
+    clearTimeout(timeout10);
+
     textElement.innerText = ""; 
     choiceText.innerText = "";
 
@@ -420,6 +508,12 @@ closeDialogue.onclick = function () {
 
     textElement3.innerText = ""; 
     choiceText3.innerText = "";
+
+    textElement4.innerText = ""; 
+    choiceText4.innerText = "";
+
+    textElement5.innerText = ""; 
+    choiceText5.innerText = "";
 
 
     resetElements();
@@ -441,6 +535,14 @@ function resetElements() {
     character3.style.visibility = "hidden";
     choice3.style.visibility = "hidden";
     choiceContainer3.style.visibility = "hidden";
+
+    character4.style.visibility = "hidden";
+    choice4.style.visibility = "hidden";
+    choiceContainer4.style.visibility = "hidden";
+
+    character5.style.visibility = "hidden";
+    choice5.style.visibility = "hidden";
+    choiceContainer5.style.visibility = "hidden";
 
 
     closeDialogue.style.visibility = "hidden";
@@ -465,6 +567,14 @@ function resetElements() {
     textElement3.dataset.text = "Hi, I'm Sammi, 22 years old, and I'm a student majoring in metal art & jewelry.";
     choiceText3.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
 
+    textElement4.innerText = "";  
+    textElement4.dataset.text = "Hi, you can call me tastycorpse, she/her, 21 years old, and I'm currently a student.";
+    choiceText4.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with fictional characters. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
+
+    textElement5.innerText = "";  
+    textElement5.dataset.text = "Hello, I’m skirua. I use she/her pronouns, am 22 years old, and currently work as an artist—though not in the traditional sense. I do things I enjoy, like painting self-portraits and creating doll avatars that express my emotions.";
+    choiceText5.innerText = "Before you were selected as the interviewee, I learned that you have experience building parasocial relationships with Kokichi Oma. Could you briefly describe through which mediums (manga/comics, anime/animation, games, novels, movies, TV dramas, etc.) you primarily establish such relationships with fictional characters?";
+
     textIndex1 = 0;
     choiceIndex1 = 0;
 
@@ -474,20 +584,32 @@ function resetElements() {
     textIndex3 = 0;
     choiceIndex3 = 0;
 
+    textIndex4 = 0;
+    choiceIndex4 = 0;
+
+    textIndex5 = 0;
+    choiceIndex5 = 0;
+
     // **Set Default Image (No More Random First Image)**
     characterImg1.setAttribute("src", "assets/PNG/penny1.png");
     characterImg2.setAttribute("src", "assets/PNG/catherine1.png");
     characterImg3.setAttribute("src", "assets/PNG/sammi1.png");
+    characterImg4.setAttribute("src", "assets/PNG/tasty1.png");
+    characterImg5.setAttribute("src", "assets/PNG/skirua1.png");
 
 
     clearTimeout(timeout1);
     clearTimeout(timeout3);
     clearTimeout(timeout5);
+    clearTimeout(timeout7);
+    clearTimeout(timeout9);
 
 
     textElement.innerText = "";  // Force clear before starting again
     textElement2.innerText = "";
     textElement3.innerText = "";
+    textElement4.innerText = "";
+    textElement5.innerText = "";
 
     // setTimeout(() => {
     //     typeEffect(textElement, timeout1, 80);
@@ -498,11 +620,15 @@ function resetElements() {
         typeEffect(textElement, 80);
         typeEffect(textElement2, 80);
         typeEffect(textElement3, 80);
+        typeEffect(textElement4, 80);
+        typeEffect(textElement5, 80);
     }, 50);
     
     textbox1.onclick = null;
     textbox2.onclick = null;
     textbox3.onclick = null;
+    textbox4.onclick = null;
+    textbox5.onclick = null;
 }
 
 
@@ -583,18 +709,82 @@ trigger7.onclick = function () {
     }, 3500);
 };
 
+trigger10.onclick = function () {
+    resetElements();
+
+    character4.style.visibility = "visible";
+    closeDialogue.style.visibility = "visible";
+
+    clearTimeout(timeout7);
+    clearTimeout(timeout8);
+
+    timeout7 = setTimeout(() => {
+        typeEffect(textElement4, timeout7, 80);
+    });
+
+    timeout8 = setTimeout(() => {
+        choice4.style.visibility = "visible";
+        choiceContainer4.style.visibility = "visible";
+    }, 3500);
+};
+
+trigger11.onclick = function () {
+    resetElements();
+
+    character5.style.visibility = "visible";
+    closeDialogue.style.visibility = "visible";
+
+    clearTimeout(timeout9);
+    clearTimeout(timeout10);
+
+    timeout9 = setTimeout(() => {
+        typeEffect(textElement5, timeout9, 80);
+    });
+
+    timeout10 = setTimeout(() => {
+        choice5.style.visibility = "visible";
+        choiceContainer5.style.visibility = "visible";
+    }, 3500);
+};
+
+
+
 
 
 const trigger3 = document.getElementById("trigger3");
 const trigger4 = document.getElementById("trigger4");
 const trigger5 = document.getElementById("trigger5");
 const trigger6 = document.getElementById("trigger6");
+const trigger8 = document.getElementById("trigger8");
+const trigger9 = document.getElementById("trigger9");
+const trigger12 = document.getElementById("trigger12");
+const trigger13 = document.getElementById("trigger13");
+const trigger14 = document.getElementById("trigger14");
+const trigger15 = document.getElementById("trigger15");
+const trigger16 = document.getElementById("trigger16");
+const trigger17 = document.getElementById("trigger17");
+const trigger18 = document.getElementById("trigger18");
+const trigger19 = document.getElementById("trigger19");
+
+
 const textTrigger1 = document.getElementById("text-trigger1");
+const textTrigger2 = document.getElementById("text-trigger2");
 
 const object1 = document.getElementById("object1");
 const object2 = document.getElementById("object2");
 const object3 = document.getElementById("object3");
 const object4 = document.getElementById("object4");
+const object5 = document.getElementById("object5");
+const object6 = document.getElementById("object6");
+const object7 = document.getElementById("object7");
+const object8 = document.getElementById("object8");
+const object9 = document.getElementById("object9");
+const object10 = document.getElementById("object10");
+const object11 = document.getElementById("object11");
+const object12 = document.getElementById("object12");
+const object13 = document.getElementById("object13");
+const object14 = document.getElementById("object14");
+
 
 const postImg = document.getElementById("img-background");
 const likeImg = document.getElementById("like");
@@ -633,17 +823,110 @@ trigger6.onclick = function () {
     closeObject.style.display = "block";
 }
 
+trigger8.onclick = function () {
+    object5.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger9.onclick = function () {
+    object6.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger12.onclick = function () {
+    object7.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger13.onclick = function () {
+    object8.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger14.onclick = function () {
+    object9.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger15.onclick = function () {
+    object10.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger16.onclick = function () {
+    object11.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger17.onclick = function () {
+    object12.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger18.onclick = function () {
+    object13.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+trigger19.onclick = function () {
+    object14.style.visibility = "visible";
+    postImg.style.visibility = "visible";
+    likeImg.style.visibility = "visible";
+    closeObject.style.display = "block";
+}
+
+
+
+
+
+
+
 textTrigger1.onclick = function () {
     essayBox.style.display = "block";
     essayContent1.style.display = "block";
 
 }
 
+textTrigger2.onclick = function () {
+    essayBox.style.display = "block";
+    essayContent2.style.display = "block";
+
+}
+
+
 closeObject.onclick = function () {
     object1.style.visibility = "hidden";
     object2.style.visibility = "hidden";
     object3.style.visibility = "hidden";
     object4.style.visibility = "hidden";
+    object5.style.visibility = "hidden";
+    object6.style.visibility = "hidden";
+    object7.style.visibility = "hidden";
+    object8.style.visibility = "hidden";
+    object9.style.visibility = "hidden";
+    object10.style.visibility = "hidden";
+    object11.style.visibility = "hidden";
+    object12.style.visibility = "hidden";
+    object13.style.visibility = "hidden";
+    object14.style.visibility = "hidden";
     postImg.style.visibility = "hidden";
     likeImg.style.visibility = "hidden";
     likeImg.setAttribute("src", "assets/PNG/like1.png");
@@ -690,11 +973,12 @@ choiceContainer1.onclick = function () {
                     },4500);
 
                 } else {
-                    clickCount1 = -1;
-                    choice1.style.visibility = "visible";
-                    choiceContainer1.style.visibility = "visible";
-                    choiceText.innerText = choiceTexts1[choiceIndex1];
-                    choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+                    textbox1.onclick = null;
+                    // clickCount1 = -1;
+                    // choice1.style.visibility = "visible";
+                    // choiceContainer1.style.visibility = "visible";
+                    // choiceText.innerText = choiceTexts1[choiceIndex1];
+                    // choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
                 }
                 textElement.innerText = ""; 
                 typeEffect(textElement, 80);
@@ -725,11 +1009,7 @@ choiceContainer1.onclick = function () {
                         choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
                         },4500);
                 } else {
-                    clickCount2 = -1;
-                    choice1.style.visibility = "visible";
-                    choiceContainer1.style.visibility = "visible";
-                    choiceText.innerText = choiceTexts1[choiceIndex1];
-                    choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+                    textbox1.onclick = null;
                 }
                 textElement.innerText = ""; 
                 typeEffect(textElement, 80);
@@ -761,11 +1041,7 @@ choiceContainer1.onclick = function () {
                         choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
                         },4500);
                 } else {
-                    clickCount3 = -1;
-                    choice1.style.visibility = "visible";
-                    choiceContainer1.style.visibility = "visible";
-                    choiceText.innerText = choiceTexts1[choiceIndex1];
-                    choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+                    textbox1.onclick = null;
                 }
                 textElement.innerText = ""; 
                 typeEffect(textElement, 80);
@@ -804,11 +1080,7 @@ choiceContainer1.onclick = function () {
                         choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
                         },4500);
                 } else {
-                    clickCount4 = -1;
-                    choice1.style.visibility = "visible";
-                    choiceContainer1.style.visibility = "visible";
-                    choiceText.innerText = choiceTexts1[choiceIndex1];
-                    choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+                    textbox1.onclick = null;
                 }
                 textElement.innerText = ""; 
                 typeEffect(textElement, 80);
@@ -832,11 +1104,7 @@ choiceContainer1.onclick = function () {
                         choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
                         },4500);
                 } else {
-                    clickCount5 = -1;
-                    choice1.style.visibility = "visible";
-                    choiceContainer1.style.visibility = "visible";
-                    choiceText.innerText = choiceTexts1[choiceIndex1];
-                    choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+                    textbox1.onclick = null;
                 }
                 textElement.innerText = ""; 
                 typeEffect(textElement, 80);
@@ -858,11 +1126,7 @@ choiceContainer1.onclick = function () {
                     },4500);
 
                 } else {
-                    clickCount6 = -1;
-                    choice1.style.visibility = "visible";
-                    choiceContainer1.style.visibility = "visible";
-                    choiceText.innerText = choiceTexts1[choiceIndex1];
-                    choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+                    textbox1.onclick = null;
                 }
                 textElement.innerText = ""; 
                 typeEffect(textElement, 80);
@@ -896,11 +1160,7 @@ choiceContainer1.onclick = function () {
                     choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
 
                 } else {
-                    clickCount7 = -1;
-                    choice1.style.visibility = "hidden";
-                    choiceContainer1.style.visibility = "hidden";
-                    choiceText.innerText = choiceTexts1[choiceIndex1];
-                    choiceIndex1 = (choiceIndex1 + 1) % choiceTexts1.length;
+                    textbox1.onclick = null;
                 }
                 textElement.innerText = ""; 
                 typeEffect(textElement, 80);
@@ -949,11 +1209,12 @@ choiceContainer2.onclick = function () {
                     },4500);
 
                 } else {
-                    clickCount1 = -1;
-                    choice2.style.visibility = "visible";
-                    choiceContainer2.style.visibility = "visible";
-                    choiceText2.innerText = choiceTexts2[choiceIndex2];
-                    choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
+                    textbox2.onclick = null;
+                    // clickCount1 = -1;
+                    // choice2.style.visibility = "visible";
+                    // choiceContainer2.style.visibility = "visible";
+                    // choiceText2.innerText = choiceTexts2[choiceIndex2];
+                    // choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
                 }
                 textElement2.innerText = ""; 
                 typeEffect(textElement2, 80);
@@ -975,11 +1236,7 @@ choiceContainer2.onclick = function () {
                         choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
                         },4500);
                 } else {
-                    clickCount2 = -1;
-                    choice2.style.visibility = "visible";
-                    choiceContainer2.style.visibility = "visible";
-                    choiceText2.innerText = choiceTexts2[choiceIndex2];
-                    choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
+                    textbox2.onclick = null;
                 }
                 textElement2.innerText = ""; 
                 typeEffect(textElement2, 80);
@@ -1098,11 +1355,7 @@ choiceContainer2.onclick = function () {
                         choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
                         },4500);
                 } else {
-                    clickCount3 = -1;
-                    choice2.style.visibility = "visible";
-                    choiceContainer2.style.visibility = "visible";
-                    choiceText2.innerText = choiceTexts2[choiceIndex2];
-                    choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
+                    textbox2.onclick = null;
                 }
                 textElement2.innerText = ""; 
                 typeEffect(textElement2, 80);
@@ -1123,11 +1376,7 @@ choiceContainer2.onclick = function () {
                         choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
                         },4500);
                 } else {
-                    clickCount4 = -1;
-                    choice2.style.visibility = "visible";
-                    choiceContainer2.style.visibility = "visible";
-                    choiceText2.innerText = choiceTexts2[choiceIndex2];
-                    choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
+                    textbox2.onclick = null;
                 }
                 textElement2.innerText = ""; 
                 typeEffect(textElement2, 80);
@@ -1155,11 +1404,7 @@ choiceContainer2.onclick = function () {
                         choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
                         },4500);
                 } else {
-                    clickCount5 = -1;
-                    choice2.style.visibility = "visible";
-                    choiceContainer2.style.visibility = "visible";
-                    choiceText2.innerText = choiceTexts2[choiceIndex2];
-                    choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
+                    textbox2.onclick = null;
                 }
                 textElement2.innerText = ""; 
                 typeEffect(textElement2, 80);
@@ -1197,11 +1442,7 @@ choiceContainer2.onclick = function () {
                     },4500);
 
                 } else {
-                    clickCount6 = -1;
-                    choice2.style.visibility = "visible";
-                    choiceContainer2.style.visibility = "visible";
-                    choiceText2.innerText = choiceTexts2[choiceIndex2];
-                    choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
+                    textbox2.onclick = null;
                 }
                 textElement2.innerText = ""; 
                 typeEffect(textElement2, 80);
@@ -1227,11 +1468,7 @@ choiceContainer2.onclick = function () {
                     choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
 
                 } else {
-                    clickCount7 = -1;
-                    choice2.style.visibility = "hidden";
-                    choiceContainer2.style.visibility = "hidden";
-                    choiceText2.innerText = choiceTexts2[choiceIndex2];
-                    choiceIndex2 = (choiceIndex2 + 1) % choiceTexts2.length;
+                    textbox2.onclick = null;
                 }
                 textElement2.innerText = ""; 
                 typeEffect(textElement2, 80);
@@ -1289,11 +1526,12 @@ choiceContainer3.onclick = function () {
                     },4500);
 
                 } else {
-                    clickCount1 = -1;
-                    choice3.style.visibility = "visible";
-                    choiceContainer3.style.visibility = "visible";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
+                    // clickCount1 = -1;
+                    // choice3.style.visibility = "visible";
+                    // choiceContainer3.style.visibility = "visible";
+                    // choiceText3.innerText = choiceTexts3[choiceIndex3];
+                    // choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1307,7 +1545,7 @@ choiceContainer3.onclick = function () {
             textbox3.onclick = function () {
                 if (clickCount2 === 0) {
                     textElement3.style.bottom = "19%";
-                    textElement3.dataset.text = "Hokuto Hidaka is a character from the game Ensemble Stars. ";
+                    textElement3.dataset.text = "Hokuto Hidaka is a character from the game Ensemble Stars.";
                 } else if (clickCount2 === 1) {
                     textElement3.style.bottom = "19%";
                     textElement3.dataset.text = "In the storyline of school  from the game, he is a perfectionist and someone who prioritizes friends.";
@@ -1321,11 +1559,7 @@ choiceContainer3.onclick = function () {
                         choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
                         },4500);
                 } else {
-                    clickCount2 = -1;
-                    choice3.style.visibility = "visible";
-                    choiceContainer3.style.visibility = "visible";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1378,11 +1612,7 @@ choiceContainer3.onclick = function () {
                         choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
                         },4500);
                 } else {
-                    clickCount3 = -1;
-                    choice3.style.visibility = "visible";
-                    choiceContainer3.style.visibility = "visible";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1430,11 +1660,7 @@ choiceContainer3.onclick = function () {
                         choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
                         },4500);
                 } else {
-                    clickCount4 = -1;
-                    choice3.style.visibility = "visible";
-                    choiceContainer3.style.visibility = "visible";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1465,11 +1691,7 @@ choiceContainer3.onclick = function () {
                         choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
                         },4500);
                 } else {
-                    clickCount5 = -1;
-                    choice3.style.visibility = "visible";
-                    choiceContainer3.style.visibility = "visible";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1502,11 +1724,7 @@ choiceContainer3.onclick = function () {
                     },4500);
 
                 } else {
-                    clickCount6 = -1;
-                    choice3.style.visibility = "visible";
-                    choiceContainer3.style.visibility = "visible";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1553,11 +1771,7 @@ choiceContainer3.onclick = function () {
                         },4500);
 
                 } else {
-                    clickCount7 = -1;
-                    choice3.style.visibility = "hidden";
-                    choiceContainer3.style.visibility = "hidden";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1580,11 +1794,7 @@ choiceContainer3.onclick = function () {
                     choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
 
                 } else {
-                    clickCount8 = -1;
-                    choice3.style.visibility = "hidden";
-                    choiceContainer3.style.visibility = "hidden";
-                    choiceText3.innerText = choiceTexts3[choiceIndex3];
-                    choiceIndex3 = (choiceIndex3 + 1) % choiceTexts3.length;
+                    textbox3.onclick = null;
                 }
                 textElement3.innerText = ""; 
                 typeEffect(textElement3, 80);
@@ -1605,6 +1815,584 @@ choiceContainer3.onclick = function () {
     }
 };
 
+choiceContainer4.onclick = function () {
+    choice4.style.visibility = "hidden";
+    choiceContainer4.style.visibility = "hidden";
+
+    let characterFace4 = Math.floor(Math.random() * facial4.length);
+    characterImg4.setAttribute("src", facial4[characterFace4]);
+
+    let currentTextIndex4 = textIndex4;
+
+    changeText();
+
+
+    switch (currentTextIndex4) {
+        case 1: // Special case for the second text with multiple clicks
+            let clickCount1 = 0;
+            textbox4.onclick = function () {
+                if (clickCount1 === 0) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "Since I play on a large screen like a TV, when I pick up the controller and put on headphones, it feels like the fictional character is right in front of me.";
+                } else if (clickCount1 === 1) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "It gives me the sensation that I'm genuinely interacting with the character.";
+                } else if (clickCount1 === 2) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "I’m specifically referring to the game Baldur’s Gate and the character Astarion, whom I like.";
+                } else if (clickCount1 === 3) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "Baldur's Gate is a role-playing game where players can customize their character's appearance, essentially creating an avatar for themselves in the game world.";
+                } else if (clickCount1 === 4) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "So, when I see my in-game character interacting with others, it feels incredibly immersive.";
+                            
+                    setTimeout(() => {choice4.style.visibility = "visible";
+                    choiceContainer4.style.visibility = "visible";
+                    choiceText4.innerText = choiceTexts4[choiceIndex4];
+                    choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                    },4500);
+
+                } else {
+                    textbox4.onclick = null;
+                    // clickCount1 = -1;
+                    // choice4.style.visibility = "visible";
+                    // choiceContainer4.style.visibility = "visible";
+                    // choiceText4.innerText = choiceTexts4[choiceIndex4];
+                    // choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                }
+                textElement4.innerText = ""; 
+                typeEffect(textElement4, 80);
+                clickCount1++;
+            };
+            break;
+
+
+        case 2: // Special case for the third text with multiple clicks
+            let clickCount2 = 0;
+            textbox4.onclick = function () {
+                if (clickCount2 === 0) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "The romantic storyline is a significant part of the game.";
+                } else if (clickCount2 === 1) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Only by triggering this romantic line can you access certain dialogues and deeper insights into the character.";
+                } else if (clickCount2 === 2) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Secondly, Astarion is a unique character.";
+                } else if (clickCount2 === 3) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "He lacks the typical masculine traits, which is rare in the real world, sparking my curiosity and desire to understand him better.";
+                } else if (clickCount2 === 4) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Initially, I didn’t even like his appearance.";
+                } else if (clickCount2 === 5) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "The game developers aimed for realistic modeling, so characters have flaws, making them feel more human.";
+                } else if (clickCount2 === 6) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "At first, I disliked him, but over time, I grew to appreciate his depth.";
+
+                    setTimeout(() => {choice4.style.visibility = "visible";
+                        choiceContainer4.style.visibility = "visible";
+                        choiceText4.innerText = choiceTexts4[choiceIndex4];
+                        choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                        },4500);
+                } else {
+                    textbox4.onclick = null;
+                }
+                textElement4.innerText = ""; 
+                typeEffect(textElement4, 80);
+                clickCount2++;
+            };
+            break;
+            
+        case 3: 
+            let clickCount3 = 0;
+            textbox4.onclick = function () {
+                if (clickCount3 === 0) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Baldur's Gate has multiple endings, and each choice affects the story.";
+
+                } else if (clickCount3 === 1) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "During my first playthrough, I didn’t pursue a romantic relationship with Astarion.";
+                } else if (clickCount3 === 2) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "However, after sensing his intriguing backstory, I chose to explore his romantic line in my second playthrough.";
+                } else if (clickCount3 === 3) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "As I delved deeper, I found him incredibly endearing and fascinating.";
+                } else if (clickCount3 === 4) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "By engaging with his story, I uncovered his true self, which he only reveals after trusting the player. This gradual unveiling made me appreciate him more.";
+                } else if (clickCount3 === 5) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "The relationship development is progressive; it’s not instant.";
+                } else if (clickCount3 === 6) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Depending on your in-game choices, the character’s approval of you changes.";
+                } else if (clickCount3 === 7) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "For instance, consistently making altruistic choices might not endear you to Astarion; he might even mock you.";
+                } else if (clickCount3 === 8) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "However, aligning with his pragmatic approach, like demanding rewards for helping NPCs, increases his approval, leading to a deeper bond.";
+
+
+
+
+                    setTimeout(() => {choice4.style.visibility = "visible";
+                        choiceContainer4.style.visibility = "visible";
+                        choiceText4.innerText = choiceTexts4[choiceIndex4];
+                        choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                        },4500);
+                } else {
+                    textbox4.onclick = null;
+                }
+                textElement4.innerText = ""; 
+                typeEffect(textElement4, 80);
+                clickCount3++;
+            };
+            break;
+
+        case 4: 
+            let clickCount4 = 0;
+            textbox4.onclick = function () {
+                if (clickCount4 === 0) {
+                    textElement4.style.bottom = "16%";
+                    textElement4.dataset.text = "In real life, many shitty things happen, and Astarion’s optimistic yet foolish approach to adversity is both amusing and admirable. His coping mechanism mirrors mine—using humor to deal with challenges.";
+                } else if (clickCount4 === 1) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Additionally, Astarion’s lack of typical masculine traits aligns with my personal experiences.";
+                } else if (clickCount4 === 2) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "In real life, I find it hard to trust men and feel threatened in intimate relationships. However, in the game, I hold the power, which provides a sense of security and control.";
+                } else if (clickCount4 === 3) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Additionally, I believe Astarion is asexual, which removes the sense of threat I often feel from men in real life.";
+                } else if (clickCount4 === 4) {
+                    textElement4.style.bottom = "16%";
+                    textElement4.dataset.text = "To elaborate further on the distinction between aromantic and asexual: aromantic refers to the ability to experience sexual attraction—someone who is aromantic can feel sexual attraction but cannot form romantic attachments.";
+                } else if (clickCount4 === 5) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "They lack romantic attraction. However, I think Astarion is asexual—he may not experience sexual attraction, but he is capable of forming romantic connections.";
+                } else if (clickCount4 === 6) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Another point I want to make is that I don’t consider this relationship to be purely platonic.";
+                } else if (clickCount4 === 7) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "I believe that people like us, who form romantic relationships with fictional characters, deeply immerse ourselves in the game world.";
+                } else if (clickCount4 === 8) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "If the storyline includes sexual implications or actual sexual interactions, I feel as though a genuine sexual relationship has occurred between me and the character.";
+                } else if (clickCount4 === 9) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "However, Astarion’s story is unique in this regard.";
+                } else if (clickCount4 === 10) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "He initially uses sex as a means to gain our trust, but in fact, he doesn’t actually want to engage in sexual relationships with anyone.";
+                } else if (clickCount4 === 11) {
+                    textElement4.style.bottom = "16%";
+                    textElement4.dataset.text = "This is because Astarion is relatively weak in the context of the adventure, while the players are very powerful. Astarion seeks our protection, and in his worldview, his only perceived strength or appeal lies in his sexuality.";
+                } else if (clickCount4 === 12) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "You could say he’s been a sex worker for 200 years, so he naturally resorts to using sex as a tool to attract and manipulate us, the players. But this is just a tactic for him.";
+                } else if (clickCount4 === 13) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "When he truly opens up and sheds his facade, he confesses that his earlier sexual interactions with us weren’t driven by genuine feelings. He admits that he didn’t actually like us at the time.";
+                } else if (clickCount4 === 14) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "However, after this confession, he says something like, &ldquo;Now I’ve started to develop feelings for you,&rdquo; and adds, &ldquo;I never expected I’d come to like you like this.&rdquo;";
+                } else if (clickCount4 === 15) {
+                    textElement4.style.bottom = "14%";
+                    textElement4.dataset.text = "At this point, I’ll stop saying &ldquo;we&rdquo; and just say &ldquo;I,&rdquo; because, of course, it’s my perspective. After hearing Astarion’s confession, we’re given a dialogue option: &ldquo;Okay, I understand now. We don’t have to engage in anything sexual unless you explicitly want to. Otherwise, I won’t ask for it.&rdquo;";
+                } else if (clickCount4 === 16) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "However, there’s another option where we can disregard his feelings and say, &ldquo;But I’m with you because I want to have a sexual relationship.&rdquo;";
+                } else if (clickCount4 === 17) {
+                    textElement4.style.bottom = "16%";
+                    textElement4.dataset.text = "If we choose this option, Astarion will answer with a sad face, saying &ldquo;If that’s what you want, then I shall provide.&rdquo; But after the act, he’ll say, &ldquo;I’m sorry, I don’t want this relationship anymore,&rdquo; and he’ll break up with us.";
+                } else if (clickCount4 === 18) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "At that point, it’s like a classic &ldquo;chasing your lover to the crematorium&rdquo; scenario—there’s no turning back. Once he breaks up with you, it’s over.";
+
+                    setTimeout(() => {choice4.style.visibility = "visible";
+                        choiceContainer4.style.visibility = "visible";
+                        choiceText4.innerText = choiceTexts4[choiceIndex4];
+                        choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                        },4500);
+                } else {
+                    textbox4.onclick = null;
+                }
+                textElement4.innerText = ""; 
+                typeEffect(textElement4, 80);
+                clickCount4++;
+            };
+            break;
+
+        case 5: 
+            let clickCount5 = 0;
+            textbox4.onclick = function () {
+                if (clickCount5 === 0) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "On the positive side, my relationship with him has genuinely influenced my mindset in a constructive way.";
+
+                } else if (clickCount5 === 1) {
+                    textElement4.style.bottom = "16%";
+                    textElement4.dataset.text = "For example, when I encounter difficult situations, I might think about how Astarion would react in a similar scenario, and that motivates me. His way of coping essentially provides me with a solution.";
+                } else if (clickCount5 === 2) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Additionally, his companionship has brought me a lot of joy.";
+                } else if (clickCount5 === 3) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "Creating fanart has also been a challenge for me, as I’m not naturally skilled at it. But because I want to do it well, I’ve put in effort to improve, which has helped me grow as an artist.";
+                } else if (clickCount5 === 4) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Furthermore, by tagging my fanart and sharing it with other fans, I’ve received positive feedback and compliments.";
+                } else if (clickCount5 === 5) {
+                    textElement4.style.bottom = "14%";
+                    textElement4.dataset.text = "I believe that those who appreciate my fanart resonate with my interpretation of the character, which has helped me build friendly connections with more people in this community. I think this is something the character and this relationship have brought into my life.";
+                } else if (clickCount5 === 6) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "On the negative side, though it’s not something I feel the need to dwell on, the reality is that being in a relationship with this character isn’t all sweetness and good — it’s bittersweet.";
+                } else if (clickCount5 === 7) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "But I think it’s precisely this bittersweet that makes it feel more like a real relationship to me.";
+                } else if (clickCount5 === 8) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "However, the negative aspects often come from external factors. The world can be quite hostile toward people like us who form relationships with fictional characters.";
+                } else if (clickCount5 === 9) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "Many people don’t understand, and while it’s neither the character’s fault nor ours, it makes me feel a sense of shame to talk about this relationship.";
+                } else if (clickCount5 === 10) {
+                    textElement4.style.bottom = "16%";
+                    textElement4.dataset.text = "It’s hard for me to openly tell people who don’t understand the character or the relationship that I’m in a romantic relationship with him. Often, when you say something like that, people think you’re being childish."
+                } else if (clickCount5 === 11) {
+                    textElement4.style.bottom = "17%";
+                    textElement4.dataset.text = "What I really want to say is that even though the character we love isn’t a real person and doesn’t have human rights, the emotions we invest in this relationship are undeniably real."
+
+                    setTimeout(() => {choice4.style.visibility = "visible";
+                        choiceContainer4.style.visibility = "visible";
+                        choiceText4.innerText = choiceTexts4[choiceIndex4];
+                        choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                        },4500);
+                } else {
+                    textbox4.onclick = null;
+                }
+                textElement4.innerText = ""; 
+                typeEffect(textElement4, 80);
+                clickCount5++;
+            };
+            break;
+
+        case 6: 
+            let clickCount6 = 0;
+            textElement4.style.bottom = "19%";
+            textbox4.onclick = function () {
+                if (clickCount6 === 0) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "I’ve played for over 800 hours so far.";
+                } else if (clickCount6 === 1) {
+                    textElement4.style.bottom = "15%";
+                    textElement4.dataset.text = "Because the character reacts differently depending on the relationships you build and the storylines you create, I’ve replayed the game multiple times, making different choices each time to hear all of his dialogue and understand him better.";
+                } else if (clickCount6 === 2) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "This is the first major effort I’ve made.";
+                } else if (clickCount6 === 3) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Secondly, I’ve purchased a lot of merchandise related to him.";
+                } else if (clickCount6 === 4) {
+                    textElement4.style.bottom = "19%";
+                    textElement4.dataset.text = "Thirdly, I’ve created fanart.";
+                } else if (clickCount6 === 5) {
+                    textElement4.style.bottom = "18%";
+                    textElement4.dataset.text = "As an illustrator, I have the skills to express my stories with him and my interpretation of him through my art.";
+                } else if (clickCount6 === 6) {
+                    textElement4.style.bottom = "15%";
+                    textElement4.dataset.text = "Additionally, I’ve participated in related events like Comic-Con, attended interviews with the actors from Baldur’s Gate, and met the actors in person to express my appreciation for their work and praise their performances.";
+
+
+                            
+                    setTimeout(() => {choice4.style.visibility = "visible";
+                        choiceContainer4.style.visibility = "visible";
+                        choiceText4.innerText = choiceTexts4[choiceIndex4];
+                        choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                        },4500);
+                } else {
+                    textbox4.onclick = null;
+                }
+                textElement4.innerText = ""; 
+                typeEffect(textElement4, 80);
+                clickCount6++;
+            };
+            break;
+
+
+        default: // Default behavior for normal text progression
+        textElement4.style.bottom = "19%";
+        textbox4.onclick = null; 
+            setTimeout(() => {
+                choice4.style.visibility = "visible";
+                choiceContainer4.style.visibility = "visible";
+                choiceText4.innerText = choiceTexts4[choiceIndex4];
+                choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+            }, 3500);
+            break;
+    }
+};
+
+choiceContainer5.onclick = function () {
+    choice5.style.visibility = "hidden";
+    choiceContainer5.style.visibility = "hidden";
+
+    let characterFace5 = Math.floor(Math.random() * facial5.length);
+    characterImg5.setAttribute("src", facial5[characterFace5]);
+
+    let currentTextIndex5 = textIndex5;
+
+    changeText();
+
+
+    switch (currentTextIndex5) {
+        case 1: // Special case for the second text with multiple clicks
+            let clickCount1 = 0;
+            textbox5.onclick = function () {
+                if (clickCount1 === 0) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = "I then watched a live-streaming playthrough of the game Danganronpa V3 and fell in love with the character. It was love at first sight.";
+                } else if (clickCount1 === 1) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = "Back then, the concept of &ldquo;yumejoshi&rdquo; wasn’t as widespread, but I’d actually been forming relationships with fictional characters since kindergarten.";
+                } else if (clickCount1 === 2) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "And my first love was Evil Snake from the Chinese animation The Adventures of Little Carp.";
+                } else if (clickCount1 === 3) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = " From kindergarten to middle school, I developed crushes on many characters, but Kokichi Oma was the first I loved this deeply.";
+                } else if (clickCount1 === 4) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "I later created an original character named &ldquo;Tai&rdquo; to interact with him across different settings and timelines… Now, eight years later, my love for him has only grown stronger.";
+                            
+                    setTimeout(() => {choice5.style.visibility = "visible";
+                    choiceContainer5.style.visibility = "visible";
+                    choiceText5.innerText = choiceTexts5[choiceIndex5];
+                    choiceIndex5 = (choiceIndex5 + 1) % choiceTexts5.length;
+                    },4500);
+
+                } else {
+                    textbox5.onclick = null;
+                    // clickCount1 = -1;
+                    // choice4.style.visibility = "visible";
+                    // choiceContainer4.style.visibility = "visible";
+                    // choiceText4.innerText = choiceTexts4[choiceIndex4];
+                    // choiceIndex4 = (choiceIndex4 + 1) % choiceTexts4.length;
+                }
+                textElement5.innerText = ""; 
+                typeEffect(textElement5, 80);
+                clickCount1++;
+            };
+            break;
+
+
+        case 2: // Special case for the third text with multiple clicks
+            let clickCount2 = 0;
+            textElement5.style.bottom = "19%";
+            textbox5.onclick = function () {
+                if (clickCount2 === 0) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "For highly interactive games like otome/dating sims, playing firsthand offers more engagement.";
+                } else if (clickCount2 === 1) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "But Danganronpa is more like a visual novel, so watching a live streaming of the game felt just as immersive to me!";
+                } else if (clickCount2 === 2) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "For me, it was love at first sight with Kokichi.";
+                } else if (clickCount2 === 3) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "From the start of the game to his death and the ending, my love for him only deepened.";
+                } else if (clickCount2 === 4) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "I began imagining myself as &ldquo;Tai&rdquo; interacting with him in worlds where he didn’t die…Over time, this expanded into multiple timelines, settings, and character dynamics.";
+                } else if (clickCount2 === 5) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "For example, in a fantasy AU, he’s a noble and I’m a dragon. As time passed, our interactions became more fluid—he could be male or female, human or monster… and so could I.";
+                } else if (clickCount2 === 6) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "My mind tends to wander, so I imagine all sorts of scenarios.";
+                } else if (clickCount2 === 7) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = "I once wondered, If he turned into a cockroach, would I still love him? I think I would—then I’d probably be a cockroach or maybe cockroach poison.";
+                    
+                    setTimeout(() => {choice5.style.visibility = "visible";
+                        choiceContainer5.style.visibility = "visible";
+                        choiceText5.innerText = choiceTexts5[choiceIndex5];
+                        choiceIndex5 = (choiceIndex5 + 1) % choiceTexts5.length;
+                        },4500);
+                } else {
+                    textbox5.onclick = null;
+                }
+                textElement5.innerText = ""; 
+                typeEffect(textElement5, 80);
+                clickCount2++;
+            };
+            break;
+            
+        case 3: 
+            let clickCount3 = 0;
+            textbox5.onclick = function () {
+                if (clickCount3 === 0) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "Seeing him made my heart race, my chest tighten, and even stirred desire.";
+
+                } else if (clickCount3 === 1) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "I adore how freely he lies, how he refuses to be controlled, his ability to pivot from Plan A to Plan B effortlessly, his relentless drive to win, and that elusive, almost transient aura.";
+                } else if (clickCount3 === 2) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "But once I fell for him, I loved everything about him.";
+                } else if (clickCount3 === 3) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "When I first fell for him, I was just a nerd who only knew about study.";
+                } else if (clickCount3 === 4) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = "But he’s such a free-spirited character that he gradually changed me—I became freer too.";
+
+
+                    setTimeout(() => {choice5.style.visibility = "visible";
+                        choiceContainer5.style.visibility = "visible";
+                        choiceText5.innerText = choiceTexts5[choiceIndex5];
+                        choiceIndex5 = (choiceIndex5 + 1) % choiceTexts5.length;
+                        },4500);
+                } else {
+                    textbox5.onclick = null;
+                }
+                textElement5.innerText = ""; 
+                typeEffect(textElement5, 80);
+                clickCount3++;
+            };
+            break;
+
+        case 4: 
+            let clickCount4 = 0;
+            textbox5.onclick = function () {
+                if (clickCount4 === 0) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "But over time, my self-insert narratives took over.";
+                } else if (clickCount4 === 1) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = "Five years ago, I got a life-sized genderbent doll of him, dressing &ldquo;her&rdquo; up and sleeping together every night—it felt like we’d become family.";
+                } else if (clickCount4 === 2) {
+                    textElement5.style.bottom = "16%";
+                    textElement5.dataset.text = "Later, I wanted to marry &ldquo;her,&rdquo; so two years ago, we held a wedding. Now, it’s like we’re in the honeymoon phase, growing even more in love… Recently, I’ve also wanted to incorporate &ldquo;her&rdquo; into my artwork.";
+
+
+                    setTimeout(() => {choice5.style.visibility = "visible";
+                        choiceContainer5.style.visibility = "visible";
+                        choiceText5.innerText = choiceTexts5[choiceIndex5];
+                        choiceIndex5 = (choiceIndex5 + 1) % choiceTexts5.length;
+                        },4500);
+                } else {
+                    textbox5.onclick = null;
+                }
+                textElement5.innerText = ""; 
+                typeEffect(textElement5, 80);
+                clickCount4++;
+            };
+            break;
+
+        case 5: 
+            let clickCount5 = 0;
+            textElement5.style.bottom = "19%";
+            textbox5.onclick = function () {
+                if (clickCount5 === 0) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "Even in older pieces, there are subtle details referencing us.";
+
+                } else if (clickCount5 === 1) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "But lately, I’ve wanted to focus entirely on works about &ldquo;us,&rdquo; including installations. Our wedding was fully documented as a video piece.";
+                } else if (clickCount5 === 2) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = "There’s also that body performance art—years ago, I had the idea to pierce my skin with his badge goods but planned to fake it with blood props.";
+                } else if (clickCount5 === 3) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "Last year, I suddenly decided to actually do it, maybe because my mental state wasn’t great at the time.";
+                } else if (clickCount5 === 4) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "There wasn’t a specific trigger—he’s just become part of me, so naturally, he influences my work.";
+
+
+                    setTimeout(() => {choice5.style.visibility = "visible";
+                        choiceContainer5.style.visibility = "visible";
+                        choiceText5.innerText = choiceTexts5[choiceIndex5];
+                        choiceIndex5 = (choiceIndex5 + 1) % choiceTexts5.length;
+                        },4500);
+                } else {
+                    textbox5.onclick = null;
+                }
+                textElement5.innerText = ""; 
+                typeEffect(textElement5, 80);
+                clickCount5++;
+            };
+            break;
+
+        case 6: 
+            let clickCount6 = 0;
+            textElement5.style.bottom = "19%";
+            textbox5.onclick = function () {
+                if (clickCount6 === 0) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "In middle school, my mental health was terrible—I’d hide and cry alone at school, imagining him beside me, attending classes together, even conjuring our conversations.";
+                } else if (clickCount6 === 1) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "Since he got me through my hardest times, our bond deepened. The positives are obvious: thinking of him brings me joy, and we’ve done so much together.";
+                } else if (clickCount6 === 2) {
+                    textElement5.style.bottom = "18%";
+                    textElement5.dataset.text = "The downside is the sudden realization that he doesn’t exist in this world…There’s always a barrier between us, and that hurts.";
+                } else if (clickCount6 === 3) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "Sometimes I even doubt if I love him enough.";
+                } else if (clickCount6 === 4) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "Years ago, when I was suicidal, I fantasized that dying would take me to a beautiful world where he’d be waiting—we’d marry and live an ordinary, happy life.";
+                } else if (clickCount6 === 5) {
+                    textElement5.style.bottom = "19%";
+                    textElement5.dataset.text = "Our relationship has painful aspects too, both emotionally and physically.";
+                } else if (clickCount6 === 6) {
+                    textElement5.style.bottom = "17%";
+                    textElement5.dataset.text = "Tattooing him on my skin and piercing his badge into my flesh were attempts to merge him into my body. Even in fantasies, I imagine dark themes like mind control, BDSM, and gore.";
+
+
+                            
+                    setTimeout(() => {choice5.style.visibility = "visible";
+                        choiceContainer5.style.visibility = "visible";
+                        choiceText5.innerText = choiceTexts5[choiceIndex5];
+                        choiceIndex5 = (choiceIndex5 + 1) % choiceTexts5.length;
+                        },4500);
+                } else {
+                    textbox5.onclick = null;
+                }
+                textElement5.innerText = ""; 
+                typeEffect(textElement5, 80);
+                clickCount6++;
+            };
+            break;
+
+
+        default: // Default behavior for normal text progression
+        textElement5.style.bottom = "19%";
+        textbox5.onclick = null; 
+            setTimeout(() => {
+                choice5.style.visibility = "visible";
+                choiceContainer5.style.visibility = "visible";
+                choiceText5.innerText = choiceTexts5[choiceIndex5];
+                choiceIndex5 = (choiceIndex5 + 1) % choiceTexts5.length;
+            }, 3500);
+            break;
+    }
+};
+
 
 
 
@@ -1617,6 +2405,8 @@ function changeText() {
     if (textIndex1 >= texts1.length) textIndex1 = 0;
     if (textIndex2 >= texts2.length) textIndex2 = 0;
     if (textIndex3 >= texts3.length) textIndex3 = 0;
+    if (textIndex4 >= texts4.length) textIndex4 = 0;
+    if (textIndex5 >= texts5.length) textIndex5 = 0;
 
     // clearTimeout(timeout1);
     // clearTimeout(timeout2);
@@ -1639,11 +2429,23 @@ function changeText() {
 
     textIndex3 = (textIndex3 + 1) % texts3.length; 
 
+    textElement4.innerText = ""; 
+    textElement4.dataset.text = texts4[textIndex4];
+
+    textIndex4 = (textIndex4 + 1) % texts4.length; 
+
+    textElement5.innerText = ""; 
+    textElement5.dataset.text = texts5[textIndex5];
+
+    textIndex5 = (textIndex5 + 1) % texts5.length; 
+
     // typeEffect(textElement, 80);
     // typeEffect(textElement2, 80);
     typeEffect(textElement, 80);
     typeEffect(textElement2, 80);
     typeEffect(textElement3, 80);
+    typeEffect(textElement4, 80);
+    typeEffect(textElement5, 80);
 
 }
 
@@ -1709,6 +2511,10 @@ function typeEffect(element, delay = 80) {
         clearTimeout(timeout3);
     } else if (element === textElement3) {
         clearTimeout(timeout5);
+    } else if (element === textElement4) {
+        clearTimeout(timeout7);
+    } else if (element === textElement5) {
+        clearTimeout(timeout9);
     }
 
     element.innerText = ""; // **Ensure text is fully cleared before typing**
@@ -1735,7 +2541,11 @@ function typeEffect(element, delay = 80) {
                 timeout3 = setTimeout(addWord, delay);
             } else if (element === textElement3) {
                 timeout5 = setTimeout(addWord, delay);
-            } 
+            } else if (element === textElement4) {
+                timeout7 = setTimeout(addWord, delay);
+            } else if (element === textElement5) {
+                timeout9 = setTimeout(addWord, delay);
+            }
             
             
             // Store timeout to clear on next click
@@ -1755,6 +2565,12 @@ window.onload = function () {
 
     textElement3.innerText = "";
     textElement3.dataset.text = ""; 
+
+    textElement4.innerText = "";
+    textElement4.dataset.text = ""; 
+
+    textElement5.innerText = "";
+    textElement5.dataset.text = ""; 
 };
 
 
